@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 59f045489ef714217b4080f396123e76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8067157105466434821
+    second: TreasureChestOpenEffectSheet_0
+  - first:
+      213: -8155092179749971750
+    second: TreasureChestOpenEffectSheet_1
+  - first:
+      213: -3551294827197522598
+    second: TreasureChestOpenEffectSheet_2
+  - first:
+      213: 4156160175399213576
+    second: TreasureChestOpenEffectSheet_3
+  - first:
+      213: 2276010039087781886
+    second: TreasureChestOpenEffectSheet_4
+  - first:
+      213: 1190733692179996585
+    second: TreasureChestOpenEffectSheet_5
+  - first:
+      213: 8557388772322554210
+    second: TreasureChestOpenEffectSheet_6
+  - first:
+      213: -8113004542012445168
+    second: TreasureChestOpenEffectSheet_7
+  - first:
+      213: -8301377814855721091
+    second: TreasureChestOpenEffectSheet_8
+  - first:
+      213: 8933054308220709544
+    second: TreasureChestOpenEffectSheet_9
+  - first:
+      213: -5270819085359768270
+    second: TreasureChestOpenEffectSheet_10
+  - first:
+      213: 2539212038439253837
+    second: TreasureChestOpenEffectSheet_11
+  - first:
+      213: -2305817473330715383
+    second: TreasureChestOpenEffectSheet_12
+  - first:
+      213: 8325981251330697583
+    second: TreasureChestOpenEffectSheet_13
+  - first:
+      213: 6821697430846531557
+    second: TreasureChestOpenEffectSheet_14
+  - first:
+      213: 5385783721626237847
+    second: TreasureChestOpenEffectSheet_15
+  - first:
+      213: 5868728973311255691
+    second: TreasureChestOpenEffectSheet_16
+  - first:
+      213: -7470986007309491096
+    second: TreasureChestOpenEffectSheet_17
+  - first:
+      213: -3725248365231944988
+    second: TreasureChestOpenEffectSheet_18
+  - first:
+      213: -7809127522999030498
+    second: TreasureChestOpenEffectSheet_19
+  - first:
+      213: 5704804943558027130
+    second: TreasureChestOpenEffectSheet_20
+  - first:
+      213: 2499388821513017305
+    second: TreasureChestOpenEffectSheet_21
+  - first:
+      213: -481027812166264223
+    second: TreasureChestOpenEffectSheet_22
+  - first:
+      213: -682217796869585049
+    second: TreasureChestOpenEffectSheet_23
+  - first:
+      213: 5805888050187094027
+    second: TreasureChestOpenEffectSheet_24
+  - first:
+      213: -7207111426875447915
+    second: TreasureChestOpenEffectSheet_25
+  - first:
+      213: -6149367200491108955
+    second: TreasureChestOpenEffectSheet_26
+  - first:
+      213: -1297635342956753500
+    second: TreasureChestOpenEffectSheet_27
+  - first:
+      213: -4119614876995885881
+    second: TreasureChestOpenEffectSheet_28
+  - first:
+      213: 674988446187665929
+    second: TreasureChestOpenEffectSheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_0
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 45
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa976daa53bb0090800000000000000
+      internalID: -8067157105466434821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 57
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8df6bbeda43de80800000000000000
+      internalID: -8155092179749971750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 63
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d95349b2447bec0800000000000000
+      internalID: -3551294827197522598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 55
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a9b44c8a5ada930800000000000000
+      internalID: 4156160175399213576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_4
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 64
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7dc0d5213069f10800000000000000
+      internalID: 2276010039087781886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 68
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af5a78fbf5568010800000000000000
+      internalID: 1190733692179996585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_6
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 66
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261b33bdfb3f1c670800000000000000
+      internalID: 8557388772322554210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_7
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 66
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ea7348a51d86f80800000000000000
+      internalID: -8113004542012445168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_8
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 16
+        width: 110
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f57372cd49bcc80800000000000000
+      internalID: -8301377814855721091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 38
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aaa4c0609598fb70800000000000000
+      internalID: 8933054308220709544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 33
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d18c5c7f94ad6b0800000000000000
+      internalID: -5270819085359768270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47319845e71d3320800000000000000
+      internalID: 2539212038439253837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 47
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905eb3989371000e0800000000000000
+      internalID: -2305817473330715383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 41
+        width: 6
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69e02cc5d3db8370800000000000000
+      internalID: 8325981251330697583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_14
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 57
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e76dc2aba98bae50800000000000000
+      internalID: 6821697430846531557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_15
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 45
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79bfc9c72c52eba40800000000000000
+      internalID: 5385783721626237847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_16
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 26
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84a24948e9e17150800000000000000
+      internalID: 5868728973311255691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_17
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 43
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86467603fc9b15890800000000000000
+      internalID: -7470986007309491096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_18
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 34
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eace3a59524d4cc0800000000000000
+      internalID: -3725248365231944988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_19
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 40
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1daae174e760a390800000000000000
+      internalID: -7809127522999030498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 27
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a772badeed98b2f40800000000000000
+      internalID: 5704804943558027130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_21
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 28
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d79ddd04ec9fa220800000000000000
+      internalID: 2499388821513017305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_22
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 35
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a1fb0e0cb0359f0800000000000000
+      internalID: -481027812166264223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_23
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 23
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767832e37864886f0800000000000000
+      internalID: -682217796869585049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_24
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 35
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b084615bb68a29050800000000000000
+      internalID: 5805888050187094027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_25
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5952e6897523bfb90800000000000000
+      internalID: -7207111426875447915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 22
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a50a45ac1f09aaa0800000000000000
+      internalID: -6149367200491108955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_27
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 25
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad021fd78fddfde0800000000000000
+      internalID: -1297635342956753500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_28
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 24
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4ee35981034d6c0800000000000000
+      internalID: -4119614876995885881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreasureChestOpenEffectSheet_29
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 22
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a32826a6a0e5900800000000000000
+      internalID: 674988446187665929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TreasureChestOpenEffectSheet_0: -8067157105466434821
+      TreasureChestOpenEffectSheet_1: -8155092179749971750
+      TreasureChestOpenEffectSheet_10: -5270819085359768270
+      TreasureChestOpenEffectSheet_11: 2539212038439253837
+      TreasureChestOpenEffectSheet_12: -2305817473330715383
+      TreasureChestOpenEffectSheet_13: 8325981251330697583
+      TreasureChestOpenEffectSheet_14: 6821697430846531557
+      TreasureChestOpenEffectSheet_15: 5385783721626237847
+      TreasureChestOpenEffectSheet_16: 5868728973311255691
+      TreasureChestOpenEffectSheet_17: -7470986007309491096
+      TreasureChestOpenEffectSheet_18: -3725248365231944988
+      TreasureChestOpenEffectSheet_19: -7809127522999030498
+      TreasureChestOpenEffectSheet_2: -3551294827197522598
+      TreasureChestOpenEffectSheet_20: 5704804943558027130
+      TreasureChestOpenEffectSheet_21: 2499388821513017305
+      TreasureChestOpenEffectSheet_22: -481027812166264223
+      TreasureChestOpenEffectSheet_23: -682217796869585049
+      TreasureChestOpenEffectSheet_24: 5805888050187094027
+      TreasureChestOpenEffectSheet_25: -7207111426875447915
+      TreasureChestOpenEffectSheet_26: -6149367200491108955
+      TreasureChestOpenEffectSheet_27: -1297635342956753500
+      TreasureChestOpenEffectSheet_28: -4119614876995885881
+      TreasureChestOpenEffectSheet_29: 674988446187665929
+      TreasureChestOpenEffectSheet_3: 4156160175399213576
+      TreasureChestOpenEffectSheet_4: 2276010039087781886
+      TreasureChestOpenEffectSheet_5: 1190733692179996585
+      TreasureChestOpenEffectSheet_6: 8557388772322554210
+      TreasureChestOpenEffectSheet_7: -8113004542012445168
+      TreasureChestOpenEffectSheet_8: -8301377814855721091
+      TreasureChestOpenEffectSheet_9: 8933054308220709544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
