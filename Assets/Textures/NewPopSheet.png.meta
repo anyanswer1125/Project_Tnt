@@ -1,0 +1,2132 @@
+fileFormatVersion: 2
+guid: c29f7375b29cd4e03a576a62ed074ece
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 33308641589180435
+    second: NewPopSheet_0
+  - first:
+      213: -3352613925790563969
+    second: NewPopSheet_1
+  - first:
+      213: 578392855248478777
+    second: NewPopSheet_2
+  - first:
+      213: -2399655619798471193
+    second: NewPopSheet_3
+  - first:
+      213: -1220159592461789425
+    second: NewPopSheet_4
+  - first:
+      213: -5795834261278127005
+    second: NewPopSheet_5
+  - first:
+      213: 7329685793901903667
+    second: NewPopSheet_6
+  - first:
+      213: -5645674181175374937
+    second: NewPopSheet_7
+  - first:
+      213: -7415373589295424203
+    second: NewPopSheet_8
+  - first:
+      213: 5798726096870358621
+    second: NewPopSheet_9
+  - first:
+      213: -8078281026780084419
+    second: NewPopSheet_10
+  - first:
+      213: -1603224456060687844
+    second: NewPopSheet_11
+  - first:
+      213: 2808207328036080543
+    second: NewPopSheet_12
+  - first:
+      213: -2170257510335774544
+    second: NewPopSheet_13
+  - first:
+      213: 4219118475008706789
+    second: NewPopSheet_14
+  - first:
+      213: -2708439430446115943
+    second: NewPopSheet_15
+  - first:
+      213: 2650393602219145124
+    second: NewPopSheet_16
+  - first:
+      213: 4742275379790487190
+    second: NewPopSheet_17
+  - first:
+      213: -434848781580425477
+    second: NewPopSheet_18
+  - first:
+      213: 6408627212774875473
+    second: NewPopSheet_19
+  - first:
+      213: 385489509755782645
+    second: NewPopSheet_20
+  - first:
+      213: 937791543059483435
+    second: NewPopSheet_21
+  - first:
+      213: -2791071337259830096
+    second: NewPopSheet_22
+  - first:
+      213: 7865545972868168858
+    second: NewPopSheet_23
+  - first:
+      213: -81150298729479316
+    second: NewPopSheet_24
+  - first:
+      213: -5546814626630769918
+    second: NewPopSheet_25
+  - first:
+      213: -5209574843651587671
+    second: NewPopSheet_26
+  - first:
+      213: -3198520233788644649
+    second: NewPopSheet_27
+  - first:
+      213: 5254030298236090574
+    second: NewPopSheet_28
+  - first:
+      213: -2367265111444522132
+    second: NewPopSheet_29
+  - first:
+      213: 1960931570163574479
+    second: NewPopSheet_30
+  - first:
+      213: 8535171957153016254
+    second: NewPopSheet_31
+  - first:
+      213: -2907983126132938924
+    second: NewPopSheet_32
+  - first:
+      213: -2486843430964304813
+    second: NewPopSheet_33
+  - first:
+      213: 5394612462811374792
+    second: NewPopSheet_34
+  - first:
+      213: 5932789766184209645
+    second: NewPopSheet_35
+  - first:
+      213: 8787341758873811202
+    second: NewPopSheet_36
+  - first:
+      213: 197401526218890197
+    second: NewPopSheet_37
+  - first:
+      213: -1366335917114452494
+    second: NewPopSheet_38
+  - first:
+      213: -1265319719755426182
+    second: NewPopSheet_39
+  - first:
+      213: -7080610775914319615
+    second: NewPopSheet_40
+  - first:
+      213: -1796600055970411623
+    second: NewPopSheet_41
+  - first:
+      213: 256475384202562125
+    second: NewPopSheet_42
+  - first:
+      213: -1693920548496949006
+    second: NewPopSheet_43
+  - first:
+      213: -7519526885937756813
+    second: NewPopSheet_44
+  - first:
+      213: -6143490613294615926
+    second: NewPopSheet_45
+  - first:
+      213: 4067936167336183808
+    second: NewPopSheet_46
+  - first:
+      213: 7107594262891870276
+    second: NewPopSheet_47
+  - first:
+      213: -8986612954201584552
+    second: NewPopSheet_48
+  - first:
+      213: 8791227826839623670
+    second: NewPopSheet_49
+  - first:
+      213: 6500274093518850854
+    second: NewPopSheet_50
+  - first:
+      213: -7806611308271457816
+    second: NewPopSheet_51
+  - first:
+      213: -8774538985202334148
+    second: NewPopSheet_52
+  - first:
+      213: -8830365187677016641
+    second: NewPopSheet_53
+  - first:
+      213: -2417950999179330969
+    second: NewPopSheet_54
+  - first:
+      213: -8401834109937986233
+    second: NewPopSheet_55
+  - first:
+      213: 8508455917128978772
+    second: NewPopSheet_56
+  - first:
+      213: 2080215584580043202
+    second: NewPopSheet_57
+  - first:
+      213: 1335474365557947989
+    second: NewPopSheet_58
+  - first:
+      213: 6721647212271111360
+    second: NewPopSheet_59
+  - first:
+      213: 8638007448774448224
+    second: NewPopSheet_60
+  - first:
+      213: -5028921900839901988
+    second: NewPopSheet_61
+  - first:
+      213: -2044999118198933585
+    second: NewPopSheet_62
+  - first:
+      213: -7961175639359647711
+    second: NewPopSheet_63
+  - first:
+      213: -3711296272241213805
+    second: NewPopSheet_64
+  - first:
+      213: -4715459988901269144
+    second: NewPopSheet_65
+  - first:
+      213: -7379002966227250709
+    second: NewPopSheet_66
+  - first:
+      213: 5968971058880590766
+    second: NewPopSheet_67
+  - first:
+      213: -1752162317206355322
+    second: NewPopSheet_68
+  - first:
+      213: 1736625220823196473
+    second: NewPopSheet_69
+  - first:
+      213: 3646960530811708332
+    second: NewPopSheet_70
+  - first:
+      213: -4725205363102176160
+    second: NewPopSheet_71
+  - first:
+      213: -6375976683759653122
+    second: NewPopSheet_72
+  - first:
+      213: -8309056113871435779
+    second: NewPopSheet_73
+  - first:
+      213: -5453744884906447128
+    second: NewPopSheet_74
+  - first:
+      213: 1351070789312241466
+    second: NewPopSheet_75
+  - first:
+      213: -635545523164857702
+    second: NewPopSheet_76
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NewPopSheet_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 140
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318bfd57806567000800000000000000
+      internalID: 33308641589180435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 137
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71c93cb56f1971d0800000000000000
+      internalID: -3352613925790563969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 132
+        width: 41
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932a5b5cc3dd60800800000000000000
+      internalID: 578392855248478777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 130
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed64ae7de5b2bed0800000000000000
+      internalID: -2399655619798471193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_4
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 126
+        width: 61
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f07970ab05f111fe0800000000000000
+      internalID: -1220159592461789425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_5
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 122
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c8a7f627f019fa0800000000000000
+      internalID: -5795834261278127005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_6
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 122
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33fffbc256648b560800000000000000
+      internalID: 7329685793901903667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 120
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab82798e3986a1b0800000000000000
+      internalID: -5645674181175374937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_8
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d9b35420d471990800000000000000
+      internalID: -7415373589295424203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_9
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 79
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ebeb189a6397050800000000000000
+      internalID: 5798726096870358621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_10
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 67
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37cefae43e24ef80800000000000000
+      internalID: -8078281026780084419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_11
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 84
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1aa849f9d330c9e0800000000000000
+      internalID: -1603224456060687844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_12
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 85
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b4d33bfa1c8f620800000000000000
+      internalID: 2808207328036080543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_13
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 77
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b00059fa42b1e1e0800000000000000
+      internalID: -2170257510335774544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_14
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 81
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e88e2036e15d8a30800000000000000
+      internalID: 4219118475008706789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_15
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 88
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993199c10b0b96ad0800000000000000
+      internalID: -2708439430446115943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_16
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 20
+        width: 85
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a77d3750f618c420800000000000000
+      internalID: 2650393602219145124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_17
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 50
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e1e7f0552ffc140800000000000000
+      internalID: 4742275379790487190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_18
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 61
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf623ea465b17f9f0800000000000000
+      internalID: -434848781580425477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_19
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 50
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1512953ee7400f850800000000000000
+      internalID: 6408627212774875473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_20
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 62
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f502adaaa8895500800000000000000
+      internalID: 385489509755782645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_21
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 54
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b0d659074b30d00800000000000000
+      internalID: 937791543059483435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_22
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 71
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b47adf086f1449d0800000000000000
+      internalID: -2791071337259830096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_23
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 75
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cbf4d8368082d60800000000000000
+      internalID: 7865545972868168858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_24
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 67
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6300d6bb32bfdef0800000000000000
+      internalID: -81150298729479316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_25
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 58
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2036bb04c71c503b0800000000000000
+      internalID: -5546814626630769918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_26
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 75
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1065df74fd3b7b0800000000000000
+      internalID: -5209574843651587671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_27
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 75
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2e02a3bc29c93d0800000000000000
+      internalID: -3198520233788644649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_28
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 73
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8708d18b01ae840800000000000000
+      internalID: 5254030298236090574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_29
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 69
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b7c276ce8c52fd0800000000000000
+      internalID: -2367265111444522132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_30
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 79
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6e274afd0a63b10800000000000000
+      internalID: 1960931570163574479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_31
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 21
+        width: 79
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb92bfa7ca5037670800000000000000
+      internalID: 8535171957153016254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_32
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 65
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457240201c4c4a7d0800000000000000
+      internalID: -2907983126132938924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_33
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 72
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354eb5d4315fc7dd0800000000000000
+      internalID: -2486843430964304813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_34
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 66
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c464caf3738dda40800000000000000
+      internalID: 5394612462811374792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_35
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec8b7cebd0855250800000000000000
+      internalID: 5932789766184209645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_36
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 68
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20931a9b5c8e2f970800000000000000
+      internalID: 8787341758873811202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_37
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 56
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db956864af4db200800000000000000
+      internalID: 197401526218890197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_38
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 69
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f51988f8bcc90de0800000000000000
+      internalID: -1366335917114452494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_39
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 60
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a765ea83b6ea07ee0800000000000000
+      internalID: -1265319719755426182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_40
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 17
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101f2d4930e9cbd90800000000000000
+      internalID: -7080610775914319615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_41
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 18
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bcf6494c13117e0800000000000000
+      internalID: -1796600055970411623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_42
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 52
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a8609c00f2f8300800000000000000
+      internalID: 256475384202562125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_43
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 36
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0ca156c3cfd78e0800000000000000
+      internalID: -1693920548496949006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_44
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 50
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3754eac232645a790800000000000000
+      internalID: -7519526885937756813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_45
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 48
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82b0a936dfedbaa0800000000000000
+      internalID: -6143490613294615926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_46
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 52
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008890f2466347830800000000000000
+      internalID: 4067936167336183808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 35
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448364f035f33a260800000000000000
+      internalID: 7107594262891870276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_48
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c04ea9123294380800000000000000
+      internalID: -8986612954201584552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_49
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 31
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f71e4e6127b00a70800000000000000
+      internalID: 8791227826839623670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_50
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 18
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b8dde19dc953a50800000000000000
+      internalID: 6500274093518850854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_51
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 32
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9aee6506859a390800000000000000
+      internalID: -7806611308271457816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_52
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 17
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36c23f48439a3680800000000000000
+      internalID: -8774538985202334148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_53
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd2987a5ad347580800000000000000
+      internalID: -8830365187677016641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_54
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 42
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a7d998066b17ed0800000000000000
+      internalID: -2417950999179330969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_55
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 36
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745d26f4460b66b80800000000000000
+      internalID: -8401834109937986233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_56
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4511b8fa39b141670800000000000000
+      internalID: 8508455917128978772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_57
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 33
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1002f7d096edc10800000000000000
+      internalID: 2080215584580043202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_58
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55eb8bd1cde888210800000000000000
+      internalID: 1335474365557947989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_59
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 33
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc0ae8d686184d50800000000000000
+      internalID: 6721647212271111360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_60
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 19
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064116f220e50e770800000000000000
+      internalID: 8638007448774448224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_61
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 26
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd46141fc2ea53ab0800000000000000
+      internalID: -5028921900839901988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_62
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 22
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7f3c90324be93e0800000000000000
+      internalID: -2044999118198933585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_63
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 32
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1209975afe8348190800000000000000
+      internalID: -7961175639359647711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_64
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 27
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eb4d424b3de7cc0800000000000000
+      internalID: -3711296272241213805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_65
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 15
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861f8f8af125f8eb0800000000000000
+      internalID: -4715459988901269144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_66
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 24
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be19879d5e3889990800000000000000
+      internalID: -7379002966227250709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_67
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 25
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea33a279d8b06d250800000000000000
+      internalID: 5968971058880590766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_68
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 13
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6820716e7a11fa7e0800000000000000
+      internalID: -1752162317206355322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_69
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 17
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933a623ff6bb91810800000000000000
+      internalID: 1736625220823196473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_70
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 20
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3e6e4c74b9c9230800000000000000
+      internalID: 3646960530811708332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_71
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 26
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c2689e1c2bc6eb0800000000000000
+      internalID: -4725205363102176160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_72
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 20
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efe255cccfaf387a0800000000000000
+      internalID: -6375976683759653122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_73
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 10
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7c7e9dc7d40bc80800000000000000
+      internalID: -8309056113871435779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_74
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 10
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee2c8f1ce76054b0800000000000000
+      internalID: -5453744884906447128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_75
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 12
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fdc5f79b7ffb210800000000000000
+      internalID: 1351070789312241466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewPopSheet_76
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 13
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a3b25c6b61e27f0800000000000000
+      internalID: -635545523164857702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NewPopSheet_0: 33308641589180435
+      NewPopSheet_1: -3352613925790563969
+      NewPopSheet_10: -8078281026780084419
+      NewPopSheet_11: -1603224456060687844
+      NewPopSheet_12: 2808207328036080543
+      NewPopSheet_13: -2170257510335774544
+      NewPopSheet_14: 4219118475008706789
+      NewPopSheet_15: -2708439430446115943
+      NewPopSheet_16: 2650393602219145124
+      NewPopSheet_17: 4742275379790487190
+      NewPopSheet_18: -434848781580425477
+      NewPopSheet_19: 6408627212774875473
+      NewPopSheet_2: 578392855248478777
+      NewPopSheet_20: 385489509755782645
+      NewPopSheet_21: 937791543059483435
+      NewPopSheet_22: -2791071337259830096
+      NewPopSheet_23: 7865545972868168858
+      NewPopSheet_24: -81150298729479316
+      NewPopSheet_25: -5546814626630769918
+      NewPopSheet_26: -5209574843651587671
+      NewPopSheet_27: -3198520233788644649
+      NewPopSheet_28: 5254030298236090574
+      NewPopSheet_29: -2367265111444522132
+      NewPopSheet_3: -2399655619798471193
+      NewPopSheet_30: 1960931570163574479
+      NewPopSheet_31: 8535171957153016254
+      NewPopSheet_32: -2907983126132938924
+      NewPopSheet_33: -2486843430964304813
+      NewPopSheet_34: 5394612462811374792
+      NewPopSheet_35: 5932789766184209645
+      NewPopSheet_36: 8787341758873811202
+      NewPopSheet_37: 197401526218890197
+      NewPopSheet_38: -1366335917114452494
+      NewPopSheet_39: -1265319719755426182
+      NewPopSheet_4: -1220159592461789425
+      NewPopSheet_40: -7080610775914319615
+      NewPopSheet_41: -1796600055970411623
+      NewPopSheet_42: 256475384202562125
+      NewPopSheet_43: -1693920548496949006
+      NewPopSheet_44: -7519526885937756813
+      NewPopSheet_45: -6143490613294615926
+      NewPopSheet_46: 4067936167336183808
+      NewPopSheet_47: 7107594262891870276
+      NewPopSheet_48: -8986612954201584552
+      NewPopSheet_49: 8791227826839623670
+      NewPopSheet_5: -5795834261278127005
+      NewPopSheet_50: 6500274093518850854
+      NewPopSheet_51: -7806611308271457816
+      NewPopSheet_52: -8774538985202334148
+      NewPopSheet_53: -8830365187677016641
+      NewPopSheet_54: -2417950999179330969
+      NewPopSheet_55: -8401834109937986233
+      NewPopSheet_56: 8508455917128978772
+      NewPopSheet_57: 2080215584580043202
+      NewPopSheet_58: 1335474365557947989
+      NewPopSheet_59: 6721647212271111360
+      NewPopSheet_6: 7329685793901903667
+      NewPopSheet_60: 8638007448774448224
+      NewPopSheet_61: -5028921900839901988
+      NewPopSheet_62: -2044999118198933585
+      NewPopSheet_63: -7961175639359647711
+      NewPopSheet_64: -3711296272241213805
+      NewPopSheet_65: -4715459988901269144
+      NewPopSheet_66: -7379002966227250709
+      NewPopSheet_67: 5968971058880590766
+      NewPopSheet_68: -1752162317206355322
+      NewPopSheet_69: 1736625220823196473
+      NewPopSheet_7: -5645674181175374937
+      NewPopSheet_70: 3646960530811708332
+      NewPopSheet_71: -4725205363102176160
+      NewPopSheet_72: -6375976683759653122
+      NewPopSheet_73: -8309056113871435779
+      NewPopSheet_74: -5453744884906447128
+      NewPopSheet_75: 1351070789312241466
+      NewPopSheet_76: -635545523164857702
+      NewPopSheet_8: -7415373589295424203
+      NewPopSheet_9: 5798726096870358621
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

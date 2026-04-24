@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 5325da360377f4f21a4532ba722c3e04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4248640354425045519
+    second: PushEffectSheet_0
+  - first:
+      213: -8649476294614515968
+    second: PushEffectSheet_1
+  - first:
+      213: 4639262483450071529
+    second: PushEffectSheet_2
+  - first:
+      213: -7031352294742297276
+    second: PushEffectSheet_3
+  - first:
+      213: -4488679419803827320
+    second: PushEffectSheet_4
+  - first:
+      213: 5640719205497741866
+    second: PushEffectSheet_5
+  - first:
+      213: 1862059256380546531
+    second: PushEffectSheet_6
+  - first:
+      213: -1755918923900439662
+    second: PushEffectSheet_7
+  - first:
+      213: 5746152906198206284
+    second: PushEffectSheet_8
+  - first:
+      213: -6111088501547543263
+    second: PushEffectSheet_9
+  - first:
+      213: 1049444967680162173
+    second: PushEffectSheet_10
+  - first:
+      213: -9079414190474043113
+    second: PushEffectSheet_11
+  - first:
+      213: 3477527152723429324
+    second: PushEffectSheet_12
+  - first:
+      213: -3419035996280418088
+    second: PushEffectSheet_13
+  - first:
+      213: 756118266244644387
+    second: PushEffectSheet_14
+  - first:
+      213: 4752222278952425444
+    second: PushEffectSheet_15
+  - first:
+      213: 6967897114876037347
+    second: PushEffectSheet_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PushEffectSheet_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 13
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0205ef54e336fa30800000000000000
+      internalID: 4248640354425045519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ff65e0323e6f780800000000000000
+      internalID: -8649476294614515968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 15
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e986d916a8f16040800000000000000
+      internalID: 4639262483450071529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 26
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445f145775e9b6e90800000000000000
+      internalID: -7031352294742297276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 29
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8838cf789d105b1c0800000000000000
+      internalID: -4488679419803827320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_5
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 31
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22aa694b3cd74e40800000000000000
+      internalID: 5640719205497741866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_6
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 36
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed5a4f270d57d910800000000000000
+      internalID: 1862059256380546531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 2
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293378eba09b1a7e0800000000000000
+      internalID: -1755918923900439662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 15
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47c50faf9f6ebf40800000000000000
+      internalID: 5746152906198206284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_9
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 8
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125d842c26d013ba0800000000000000
+      internalID: -6111088501547543263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 22
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79b5ed43a0609e00800000000000000
+      internalID: 1049444967680162173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711672806e07ff180800000000000000
+      internalID: -9079414190474043113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 18
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc70bda4588a24030800000000000000
+      internalID: 3477527152723429324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_13
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 5
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d09e6f40e42d80d0800000000000000
+      internalID: -3419035996280418088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_14
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 3
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e32bb9e854e7a00800000000000000
+      internalID: 756118266244644387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_15
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 6
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e718aefbf843f140800000000000000
+      internalID: 4752222278952425444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PushEffectSheet_16
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8c7ab2281f2b060800000000000000
+      internalID: 6967897114876037347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PushEffectSheet_0: 4248640354425045519
+      PushEffectSheet_1: -8649476294614515968
+      PushEffectSheet_10: 1049444967680162173
+      PushEffectSheet_11: -9079414190474043113
+      PushEffectSheet_12: 3477527152723429324
+      PushEffectSheet_13: -3419035996280418088
+      PushEffectSheet_14: 756118266244644387
+      PushEffectSheet_15: 4752222278952425444
+      PushEffectSheet_16: 6967897114876037347
+      PushEffectSheet_2: 4639262483450071529
+      PushEffectSheet_3: -7031352294742297276
+      PushEffectSheet_4: -4488679419803827320
+      PushEffectSheet_5: 5640719205497741866
+      PushEffectSheet_6: 1862059256380546531
+      PushEffectSheet_7: -1755918923900439662
+      PushEffectSheet_8: 5746152906198206284
+      PushEffectSheet_9: -6111088501547543263
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
