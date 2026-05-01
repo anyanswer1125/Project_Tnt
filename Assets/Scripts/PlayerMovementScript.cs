@@ -1,6 +1,7 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class PlayerMovementScript : MonoBehaviour
             }
         }
         else
-        {
-            readyToMove = true;
-        }
+
+            readyToMove = true;        
+
     }
     private void MovePlayer(Vector2 direction)
     {
@@ -37,37 +38,41 @@ public class PlayerMovementScript : MonoBehaviour
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) direction.y = 0;
         else direction.x = 0;
         direction.Normalize();
-
+                        
         Vector2 targetPos = (Vector2)transform.position + direction;
 
-        // 에외 처리 [Wall]
-        //if (targetPos.)
+        Maps mapConfig = GetComponent<Maps>();
 
-
-
-        // 1. 벽/함정에 막혔는지 확인
-        if (IsPosBlockedByObstacle(targetPos)) return;
-
-        // 2. 상자에 막혔는지 확인 (상자가 있다면 밀기 시도)
-        GameObject box = GetPushableObject(targetPos);
-        if (box != null)
+        // 맵 밖이거나 타일이 없는 곳이면 이동 불가
+        if (mapConfig != null)
         {
-            // 상자가 밀릴 위치 계산
-            Vector2 boxNextPos = targetPos + direction;
-
-            // 상자의 다음 위치가 벽이나 다른 상자로 막혀있는지 확인
-            if (IsPosBlockedByObstacle(boxNextPos) || GetPushableObject(boxNextPos) != null)
-            {
-                return; // 상자를 밀 수 없으므로 플레이어도 못 움직임
-            }
-
-            // 상자 이동
-            box.transform.Translate(direction);
-            //Debug.Log("박스 이동");
+            return;
         }
+        else
+        {
+            // 1. 벽/함정에 막혔는지 확인
+            if (IsPosBlockedByObstacle(targetPos)) return;
 
-        // 3. 플레이어 이동
-        transform.Translate(direction);
+            // 2. 상자에 막혔는지 확인 (상자가 있다면 밀기 시도)
+            GameObject box = GetPushableObject(targetPos);
+            if (box != null)
+            {
+                // 상자가 밀릴 위치 계산
+                Vector2 boxNextPos = targetPos + direction;
+
+                // 상자의 다음 위치가 벽이나 다른 상자로 막혀있는지 확인
+                if (IsPosBlockedByObstacle(boxNextPos) || GetPushableObject(boxNextPos) != null)
+                {
+                    return; // 상자를 밀 수 없으므로 플레이어도 못 움직임
+                }
+                else
+                {
+                    box.transform.Translate(direction);
+                }
+            }
+            // 3. 플레이어 이동
+            transform.Translate(direction);
+        }
     }
 
     // 특정 위치에 "Obstacles"가 있는지 확인하는 함수
@@ -86,15 +91,11 @@ public class PlayerMovementScript : MonoBehaviour
             //Debug.Log("박스 있음");
             if ((Vector2)obj.transform.position == pos)
             {
-                Debug.Log("박스 있음");
                 return obj;// 상자의 위치와 목표 지점이 같으면 그 상자 오브젝트를 반환합니다.
             } 
                 
-        }
-        
-        Debug.Log("박스 없음");
-        return null;//상자없으면
+        }        return null;//상자없으면
     }
 }
-// 맵 위에 구현 완료
-// heavySheet 구별하기
+//맵 읽어오기
+// collider 적용
