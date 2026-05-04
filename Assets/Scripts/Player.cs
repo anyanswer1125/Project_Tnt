@@ -3,92 +3,83 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float moveDuration = 0.2f; // �̵��� �ɸ��� �ð� (��: 0.2��)
-    [SerializeField] private float jumpHeight = 0.1f; // ���� ����
-    [SerializeField] private Transform tr;
-    [SerializeField] private LayerMask targetLay;
-    // Ű�� �ѹ��� �Է¹ޱ� ���� ����
+    [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
+    [SerializeField] private float jumpHeight = 0.1f; // 점프 높이
+    // 키를 한번만 입력받기 위한 변수
     private bool isMoveing;
-
-    Animator animator;
-
     Vector3 Pos => transform.position;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        tr = transform.Find("PlayerSprite");
+
     }
 
 
     IEnumerator Movement(Vector3 dir)
     {
-        // �̹��� ��ȯ
+        // 이미지 전환
         if (dir.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
         else if (dir.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
 
-        // �̵� �Ǵ� ���� Ű�� �Է¹��� �ʰ� true
+        // 이동 되는 동안 키를 입력받지 않게 true
         isMoveing = true;
-        //animator.SetBool("Run", isMoveing);
-        // ���� ������ �Ÿ� (�� ��ġ + ������ ����)
+        // 내가 움직일 거리 (내 위치 + 움직일 방향)
         Vector3 targetPos = Pos + dir;
 
-        float elapsedTime = 0f;// ��� �ð� �ʱ�ȭ
-        // ��� �ð��� ������ �̵� �ð�(duration)���� ���� ���� �ݺ�
+        float elapsedTime = 0f; // 경과 시간 초기화
+        // 경과 시간이 설정한 이동 시간(duration)보다 작을 동안 반복
         while (elapsedTime < moveDuration)
         {
-            float progress = elapsedTime / moveDuration; // 0���� 1���� �����
-            // Lerp(����, ��, ����): ����(0~1)�� ���� ��ġ�� ������
-            // ��� �ð��� ��ü �̵� �ð����� ������ ������ ��� (��: 0.1�� / 0.2�� = 0.5)
-            // ��� �̵� (X, Z��)
+            float progress = elapsedTime / moveDuration; // 0에서 1까지 진행률
+            // Lerp(시작, 끝, 비율): 비율(0~1)에 따라 위치를 결정함
+            // 경과 시간을 전체 이동 시간으로 나누어 비율을 계산 (예: 0.1초 / 0.2초 = 0.5)
+            // 평면 이동 (X, Z축)
             Vector3 currentPos = Vector3.Lerp(Pos, targetPos, progress);
-            // ���� �̵� (Y��): ���� ��� �̿��� 0 -> 1 -> 0���� ����
+            // 높이 이동 (Y축): 사인 곡선을 이용해 0 -> 1 -> 0으로 변함
             float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
             currentPos.y += yOffset;
 
             transform.position = currentPos;
-            // �� ������ �ð��� ������
+            // 매 프레임 시간을 더해줌
             elapsedTime += Time.deltaTime;
 
             yield return null;
         }
 
-        // ���������� �����ϸ� ��ġ�� ������
+        // 오차범위에 도달하면 위치를 보정함
         transform.position = targetPos;
-        // ���� Ű�� �Է¹ޱ� ���ؼ� false
+        // 다음 키를 입력받기 위해서 false
         isMoveing = false;
-        //animator.SetBool("Run", isMoveing);
     }
 
     bool CanMove(Vector2 dir)
     {
-        // 1. ���� ���� ����: �� ��(ĳ����)�� ���� �ʰ� �̵� �������� 0.6f��ŭ �б�
-        
+        // 1. 레이 시작 지점: 내 몸(캐릭터)에 닿지 않게 이동 방향으로 0.5f만큼 밀기
         Vector2 rayStart = (Vector2)transform.position + Vector2.up * 0.5f;
         // 오프셋 값 0.5 올림. 추후에 스프라이트 바뀌면 변경 필요할지도.
 
-        // 2. ���� ��� (�Ÿ� 1f)
+        // 2. 레이 쏘기 (거리 1f)
         RaycastHit2D hit = Physics2D.Raycast(rayStart, dir, 1f);
 
-        // 3. ����� �α� �߰�
+        // 3. 디버그 로그 추가
         if (hit.collider != null)
         {
-            // ���𰡿� �ε����� ��: �ε��� ����� �̸��� ���̾� ���
-            Debug.Log($"<color=red>[����]</color> {hit.collider.name} (���̾�: {LayerMask.LayerToName(hit.collider.gameObject.layer)}) : {hit.collider.gameObject.layer}");
+            // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
+            Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
 
         }
         else
         {
-            // �ƹ��͵� ���� ��
-            Debug.Log("<color=green>[���]</color> ���� ����ֽ��ϴ�. �̵� ����!");
+            // 아무것도 없을 때
+            Debug.Log("<color=green>[통과]</color> 앞이 비어있습니다. 이동 가능!");
         }
 
-        // 4. ��(Scene) �� �ð�ȭ (������=����, ���=���)
+        // 4. 씬(Scene) 뷰 시각화 (빨간색=막힘, 녹색=통과)
         Debug.DrawRay(rayStart, dir * 1f, hit.collider != null ? Color.red : Color.green, 0.5f);
 
-        // ��� ��ȯ: �ε��� �� ����� true(�̵� ����)
+        // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
         return hit.collider == null;
     }
 
@@ -101,7 +92,7 @@ public class Player : MonoBehaviour
             float y = Input.GetAxisRaw("Vertical");
 
 
-            // �밢���� �����ϱ� ���� ���ǹ�
+            // 대각선을 방지하기 위한 조건문
             if (x != 0 && CanMove(new Vector3(x, 0, 0)))
                 StartCoroutine(Movement(new Vector3(x, 0, 0)));
             else if (y != 0 && CanMove(new Vector3(0, y, 0)))
