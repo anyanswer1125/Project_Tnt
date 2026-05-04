@@ -6052,8 +6052,34 @@ PrefabInstance:
     - {fileID: 5425069489575942281, guid: 48f597600b747a246832896d313d1f6e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5457863645966198453, guid: 48f597600b747a246832896d313d1f6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1993633618}
   m_SourcePrefab: {fileID: 100100000, guid: 48f597600b747a246832896d313d1f6e, type: 3}
+--- !u!1 &1993633617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5457863645966198453, guid: 48f597600b747a246832896d313d1f6e, type: 3}
+  m_PrefabInstance: {fileID: 1993633616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1993633618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993633617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6c2010adf247c4e97d62401c64a8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  moveDuration: 0.2
+  jumpHeight: 0.1
+  tr: {fileID: 0}
+  targetLay:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2009401572
 GameObject:
   m_ObjectHideFlags: 0

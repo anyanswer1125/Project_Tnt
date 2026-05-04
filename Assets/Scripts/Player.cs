@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
         return hit.collider == null;
     }
 
+
     void Update()
     {
         if (!isMoveing)
