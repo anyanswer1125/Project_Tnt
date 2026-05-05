@@ -85,11 +85,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 2
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 1}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -169,11 +169,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 13
-        width: 12
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 24
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: ForestSpikeTrapSheet_1
       rect:
         serializedVersion: 2
-        x: 11
-        y: 13
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 24
+        y: 0
+        width: 24
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: ForestSpikeTrapSheet_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 13
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 0
+        width: 24
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: ForestSpikeTrapSheet_3
       rect:
         serializedVersion: 2
-        x: 35
-        y: 13
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 72
+        y: 0
+        width: 24
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: ForestSpikeTrapSheet_4
       rect:
         serializedVersion: 2
-        x: 47
-        y: 1
-        width: 13
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 0
+        width: 24
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -270,204 +270,6 @@ TextureImporter:
       bones: []
       spriteID: bea121352d4621960800000000000000
       internalID: 7571224778062830315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_5
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 1
-        width: 13
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3089d16e44f54c60800000000000000
-      internalID: 7801910546975522879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_6
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 1
-        width: 13
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69a55c70246910d90800000000000000
-      internalID: -7133255124435772778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_7
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 1
-        width: 13
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b04d49586a9f52930800000000000000
-      internalID: 4117971927901197323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_8
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 1
-        width: 13
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 405ae51b873b34a70800000000000000
-      internalID: 8810082627020039428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_9
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 1
-        width: 13
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54d4567166b0a3ed0800000000000000
-      internalID: -2433620115533247163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c86ce1f4783f0c920800000000000000
-      internalID: 3008672313557042828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_11
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 1
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0151e9788b9328620800000000000000
-      internalID: 2774843785125696784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_12
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 1
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23847f9d4fd58bdd0800000000000000
-      internalID: -2470121089402451918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapSheet_13
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 1
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 958c7e464e620e3d0800000000000000
-      internalID: -3179498574536259495
       vertices: []
       indices: 
       edges: []
@@ -484,22 +286,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       ForestSpikeTrapSheet_0: 7689734646521634351
       ForestSpikeTrapSheet_1: 1735480839194063447
-      ForestSpikeTrapSheet_10: 3008672313557042828
-      ForestSpikeTrapSheet_11: 2774843785125696784
-      ForestSpikeTrapSheet_12: -2470121089402451918
-      ForestSpikeTrapSheet_13: -3179498574536259495
       ForestSpikeTrapSheet_2: 9050616995609775427
       ForestSpikeTrapSheet_3: -3727931575908985366
       ForestSpikeTrapSheet_4: 7571224778062830315
-      ForestSpikeTrapSheet_5: 7801910546975522879
-      ForestSpikeTrapSheet_6: -7133255124435772778
-      ForestSpikeTrapSheet_7: 4117971927901197323
-      ForestSpikeTrapSheet_8: 8810082627020039428
-      ForestSpikeTrapSheet_9: -2433620115533247163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
