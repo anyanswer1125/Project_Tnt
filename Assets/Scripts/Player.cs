@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
     [SerializeField] private LayerMask floorButtonLayer;    // 함정 레이어
 
+    [SerializeField] private GameObject vfx_JumpEffectObj;
+    [SerializeField] private Transform JumpEffectPos;
+
     private bool isMoving; // 키를 한번만 입력받기 위한 변수
 
     Vector3 Pos => transform.position;
@@ -125,9 +128,15 @@ public class Player : MonoBehaviour
 
             // 대각선을 방지하기 위한 조건문
             if (x != 0 && CanMove(new Vector3(x, 0, 0)))
+            {
+                Instantiate(vfx_JumpEffectObj,JumpEffectPos.position,transform.rotation);
                 StartCoroutine(Movement(new Vector3(x, 0, 0)));
+            }
             else if (y != 0 && CanMove(new Vector3(0, y, 0)))
+            {
+                Instantiate(vfx_JumpEffectObj,JumpEffectPos.position,transform.rotation);
                 StartCoroutine(Movement(new Vector3(0, y, 0)));
+            }
 
         }
     }
