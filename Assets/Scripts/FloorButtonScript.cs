@@ -16,13 +16,14 @@ public class FloorButtonScript : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        activeFloor = true;
-    }
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         activeFloor = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        activeFloor = true;
     }
 
 
