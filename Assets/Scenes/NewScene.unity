@@ -6757,7 +6757,8 @@ GameObject:
   - component: {fileID: 1592061869}
   - component: {fileID: 1592061870}
   - component: {fileID: 1592061871}
-  m_Layer: 0
+  - component: {fileID: 1592061872}
+  m_Layer: 7
   m_Name: FloorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6872,7 +6873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366da06910f3e4110b6324b5c05e0dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  activeFloor: 0
+  activeFloor: 1
   spikeObject: {fileID: 2113152673}
 --- !u!61 &1592061871
 BoxCollider2D:
@@ -6918,8 +6919,35 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!50 &1592061872
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592061866}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1993633617
 GameObject:
   m_ObjectHideFlags: 0
@@ -6954,6 +6982,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveDuration: 0.2
   jumpHeight: 0.1
+  objLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  floorButtonLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!95 &1993633622
 Animator:
   serializedVersion: 7
@@ -7057,7 +7091,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993633617}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -7080,7 +7114,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -7325,8 +7359,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3620861623776065799}
   - component: {fileID: 3712694105503431131}
+  - component: {fileID: 3712694105503431132}
   - component: {fileID: 804859430336816328}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Box
   m_TagString: ObjToPush
   m_Icon: {fileID: 0}
@@ -7453,6 +7488,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3712694105503431132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119348453521972640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a830ba7a24a626244804e764027870f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectMoveMent
+  floorButtonLay:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
