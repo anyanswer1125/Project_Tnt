@@ -63,7 +63,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: ActiveFloorButton
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -88,7 +88,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: ActiveFloorButton
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -119,7 +119,7 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8724957999250609291}
-    m_Position: {x: 230, y: 160, z: 0}
+    m_Position: {x: 240, y: 170, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
