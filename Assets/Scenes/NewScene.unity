@@ -7537,6 +7537,8 @@ MonoBehaviour:
   floorButtonLay:
     serializedVersion: 2
     m_Bits: 128
+  vfx_PushEffect: {fileID: 6346689490019014112, guid: f759dd2612f0244d79a05e72fc9b5d40, type: 3}
+  pushEffectPos: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
