@@ -10,14 +10,26 @@ public class SpikeScript : MonoBehaviour
     public void FuncSpike_On()
     {
         activeSpike = true;
+        gameObject.layer = 6;
     }
     public void FuncSpike_Off()
     {
         activeSpike = false;
+        gameObject.layer = 7;
     }
     void Start()
     {
         spikeAnim = GetComponent<Animator>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+
+        if (player == null) return;
+
+        if (activeSpike && !player.StagePlayEnd)
+            player.SetState(State.Lose);
     }
 
     void Update()
