@@ -10,12 +10,10 @@ public class SpikeScript : MonoBehaviour
     public void FuncSpike_On()
     {
         activeSpike = true;
-        gameObject.layer = 6;
     }
     public void FuncSpike_Off()
     {
         activeSpike = false;
-        gameObject.layer = 7;
     }
     void Start()
     {
