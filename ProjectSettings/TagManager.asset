@@ -15,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Object
-  - FloorButton
-  - Trap
+  - FloorObject
+  - 
   - 
   - 
   - 
@@ -41,14 +41,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Menu
-    uniqueID: 3215935441
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BackGround
-    uniqueID: 757682339
     locked: 0
   m_RenderingLayers:
   - Default

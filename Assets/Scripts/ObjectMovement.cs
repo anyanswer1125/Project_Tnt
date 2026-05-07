@@ -8,9 +8,30 @@ public class ObjectMovement : MonoBehaviour
     private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask floorButtonLay;  //함정 레이어
 
-    [SerializeField] private GameObject vfx_PushEffect;
+    //[SerializeField] private GameObject vfx_PushEffect;
 
     private Vector3 Pos => transform.position;
+
+    private void Start()
+    {
+        Initialize();
+    }
+
+    // 초기화 함수
+    private void Initialize()
+    {
+        //vfx_PushEffect = Instantiate(vfx_PushEffect);
+        //vfx_PushEffect.SetActive(false);
+    }
+
+    // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
+    //private void PlayVfx(Vector3 pos)
+    //{
+    //    vfx_PushEffect.SetActive(true);
+    //    vfx_PushEffect.transform.position = pos;
+    //    vfx_PushEffect.transform.rotation = transform.rotation;
+    //}
+
 
     // 이동 로직
     IEnumerator Movement(Player player, Vector3 dir)
@@ -19,10 +40,11 @@ public class ObjectMovement : MonoBehaviour
         animator.SetTrigger("Push");
 
         Vector3 centerPos = (transform.position + player.transform.position) / 2f;
+        player.PlayVfxPush(centerPos);
 
-        Vector3 direction = player.transform.position - transform.position;
-        Instantiate(vfx_PushEffect,centerPos, transform.rotation);
-
+        //Vector3 direction = player.transform.position - transform.position;
+        //Instantiate(vfx_PushEffect,centerPos, transform.rotation);
+        //PlayVfx(centerPos);
 
         // 애니메이션 타이밍
         yield return new WaitForSeconds(0.12f);
