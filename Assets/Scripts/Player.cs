@@ -133,8 +133,8 @@ public class Player : MonoBehaviour
         vfx_JumpEffectObj.transform.rotation = JumpEffectPos.rotation;
     }
 
-    // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
-    private void PlayVfxPush(Vector3 pos)
+    // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정 ( Push는 ObjectMovement에서 호출)
+    public void PlayVfxPush(Vector3 pos)
     {
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
@@ -221,7 +221,6 @@ public class Player : MonoBehaviour
                 // obj가 null 경우 리턴 true를 하여 통과하게 함
                 if (obj == null) return true;
                 obj.ObjMovement(this, dir);
-                PlayVfxPush((obj.transform.position + transform.position) / 2f);
                 return false;
             }
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력

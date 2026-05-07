@@ -39,12 +39,12 @@ public class ObjectMovement : MonoBehaviour
         Animator animator = player.GetComponent<Animator>();
         animator.SetTrigger("Push");
 
-        //Vector3 centerPos = (transform.position + player.transform.position) / 2f;
+        Vector3 centerPos = (transform.position + player.transform.position) / 2f;
+        player.PlayVfxPush(centerPos);
 
         //Vector3 direction = player.transform.position - transform.position;
         //Instantiate(vfx_PushEffect,centerPos, transform.rotation);
         //PlayVfx(centerPos);
-
 
         // 애니메이션 타이밍
         yield return new WaitForSeconds(0.12f);
