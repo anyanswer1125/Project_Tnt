@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     {
         this.isMoving = isMoveing;
     }
-
     // 이미지 전환 로직
     private void ImageStats(Vector3 dir)
     {
@@ -65,7 +64,6 @@ public class Player : MonoBehaviour
             // 다음 프레임까지 기다림 (루프를 프레임 단위로 나눔)
             yield return null;
         }
-
         // 오차범위에 도달하면 위치를 보정함
         transform.position = targetPos;
         // 다음 키를 입력받기 위해서 false
@@ -100,6 +98,7 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
+            SpikeScript spike = hit.collider.GetComponent<SpikeScript>();//스파이크 받고
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
 
@@ -116,8 +115,6 @@ public class Player : MonoBehaviour
         // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
         return hit.collider == null;
     }
-
-
     void Update()
     {
         if (!isMoving)
@@ -141,3 +138,5 @@ public class Player : MonoBehaviour
         }
     }
 }
+// 장애물 인식 raycast gameover로 일단 만들기
+// 움직임 로직 수정 앞에 트랩있을때 인식불가
