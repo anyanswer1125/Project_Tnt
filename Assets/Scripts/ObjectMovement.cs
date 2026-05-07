@@ -8,6 +8,8 @@ public class ObjectMovement : MonoBehaviour
     private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask floorButtonLay;  //함정 레이어
 
+    [SerializeField] private GameObject vfx_PushEffect;
+
     private Vector3 Pos => transform.position;
 
     // 이동 로직
@@ -15,6 +17,12 @@ public class ObjectMovement : MonoBehaviour
     {
         Animator animator = player.GetComponent<Animator>();
         animator.SetTrigger("Push");
+
+        Vector3 centerPos = (transform.position + player.transform.position) / 2f;
+
+        Vector3 direction = player.transform.position - transform.position;
+        Instantiate(vfx_PushEffect,centerPos, transform.rotation);
+
 
         // 애니메이션 타이밍
         yield return new WaitForSeconds(0.12f);

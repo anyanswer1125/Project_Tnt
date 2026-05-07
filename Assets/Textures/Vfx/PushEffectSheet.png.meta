@@ -85,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +99,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +123,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -164,12 +164,12 @@ TextureImporter:
       name: PushEffectSheet_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 13
-        width: 25
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: PushEffectSheet_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 8
-        width: 35
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,12 +208,12 @@ TextureImporter:
       name: PushEffectSheet_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 15
-        width: 19
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: PushEffectSheet_3
       rect:
         serializedVersion: 2
-        x: 165
-        y: 26
-        width: 21
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: PushEffectSheet_4
       rect:
         serializedVersion: 2
-        x: 194
-        y: 29
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: PushEffectSheet_5
       rect:
         serializedVersion: 2
-        x: 213
-        y: 31
-        width: 26
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: PushEffectSheet_6
       rect:
         serializedVersion: 2
-        x: 243
-        y: 36
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -314,231 +314,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_7
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 2
-        width: 73
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 293378eba09b1a7e0800000000000000
-      internalID: -1755918923900439662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_8
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 15
-        width: 20
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c47c50faf9f6ebf40800000000000000
-      internalID: 5746152906198206284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_9
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 8
-        width: 20
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 125d842c26d013ba0800000000000000
-      internalID: -6111088501547543263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_10
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 22
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d79b5ed43a0609e00800000000000000
-      internalID: 1049444967680162173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_11
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 14
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 711672806e07ff180800000000000000
-      internalID: -9079414190474043113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_12
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 18
-        width: 15
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc70bda4588a24030800000000000000
-      internalID: 3477527152723429324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_13
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 5
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d09e6f40e42d80d0800000000000000
-      internalID: -3419035996280418088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_14
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 3
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32e32bb9e854e7a00800000000000000
-      internalID: 756118266244644387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_15
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 6
-        width: 19
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e718aefbf843f140800000000000000
-      internalID: 4752222278952425444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PushEffectSheet_16
-      rect:
-        serializedVersion: 2
-        x: 245
-        y: 1
-        width: 11
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e8c7ab2281f2b060800000000000000
-      internalID: 6967897114876037347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d3e4a22627e0342b8983edd1eb94f9a4
     internalID: 0
     vertices: []
     indices: 
@@ -546,25 +326,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PushEffectSheet_0: 4248640354425045519
       PushEffectSheet_1: -8649476294614515968
-      PushEffectSheet_10: 1049444967680162173
-      PushEffectSheet_11: -9079414190474043113
-      PushEffectSheet_12: 3477527152723429324
-      PushEffectSheet_13: -3419035996280418088
-      PushEffectSheet_14: 756118266244644387
-      PushEffectSheet_15: 4752222278952425444
-      PushEffectSheet_16: 6967897114876037347
       PushEffectSheet_2: 4639262483450071529
       PushEffectSheet_3: -7031352294742297276
       PushEffectSheet_4: -4488679419803827320
       PushEffectSheet_5: 5640719205497741866
       PushEffectSheet_6: 1862059256380546531
-      PushEffectSheet_7: -1755918923900439662
-      PushEffectSheet_8: 5746152906198206284
-      PushEffectSheet_9: -6111088501547543263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
