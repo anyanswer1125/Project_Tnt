@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 8e4fb58bccafd7a44ab38f6c46bc399d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7420183184341806373
+    second: AfterTrapAni_0
+  - first:
+      213: -6939467055698331542
+    second: AfterTrapAni_1
+  - first:
+      213: -3939730744174324754
+    second: AfterTrapAni_2
+  - first:
+      213: -8906632033466158552
+    second: AfterTrapAni_3
+  - first:
+      213: -642555168048297993
+    second: AfterTrapAni_4
+  - first:
+      213: 3796483235787282667
+    second: AfterTrapAni_5
+  - first:
+      213: -5733440003518293759
+    second: AfterTrapAni_6
+  - first:
+      213: -6762946366000236424
+    second: AfterTrapAni_7
+  - first:
+      213: 8114745726609378501
+    second: AfterTrapAni_8
+  - first:
+      213: 7460084667382161840
+    second: AfterTrapAni_9
+  - first:
+      213: 7541513818914692655
+    second: AfterTrapAni_10
+  - first:
+      213: 2361380640955598204
+    second: AfterTrapAni_11
+  - first:
+      213: 1668658825759079003
+    second: AfterTrapAni_12
+  - first:
+      213: -7231356394199554333
+    second: AfterTrapAni_13
+  - first:
+      213: 3641998879720057667
+    second: AfterTrapAni_14
+  - first:
+      213: -3620514460473413784
+    second: AfterTrapAni_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AfterTrapAni_0
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 17
+        width: 155
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d2507da49c9f660800000000000000
+      internalID: 7420183184341806373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_1
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 375
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68339eca7f02bf90800000000000000
+      internalID: -6939467055698331542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_2
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 17
+        width: 156
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3ddc203c34359c0800000000000000
+      internalID: -3939730744174324754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_3
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 17
+        width: 156
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822722cda59456480800000000000000
+      internalID: -8906632033466158552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_4
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 17
+        width: 150
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7c3e3aa7f2517f0800000000000000
+      internalID: -642555168048297993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 325
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be893d86361dfa430800000000000000
+      internalID: 3796483235787282667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_7
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 180
+        width: 155
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878798b9c103522a0800000000000000
+      internalID: -6762946366000236424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_8
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 180
+        width: 155
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cccb2d9e3e5d9070800000000000000
+      internalID: 8114745726609378501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_9
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 180
+        width: 156
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1e6a1da7b878760800000000000000
+      internalID: 7460084667382161840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_10
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 17
+        width: 156
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e1c159cd6d8a860800000000000000
+      internalID: 7541513818914692655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_11
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 17
+        width: 156
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7584ab8e2f45c020800000000000000
+      internalID: 2361380640955598204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_14
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 17
+        width: 155
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ba51a5faafa8230800000000000000
+      internalID: 3641998879720057667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AfterTrapAni_15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 17
+        width: 156
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f215fc74951cdc0800000000000000
+      internalID: -3620514460473413784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5cbc6ab3775aa4b4da600c5c694ac379
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AfterTrapAni_0: 7420183184341806373
+      AfterTrapAni_1: -6939467055698331542
+      AfterTrapAni_10: 7541513818914692655
+      AfterTrapAni_11: 2361380640955598204
+      AfterTrapAni_12: 1668658825759079003
+      AfterTrapAni_13: -7231356394199554333
+      AfterTrapAni_14: 3641998879720057667
+      AfterTrapAni_15: -3620514460473413784
+      AfterTrapAni_2: -3939730744174324754
+      AfterTrapAni_3: -8906632033466158552
+      AfterTrapAni_4: -642555168048297993
+      AfterTrapAni_5: 3796483235787282667
+      AfterTrapAni_6: -5733440003518293759
+      AfterTrapAni_7: -6762946366000236424
+      AfterTrapAni_8: 8114745726609378501
+      AfterTrapAni_9: 7460084667382161840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
