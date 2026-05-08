@@ -1,16 +1,30 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 
 public class ObjectMovement : MonoBehaviour
 {
     private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask floorButtonLay;  //함정 레이어
+    [SerializeField] private Animator objAnimator;
 
-    [SerializeField] private GameObject vfx_PushEffect;
+    //[SerializeField] private GameObject vfx_PushEffect;
 
     private Vector3 Pos => transform.position;
+
+    private void Start()
+    {
+        Initialize();
+    }
+
+    // 초기화 함수
+    private void Initialize()
+    {
+        objAnimator = GetComponent<Animator>();
+    }
+
 
     // 이동 로직
     IEnumerator Movement(Player player, Vector3 dir)
@@ -19,13 +33,15 @@ public class ObjectMovement : MonoBehaviour
         animator.SetTrigger("Push");
 
         Vector3 centerPos = (transform.position + player.transform.position) / 2f;
+        player.PlayVfxPush(centerPos);
 
-        Vector3 direction = player.transform.position - transform.position;
-        Instantiate(vfx_PushEffect,centerPos, transform.rotation);
-
+        //Vector3 direction = player.transform.position - transform.position;
+        //Instantiate(vfx_PushEffect,centerPos, transform.rotation);
+        //PlayVfx(centerPos);
 
         // 애니메이션 타이밍
         yield return new WaitForSeconds(0.12f);
+        objAnimator.SetTrigger("Moving");
 
         // 이동 되는 동안 키를 입력받지 않게 true
         player.IsMoving(true);
@@ -42,8 +58,8 @@ public class ObjectMovement : MonoBehaviour
             // 평면 이동 (X, Z축)
             Vector3 currentPos = Vector3.Lerp(Pos, targetPos, progress);
             // 높이 이동 (Y축): 사인 곡선을 이용해 0 -> 1 -> 0으로 변함
-            float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
-            currentPos.y += yOffset;
+            //float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
+            //currentPos.y += yOffset;
 
             transform.position = currentPos;
             // 매 프레임 시간을 더해줌
