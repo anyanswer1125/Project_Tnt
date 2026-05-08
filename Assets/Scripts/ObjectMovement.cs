@@ -22,18 +22,8 @@ public class ObjectMovement : MonoBehaviour
     // 초기화 함수
     private void Initialize()
     {
-        //vfx_PushEffect = Instantiate(vfx_PushEffect);
-        //vfx_PushEffect.SetActive(false);
         objAnimator = GetComponent<Animator>();
     }
-
-    // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
-    //private void PlayVfx(Vector3 pos)
-    //{
-    //    vfx_PushEffect.SetActive(true);
-    //    vfx_PushEffect.transform.position = pos;
-    //    vfx_PushEffect.transform.rotation = transform.rotation;
-    //}
 
 
     // 이동 로직

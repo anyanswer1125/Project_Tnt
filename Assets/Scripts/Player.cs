@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private State currentState; // 에디터에서 확인하는 용도
     [SerializeField] private Animator animator; // Player의 animator
+    [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     private bool isMoving; // 키를 한번만 입력받기 위한 변수
 
@@ -123,6 +124,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         stagePlayEnd = false;
         isMoving = false;
+
+        turnManager = FindAnyObjectByType<TurnManager>();
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -160,7 +163,8 @@ public class Player : MonoBehaviour
     {
         // 이미지 전환
         ImageStats(dir);
-
+        // 현재 턴을 1씩 올림
+        turnManager.SetTurnCount();
         // 이동 되는 동안 키를 입력받지 않게 true
         isMoving = true;
         // 내가 움직일 거리 (내 위치 + 움직일 방향)
