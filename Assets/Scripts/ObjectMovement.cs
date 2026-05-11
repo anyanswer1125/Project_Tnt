@@ -7,12 +7,12 @@ public class ObjectMovement : MonoBehaviour
 {
     private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     private float jumpHeight = 0.1f; // 점프 높이
-    [SerializeField] private LayerMask floorButtonLay;  //함정 레이어
+    [SerializeField] private LayerMask floorObjectLay;  //f
     [SerializeField] private Animator objAnimator;
 
-    //[SerializeField] private GameObject vfx_PushEffect;
-
     private Vector3 Pos => transform.position;
+
+    public Animator ObjAnimator => objAnimator;
 
     private void Start()
     {
@@ -95,7 +95,7 @@ public class ObjectMovement : MonoBehaviour
         if (hit.collider != null)
         {
             // floorButtonLay는 발판이기에 통과함
-            if ((1 << hit.collider.gameObject.layer & floorButtonLay) != 0) return true;
+            if ((1 << hit.collider.gameObject.layer & floorObjectLay) != 0) return true;
 
             player.IsMoving(false);
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name}");
