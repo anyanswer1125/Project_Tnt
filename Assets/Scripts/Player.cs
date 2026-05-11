@@ -160,45 +160,46 @@ public class Player : MonoBehaviour
     }
 
     IEnumerator Movement(Vector3 dir)
-{
-    ImageStats(dir);
-    turnManager?.SetTurnCount();
-    isMoving = true;
-
-    Vector3 startPos = transform.position;
-    Vector3 targetPos = startPos + dir;
-
-    animator.SetTrigger("Move");
-
-    // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
-    float distance = Vector3.Distance(startPos, targetPos);
-    float counter = 0;
-
-    // 거리를 속도로 나누면 이동에 필요한 '시간'이 나옵니다.
-    // 하지만 속도 기반으로 매 프레임 위치를 옮기는 게 더 직관적입니다.
-    float progress = 0f;
-
-    while (progress < 1f)
     {
-        // 매 프레임 이동 진행률을 속도에 맞춰 증가시킴
-        // 거리(1)를 이동하는 데 걸리는 비율을 계산
-        progress += Time.deltaTime * moveSpeed;
-
-        // 이동 위치 계산
-        Vector3 currentPos = Vector3.Lerp(startPos, targetPos, progress);
-
-        // 점프 효과 (선택 사항)
-        float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
-        currentPos.y += yOffset;
-
-        transform.position = currentPos;
-        
-        yield return null;
+        ImageStats(dir);
+        turnManager?.SetTurnCount();
+        isMoving = true;
+    
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + dir;
+    
+        animator.SetBool("Move", true);
+    
+        // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
+        float distance = Vector3.Distance(startPos, targetPos);
+        float counter = 0;
+    
+        // 거리를 속도로 나누면 이동에 필요한 '시간'이 나옵니다.
+        // 하지만 속도 기반으로 매 프레임 위치를 옮기는 게 더 직관적입니다.
+        float progress = 0f;
+    
+        while (progress < 1f)
+        {
+            // 매 프레임 이동 진행률을 속도에 맞춰 증가시킴
+            // 거리(1)를 이동하는 데 걸리는 비율을 계산
+            progress += Time.deltaTime * moveSpeed;
+    
+            // 이동 위치 계산
+            Vector3 currentPos = Vector3.Lerp(startPos, targetPos, progress);
+    
+            // 점프 효과 (선택 사항)
+            float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
+            currentPos.y += yOffset;
+    
+            transform.position = currentPos;
+            
+            yield return null;
+        }
+    
+        transform.position = targetPos;
+        isMoving = false;
+        animator.SetBool("Move", false);
     }
-
-    transform.position = targetPos;
-    isMoving = false;
-}
 
     // 이동 할 수 있는 지 확인하는 함수
     bool CanMove(Vector2 dir)
