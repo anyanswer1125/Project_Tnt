@@ -495,6 +495,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &235387539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235387541}
+  - component: {fileID: 235387540}
+  m_Layer: 0
+  m_Name: GameSpeedObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235387540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235387539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3be173dfe09043fe9f312037d9f0be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  speedStep: 0.25
+  minSpeed: 0
+  maxSpeed: 3
+--- !u!4 &235387541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235387539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.89462, y: 3.91488, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260283651
 GameObject:
   m_ObjectHideFlags: 0
@@ -17728,6 +17775,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1769031000384471762, guid: d8e17718e72a99947b7cfb20ba027fcd, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769031000384471762, guid: d8e17718e72a99947b7cfb20ba027fcd, type: 3}
+      propertyPath: moveDuration
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 3116504091788397884, guid: d8e17718e72a99947b7cfb20ba027fcd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17919,3 +17974,4 @@ SceneRoots:
   - {fileID: 131525957}
   - {fileID: 2008253613}
   - {fileID: 4390317043534644870}
+  - {fileID: 235387541}
