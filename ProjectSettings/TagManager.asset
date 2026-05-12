@@ -7,6 +7,9 @@ TagManager:
   - Map
   - Obstacles
   - ObjToPush
+  - Vfx_JumpEffect
+  - Vfx_PushEffect
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - FloorObject
   - GoalBox
   - Key
-  - 
+  - Enemy
   - 
   - 
   - 
