@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     [SerializeField] private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
-    [SerializeField] private LayerMask floorButtonLayer;    // 함정 레이어
+    [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
+    [SerializeField] private LayerMask enemyLayer;  // 적 레이어
 
     [SerializeField] private GameObject vfx_JumpEffectObj; //점프 이펙트 프리팹
     [SerializeField] private GameObject vfx_PushEffect; // 푸쉬 이펙트 프리팹
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
     [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
+    [SerializeField] new BoxCollider2D collider2D;  // Player 콜라이더
+
+    [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
 
     [SerializeField] private GameObject goalTimelineObj;
 
@@ -34,7 +38,11 @@ public class Player : MonoBehaviour
 
     public bool StagePlayEnd => stagePlayEnd; // 스테이지 플레이 종료 get 프로퍼티
 
-    Vector3 Pos => transform.position;
+    public Vector3 Pos => transform.position;
+
+    public Transform Transform => transform;
+
+    public Character PlayerCharacterType => playerCharacterType;    //플레이어의 캐릭터타입 get 프로퍼티
 
     private void Start()
     {
@@ -65,6 +73,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
         stagePlayEnd = true;
+        collider2D.isTrigger = false;
     }
     private IEnumerator AnimationLose()
     {
@@ -106,6 +115,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 외부에서 Transform를 받을 메서드
+    public void SetPlayerTransform(Transform transform)
+    {
+        this.transform.position = transform.position;
+        this.transform.localScale = transform.localScale;
+    }
+
 
     // Win 상태 메서드
     private void PlayerWin()
@@ -131,6 +147,10 @@ public class Player : MonoBehaviour
         isMoving = false;
 
         turnManager = FindAnyObjectByType<TurnManager>();
+
+        collider2D = GetComponent<BoxCollider2D>();
+
+        collider2D.isTrigger = true;
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -222,10 +242,24 @@ public class Player : MonoBehaviour
         // 3. 디버그 로그 추가
         if (hit.collider != null)
         {
-            // 이동 방향에 FloorButton 레이어가 감지되면 통과 허용
-            if (((1 << hit.collider.gameObject.layer) & floorButtonLayer) != 0) return true;
+            // 레이어의 비트연산을 int로 변환
+            int hitLayer = 1 << hit.collider.gameObject.layer;
 
-            if (((1 << hit.collider.gameObject.layer) & objLayer) != 0)
+            // 플레이어가 워리어타입이고 레이가 enemylayer 일때
+            if ((hitLayer & enemyLayer) != 0 && PlayerCharacterType == Character.Warrior)
+            {
+                isMoving = true;
+                animator.SetTrigger("Attack");
+                Monster enemy = hit.collider.GetComponent<Monster>();
+                enemy.MonsterDie(this);
+                return false;
+            }
+
+            // 이동 방향에 FloorButton 레이어가 감지되면 통과 허용
+            if ((hitLayer & floorLayer) != 0) return true;
+
+            // 이동 할 수 있는 오브젝트 레이어일때
+            if ((hitLayer & objLayer) != 0)
             {
                 isMoving = true;
                 ImageStats(dir);
@@ -235,7 +269,7 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
-            SpikeScript spike = hit.collider.GetComponent<SpikeScript>();//스파이크 받고
+            
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
 
@@ -252,6 +286,40 @@ public class Player : MonoBehaviour
         // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
         return hit.collider == null;
     }
+
+    // 캐릭터 스킬
+    private void CharacterSkill()
+    {
+        isMoving = true;
+        switch (playerCharacterType)
+        {
+            case Character.Warrior:
+                WarriorSkill();
+                break;
+            case Character.Thief:
+                ThiefSkill();
+                break;
+            case Character.Wizard:
+                WizardSkill();
+                break;
+        }
+        isMoving = false;
+    }
+
+    private void WarriorSkill()
+    {
+
+    }
+    private void ThiefSkill()
+    {
+
+    }
+    private void WizardSkill()
+    {
+
+    }
+
+
     void Update()
     {
         if (!isMoving && !stagePlayEnd)
@@ -277,5 +345,3 @@ public class Player : MonoBehaviour
         }
     }
 }
-// 장애물 인식 raycast gameover로 일단 만들기
-// 움직임 로직 수정 앞에 트랩있을때 인식불가
