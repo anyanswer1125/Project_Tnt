@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     public bool StagePlayEnd => stagePlayEnd; // 스테이지 플레이 종료 get 프로퍼티
 
-    Vector3 Pos => transform.position;
+    public Vector3 Pos => transform.position;
 
     private void Start()
     {
