@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 484a8c6a6576f465d853b182197bf6f2
+guid: 913415e5b986d574db5ef86a62851be7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6658327241020951668
-    second: ForestSpikeTrapOn_0
+      213: 5601552872648499960
+    second: Outline_Gold_0
   - first:
-      213: -7690994761229777102
-    second: ForestSpikeTrapOn_1
+      213: -5059112567108190668
+    second: Outline_Gold_1
+  - first:
+      213: 7550208607774711118
+    second: Outline_Gold_2
+  - first:
+      213: 4930907419471020190
+    second: Outline_Gold_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 2
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,19 +84,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,7 +93,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -129,45 +122,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ForestSpikeTrapOn_0
+      name: Outline_Gold_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 12
-        height: 29
+        y: 0
+        width: 692
+        height: 678
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47c4c5f2951276c50800000000000000
-      internalID: 6658327241020951668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForestSpikeTrapOn_1
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 1
-        width: 12
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23742876309144590800000000000000
-      internalID: -7690994761229777102
+      spriteID: 8f268ccc8a6bcbd40800000000000000
+      internalID: 5601552872648499960
       vertices: []
       indices: 
       edges: []
@@ -176,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8a55e078d5a06324480cb2102e1ab58f
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +157,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ForestSpikeTrapOn_0: 6658327241020951668
-      ForestSpikeTrapOn_1: -7690994761229777102
+      Outline_Gold_0: 5601552872648499960
+      Outline_Gold_1: -5059112567108190668
+      Outline_Gold_2: 7550208607774711118
+      Outline_Gold_3: 4930907419471020190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
