@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ced14682207654f939eddc4be9b31f2c
+guid: a6c3846e8965342bdb2a8526fc14334e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -255030023326351565
-    second: ForestFloorButtonOff_0
+      213: 871674971011632118
+    second: ForestPushObjectEdit(2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24.45
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ForestFloorButtonOff_0
+      name: ForestPushObjectEdit(2)_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 2
         width: 22
-        height: 24
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33fb2948b83f57cf0800000000000000
-      internalID: -255030023326351565
+      spriteID: 6fb4fbe84cfc81c00800000000000000
+      internalID: 871674971011632118
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ForestFloorButtonOff_0: -255030023326351565
+      ForestPushObjectEdit(2)_0: 871674971011632118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
