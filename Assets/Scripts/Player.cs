@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject goalTimelineObj;
 
+    // [SerializeField] private GameObject goalTimelineObj;
+
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
     public State CurrentState => currentState; // 현재 상태 get 프로퍼티
