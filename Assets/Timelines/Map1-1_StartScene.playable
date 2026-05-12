@@ -338,6 +338,22 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 5e5ccaecee8e54ced9f200de0ca14039, type: 2}
+--- !u!114 &5877701811836620554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 5
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 5237a641290044690810947001124c24, type: 2}
 --- !u!114 &5961630061146980400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +379,7 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 4359508839191048076}
     - {fileID: -3185461345728235222}
+    - {fileID: 5877701811836620554}
   m_InfiniteClipPreExtrapolation: 0
   m_InfiniteClipPostExtrapolation: 0
   m_InfiniteClipOffsetPosition: {x: 0, y: 0, z: 0}

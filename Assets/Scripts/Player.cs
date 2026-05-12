@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
 
+    [SerializeField] private GameObject goalTimelineObj;
+
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
     public State CurrentState => currentState; // 현재 상태 get 프로퍼티
@@ -110,6 +112,8 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("Win", true);
         stagePlayEnd = true;
+        // goalTimelineObj.SetActive(true);
+
     }
 
     // 초기화 메서드
