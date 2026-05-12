@@ -7,6 +7,8 @@ TagManager:
   - Map
   - Obstacles
   - ObjToPush
+  - Key
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Object
   - FloorObject
-  - 
+  - Goal
   - 
   - 
   - 
