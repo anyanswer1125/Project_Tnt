@@ -10,6 +10,7 @@ public enum State
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float moveSpeed = 0.2f; //캐릭터의 이동 속도 (값이 클수록 빠름)
     [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     [SerializeField] private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator; // Player의 animator
     [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
-    private bool isMoving; // 키를 한번만 입력받기 위한 변수
+    [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -149,7 +150,6 @@ public class Player : MonoBehaviour
     {
         this.isMoving = isMoveing;
     }
-
     // 이미지 전환 로직
     private void ImageStats(Vector3 dir)
     {
@@ -161,40 +161,44 @@ public class Player : MonoBehaviour
 
     IEnumerator Movement(Vector3 dir)
     {
-        // 이미지 전환
         ImageStats(dir);
-        // 현재 턴을 1씩 올림
-        turnManager.SetTurnCount();
-        // 이동 되는 동안 키를 입력받지 않게 true
+        turnManager?.SetTurnCount();
         isMoving = true;
-        // 내가 움직일 거리 (내 위치 + 움직일 방향)
-        Vector3 targetPos = Pos + dir;
-
-        float elapsedTime = 0f; // 경과 시간 초기화
-        // 경과 시간이 설정한 이동 시간(duration)보다 작을 동안 반복
-        while (elapsedTime < moveDuration)
+    
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + dir;
+    
+        animator.SetBool("Move", true);
+    
+        // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
+        float distance = Vector3.Distance(startPos, targetPos);
+        float counter = 0;
+    
+        // 거리를 속도로 나누면 이동에 필요한 '시간'이 나옵니다.
+        // 하지만 속도 기반으로 매 프레임 위치를 옮기는 게 더 직관적입니다.
+        float progress = 0f;
+    
+        while (progress < 1f)
         {
-            float progress = elapsedTime / moveDuration; // 0에서 1까지 진행률
-            // Lerp(시작, 끝, 비율): 비율(0~1)에 따라 위치를 결정함
-            // 경과 시간을 전체 이동 시간으로 나누어 비율을 계산 (예: 0.1초 / 0.2초 = 0.5)
-            // 평면 이동 (X, Z축)
-            Vector3 currentPos = Vector3.Lerp(Pos, targetPos, progress);
-            // 높이 이동 (Y축): 사인 곡선을 이용해 0 -> 1 -> 0으로 변함
+            // 매 프레임 이동 진행률을 속도에 맞춰 증가시킴
+            // 거리(1)를 이동하는 데 걸리는 비율을 계산
+            progress += Time.deltaTime * moveSpeed;
+    
+            // 이동 위치 계산
+            Vector3 currentPos = Vector3.Lerp(startPos, targetPos, progress);
+    
+            // 점프 효과 (선택 사항)
             float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
             currentPos.y += yOffset;
-
+    
             transform.position = currentPos;
-            // 매 프레임 시간을 더해줌
-            elapsedTime += Time.deltaTime;
-
-            // 다음 프레임까지 기다림 (루프를 프레임 단위로 나눔)
+            
             yield return null;
         }
-
-        // 오차범위에 도달하면 위치를 보정함
+    
         transform.position = targetPos;
-        // 다음 키를 입력받기 위해서 false
         isMoving = false;
+        animator.SetBool("Move", false);
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -227,6 +231,7 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
+            SpikeScript spike = hit.collider.GetComponent<SpikeScript>();//스파이크 받고
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
 
@@ -243,8 +248,6 @@ public class Player : MonoBehaviour
         // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
         return hit.collider == null;
     }
-
-
     void Update()
     {
         if (!isMoving && !stagePlayEnd)
@@ -270,3 +273,5 @@ public class Player : MonoBehaviour
         }
     }
 }
+// 장애물 인식 raycast gameover로 일단 만들기
+// 움직임 로직 수정 앞에 트랩있을때 인식불가
