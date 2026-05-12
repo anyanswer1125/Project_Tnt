@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LoadScene.unity
+    path: Assets/Scenes/Title.unity
     guid: 3a9308532288626488ea735d03369d5f
   - enabled: 1
-    path: Assets/Scenes/MapScene.unity
+    path: Assets/Scenes/Stage.unity
     guid: 8c3de5dedc14eb84893b6724ee8fdd17
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Map1-1.unity
+    guid: 60a5949562f9a8e428eb1fbdd2537a99
+  - enabled: 1
+    path: Assets/Scenes/NewScene.unity
+    guid: 24beeb382cb33be41bc33116e7a4d7d8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

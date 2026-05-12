@@ -15,9 +15,29 @@ public class MainMenu : MonoBehaviour
     public GameObject soundMusicButton;  // 옵션 내의 'SoundMusic' 버튼
     public GameObject gameStartButton;   // 메인 메뉴의 'GameStart' 버튼
 
+    [Header("연결할 패널 및 버튼")]
+    public SceneController sceneController; // 직접 연결을 위한 변수 추가
+
     public void OnclickGameStart()
     {
-        SceneManager.LoadSceneAsync(1);//map씬으로 이동
+        // 인스펙터에 연결된 컨트롤러가 있다면 사용
+        if (sceneController != null)
+        {
+            sceneController.LoadNextScene(1);//바로 다음씬 전환 map씬을 다음에 넣거나 맵이름으로 불러오기
+        }
+        else
+        {
+            // 연결 안 됐을 때만 검색
+            SceneController found = Object.FindFirstObjectByType<SceneController>();
+            if (found != null)
+            {
+                found.LoadNextScene(1);
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            }
+        }
     }
     public void OnclickOption()
     {

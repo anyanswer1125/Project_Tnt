@@ -41,7 +41,7 @@ public class PlayerMovementScript : MonoBehaviour
                         
         Vector2 targetPos = (Vector2)transform.position + direction;
 
-        Maps mapConfig = GetComponent<Maps>();
+        Stage mapConfig = GetComponent<Stage>();
 
         // 맵 밖이거나 타일이 없는 곳이면 이동 불가
         if (mapConfig != null)
