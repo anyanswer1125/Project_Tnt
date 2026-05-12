@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject goalTimelineObj;
 
-    [SerializeField] private GameObject goalTimelineObj;
+    // [SerializeField] private GameObject goalTimelineObj;
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
