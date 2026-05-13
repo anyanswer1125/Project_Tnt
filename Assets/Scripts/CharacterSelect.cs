@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -93,7 +92,6 @@ public class CharacterSelect : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) Characters(Character.Wizard);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CharacterChange();
