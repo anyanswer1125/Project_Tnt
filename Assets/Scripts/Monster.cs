@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -6,7 +7,7 @@ public class Monster : MonoBehaviour
     BoxCollider2D boxCollider2D;
     Player targetPlayer; // 변수명 구분 (클래스명과 중복 방지)
     bool isDead = false; // 중복 사망 방지 플래그
-    [SerializeField] private ParticleSystem slimeParticle;
+    [SerializeField] private ParticleSystem slimeParticle; 
 
     private void Start()
     {
@@ -23,13 +24,18 @@ public class Monster : MonoBehaviour
     {
         if (isDead) return; // 이미 죽었다면 로직 무시
 
+        if(collision.CompareTag("Spike"))
+        {
+            MonsterDie();
+        }
+
         Player player = collision.GetComponent<Player>();
         if (player == null) return;
 
         player.SetState(State.Lose);
     }
 
-    public void MonsterDie(Player p)
+    public void MonsterDie(Player p = null)
     {
         if (isDead) return;
         isDead = true;

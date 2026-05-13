@@ -26,25 +26,22 @@ public class Player : MonoBehaviour
     [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
+    [SerializeField] private bool isOnSpike = false; // 도적타입일 때 함정위에 있는지 체크(현재 도적타입에 대한 변수이므로 초기값은 false이여야 함)
     [SerializeField] new BoxCollider2D collider2D;  // Player 콜라이더
 
     [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
 
     [SerializeField] private GameObject goalTimelineObj;
 
-    // [SerializeField] private GameObject goalTimelineObj;
-
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
-    public State CurrentState => currentState; // 현재 상태 get 프로퍼티
-
     public bool StagePlayEnd => stagePlayEnd; // 스테이지 플레이 종료 get 프로퍼티
-
-    public Vector3 Pos => transform.position;
 
     public Transform Transform => transform;
 
     public Character PlayerCharacterType => playerCharacterType;    //플레이어의 캐릭터타입 get 프로퍼티
+
+    public bool IsOnSpike => isOnSpike;
 
     private void Start()
     {
@@ -124,7 +121,6 @@ public class Player : MonoBehaviour
         this.transform.localScale = transform.localScale;
     }
 
-
     // Win 상태 메서드
     private void PlayerWin()
     {
@@ -153,6 +149,8 @@ public class Player : MonoBehaviour
         collider2D = GetComponent<BoxCollider2D>();
 
         collider2D.isTrigger = true;
+
+        isOnSpike = false; //현재 도적타입에 대한 변수이므로 초기값은 false이여야 함
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -171,11 +169,18 @@ public class Player : MonoBehaviour
         vfx_PushEffect.transform.rotation = transform.rotation;
     }
 
-    // isMoving로 외부에 전달하는 용도
+    // isMoving를 외부에 전달하는 용도
     public void IsMoving(bool isMoveing)
     {
         this.isMoving = isMoveing;
     }
+
+    // isOnSpike를 외부에 전달하는 용도
+    public void OnSpike(bool isOnSpike)
+    {
+        this.isOnSpike = isOnSpike;
+    }
+
     // 이미지 전환 로직
     private void ImageStats(Vector3 dir)
     {
@@ -190,41 +195,55 @@ public class Player : MonoBehaviour
         ImageStats(dir);
         turnManager?.SetTurnCount();
         isMoving = true;
-    
+
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + dir;
-    
-        animator.SetBool("Move", true);
-    
+
+        if (isOnSpike)
+        {
+            //animator.SetBool("OnSpikeIdle", false);
+            animator.SetBool("OnSpikeMove", true);
+        }
+        else
+            animator.SetBool("Move", true);
+
         // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
-        float distance = Vector3.Distance(startPos, targetPos);
-        float counter = 0;
-    
+        //float distance = Vector3.Distance(startPos, targetPos);
+        //float counter = 0;
+
         // 거리를 속도로 나누면 이동에 필요한 '시간'이 나옵니다.
         // 하지만 속도 기반으로 매 프레임 위치를 옮기는 게 더 직관적입니다.
         float progress = 0f;
-    
+
         while (progress < 1f)
         {
             // 매 프레임 이동 진행률을 속도에 맞춰 증가시킴
             // 거리(1)를 이동하는 데 걸리는 비율을 계산
             progress += Time.deltaTime * moveSpeed;
-    
+
             // 이동 위치 계산
             Vector3 currentPos = Vector3.Lerp(startPos, targetPos, progress);
-    
+
             // 점프 효과 (선택 사항)
             float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
             currentPos.y += yOffset;
-    
+
             transform.position = currentPos;
-            
+
             yield return null;
         }
-    
+
         transform.position = targetPos;
         isMoving = false;
-        animator.SetBool("Move", false);
+        if (isOnSpike)
+        {
+            animator.SetBool("Move", false);
+            animator.SetBool("OnSpikeMove", false);
+            animator.SetBool("OnSpikeIdle", true);
+
+        }
+        else
+            animator.SetBool("Move", false);
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -240,15 +259,14 @@ public class Player : MonoBehaviour
 
         // 3. 레이 쏘기 (실제 거리 rayDistance 사용)
         RaycastHit2D hit = Physics2D.Raycast(rayStart, dir, rayDistance);
-
         // 3. 디버그 로그 추가
         if (hit.collider != null)
         {
             // 레이어의 비트연산을 int로 변환
             int hitLayer = 1 << hit.collider.gameObject.layer;
 
-            // 플레이어가 워리어타입이고 레이가 enemylayer 일때
-            if ((hitLayer & enemyLayer) != 0 && PlayerCharacterType == Character.Warrior)
+            // 플레이어가 워리어타입이고 레이어가 enemylayer 일때
+            if ((hitLayer & enemyLayer) != 0 && playerCharacterType == Character.Warrior)
             {
                 isMoving = true;
                 animator.SetTrigger("Attack");
@@ -257,7 +275,7 @@ public class Player : MonoBehaviour
                 return false;
             }
 
-            // 이동 방향에 FloorButton 레이어가 감지되면 통과 허용
+            // 이동 방향에 Floor 레이어가 감지되면 통과 허용
             if ((hitLayer & floorLayer) != 0) return true;
 
             // 이동 할 수 있는 오브젝트 레이어일때
@@ -271,7 +289,7 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
-            
+
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
 
@@ -282,6 +300,12 @@ public class Player : MonoBehaviour
             Debug.Log("<color=green>[통과]</color> 앞이 비어있습니다. 이동 가능!");
         }
 
+        // isOnSpike가 활성화가 된 상태라면
+        if (isOnSpike)
+        {
+            isOnSpike = false;
+            animator.SetBool("OnSpikeIdle", false);
+        }
         // 4. 씬(Scene) 뷰 시각화 (빨간색=막힘, 녹색=통과) (실제 레이와 디버그 레이의 길이를 0.5f로 일치시킴)
         Debug.DrawRay(rayStart, dir * rayDistance, hit.collider != null ? Color.red : Color.green, 0.5f);
 

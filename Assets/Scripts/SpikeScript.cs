@@ -21,15 +21,38 @@ public class SpikeScript : MonoBehaviour
         spikeAnim.SetBool("ActiveSpike", spikeActive);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 예외처리
+        if (!collision.CompareTag("Player")) return;
+
         Player player = collision.GetComponent<Player>();
 
-        // 예외처리
-        if (player == null) return;
+        // 플레이어의 캐릭터 타입이 도적이라면 충돌 무시
+        if (player.PlayerCharacterType == Character.Thief && spikeActive)
+        {
+            if (!player.IsOnSpike)
+                player.OnSpike(true);
+            return;
+        }
 
         // 함정이 솟아있는 상태에서 플레이어와 접촉 시 패배 처리
         if (spikeActive && !player.StagePlayEnd)
             player.SetState(State.Lose);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // 예외처리
+        if (!collision.CompareTag("Player")) return;
+
+        Player player = collision.GetComponent<Player>();
+
+        if (player.PlayerCharacterType == Character.Thief)
+        {
+            Animator a = player.GetComponent<Animator>();
+            a.SetBool("OnSpikeIdle", false);
+        }
+
     }
 }

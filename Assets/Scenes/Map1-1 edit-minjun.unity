@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 260283652}
   m_Layer: 7
   m_Name: SpikeTrap (10)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 330437363}
   m_Layer: 7
   m_Name: SpikeTrap (4)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 612701376}
   m_Layer: 7
   m_Name: SpikeTrap (6)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 931003607}
   m_Layer: 7
   m_Name: SpikeTrap (7)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5294,7 +5294,7 @@ GameObject:
   - component: {fileID: 1096321018}
   m_Layer: 7
   m_Name: SpikeTrap (5)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5675,7 +5675,7 @@ GameObject:
   - component: {fileID: 1111437935}
   m_Layer: 7
   m_Name: SpikeTrap (1)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5878,7 +5878,7 @@ GameObject:
   - component: {fileID: 1197281844}
   m_Layer: 7
   m_Name: SpikeTrap (2)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6081,7 +6081,7 @@ GameObject:
   - component: {fileID: 1274136351}
   m_Layer: 7
   m_Name: SpikeTrap (3)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16522,7 +16522,7 @@ GameObject:
   - component: {fileID: 1577547754}
   m_Layer: 7
   m_Name: SpikeTrap (9)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17206,7 +17206,7 @@ GameObject:
   - component: {fileID: 1926503830}
   m_Layer: 7
   m_Name: SpikeTrap (8)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18279,7 +18279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857104443551666086, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.5
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 4857104443551666086, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18346,10 +18346,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195233461364957961, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1391828794509417289, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_Name
       value: CharacterSelect
@@ -18394,30 +18390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
-    - target: {fileID: 5121649008012438145, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7393068012084249894, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: vfx_ChangePlayer
       value: 
       objectReference: {fileID: 407691579}
-    - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

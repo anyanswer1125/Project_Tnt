@@ -10,6 +10,7 @@ TagManager:
   - Vfx_JumpEffect
   - Vfx_PushEffect
   - Enemy
+  - Spike
   layers:
   - Default
   - TransparentFX
