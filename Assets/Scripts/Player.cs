@@ -40,6 +40,10 @@ public class Player : MonoBehaviour
     
     [SerializeField] private GameObject cameraShakeObj;
     private AudioSource audiosource;
+    
+    
+    private bool canWarriorMove = true;
+
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -396,7 +400,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving && !stagePlayEnd)
+        if (!isMoving && !stagePlayEnd && canWarriorMove)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
@@ -417,5 +421,14 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    public void WarrirMoveFalse()
+    {
+        canWarriorMove = false;
+    }
+    public void WarrirMoveTrue()
+    {
+        canWarriorMove = true;
     }
 }
