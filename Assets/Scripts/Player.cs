@@ -11,7 +11,7 @@ public enum State
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 0.2f; //캐릭터의 이동 속도 (값이 클수록 빠름)
-    [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
+    // [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     [SerializeField] private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
     [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
@@ -32,6 +32,14 @@ public class Player : MonoBehaviour
     [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
 
     [SerializeField] private GameObject goalTimelineObj;
+
+    //SFX
+    [SerializeField] private AudioClip sfx_MoveSound;
+    [SerializeField] private AudioClip sfx_PushBox;
+    [SerializeField] private AudioClip sfx_Attack;
+    
+    [SerializeField] private GameObject cameraShakeObj;
+    private AudioSource audiosource;
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -169,6 +177,8 @@ public class Player : MonoBehaviour
         vfx_PushEffect = Instantiate(vfx_PushEffect);
         vfx_PushEffect.SetActive(false);
 
+        audiosource = GetComponent<AudioSource>();
+
         SetState(State.None);
         animator = GetComponent<Animator>();
         stagePlayEnd = false;
@@ -194,9 +204,13 @@ public class Player : MonoBehaviour
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정 ( Push는 ObjectMovement에서 호출)
     public void PlayVfxPush(Vector3 pos)
     {
+        // -- 그냥 여기에다가 SFX 추가할게요
+        audiosource.PlayOneShot(sfx_PushBox);
+
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
         vfx_PushEffect.transform.rotation = transform.rotation;
+
     }
 
     // isMoving를 외부에 전달하는 용도
@@ -236,6 +250,7 @@ public class Player : MonoBehaviour
         }
         else
             animator.SetBool("Move", true);
+            audiosource.PlayOneShot(sfx_MoveSound);
 
         // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
         //float distance = Vector3.Distance(startPos, targetPos);
@@ -300,6 +315,9 @@ public class Player : MonoBehaviour
             {
                 isMoving = true;
                 animator.SetTrigger("Attack");
+                audiosource.PlayOneShot(sfx_Attack);
+                cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
+                
                 Monster enemy = hit.collider.GetComponent<Monster>();
                 enemy.MonsterDie(this);
                 return false;
