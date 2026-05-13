@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map1-1 edit.unity
     guid: 3b5629074e717f14d93c29c20273b4d9
   - enabled: 1
+    path: Assets/Scenes/Map1-1 edit-janghwan.unity
+    guid: 439ff495670f24676b59b4f96b84ea8f
+  - enabled: 1
     path: Assets/Scenes/Map1-1 edit-minjun.unity
     guid: 5c5fdf607904b9b4a97310ec927b497c
   - enabled: 1
