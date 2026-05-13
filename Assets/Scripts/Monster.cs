@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -23,13 +25,19 @@ public class Monster : MonoBehaviour
     {
         if (isDead) return; // 이미 죽었다면 로직 무시
 
+        SpikeScript s = collision?.GetComponent<SpikeScript>();
+        if(s != null && s.SpikeActive == true)
+        {
+            MonsterDie();
+        }
+
         Player player = collision.GetComponent<Player>();
         if (player == null) return;
 
         player.SetState(State.Lose);
     }
 
-    public void MonsterDie(Player p)
+    public void MonsterDie(Player p = null)
     {
         if (isDead) return;
         isDead = true;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +20,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private Character currentCharacter;
     // 캐릭터 선택 UI
     [SerializeField] private CharacterSelectUI characterSelectUI;
+    [SerializeField] private GameObject vfx_ChangePlayer;
 
     void Start()
     {
@@ -54,6 +54,7 @@ public class CharacterSelect : MonoBehaviour
 
     private void Characters(Character c)
     {
+
         // 예외처리
         if (currentCharacter == c) return;
         // 현재 캐릭터
@@ -61,6 +62,14 @@ public class CharacterSelect : MonoBehaviour
         // 바꿀 캐릭터
         Player nextPlayer = playerDictionary[c];
         // 캐릭터 전체를 비활성화
+
+
+        //AutoDestroy 확인했습니다, 이 이펙트도 풀링 형식으로 작업하겠습니다.
+        vfx_ChangePlayer.transform.position = currentPlayer.transform.position;
+        vfx_ChangePlayer.SetActive(true);
+
+
+
         foreach(Player player in  players)
         {
             player.gameObject.SetActive(false);  
@@ -83,7 +92,6 @@ public class CharacterSelect : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) Characters(Character.Wizard);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CharacterChange();

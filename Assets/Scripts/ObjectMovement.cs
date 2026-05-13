@@ -30,7 +30,11 @@ public class ObjectMovement : MonoBehaviour
     IEnumerator Movement(Player player, Vector3 dir)
     {
         Animator animator = player.GetComponent<Animator>();
-        animator.SetTrigger("Push");
+
+        if (player.PlayerCharacterType == Character.Thief && player.IsOnSpike)
+            animator.SetTrigger("OnSpikePush");
+        else
+            animator.SetTrigger("Push");
 
         Vector3 centerPos = (transform.position + player.transform.position) / 2f;
         player.PlayVfxPush(centerPos);
@@ -108,7 +112,7 @@ public class ObjectMovement : MonoBehaviour
 
 
     public void ObjMovement(Player player, Vector3 dir)
-    { 
+    {
         if (CanMove(player, dir))
         {
             StartCoroutine(Movement(player, dir));
