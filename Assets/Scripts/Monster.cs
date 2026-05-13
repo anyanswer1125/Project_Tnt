@@ -6,6 +6,7 @@ public class Monster : MonoBehaviour
     BoxCollider2D boxCollider2D;
     Player targetPlayer; // 변수명 구분 (클래스명과 중복 방지)
     bool isDead = false; // 중복 사망 방지 플래그
+    [SerializeField] private ParticleSystem slimeParticle;
 
     private void Start()
     {
@@ -38,16 +39,24 @@ public class Monster : MonoBehaviour
 
         monsterAnimator.SetTrigger("Die");
         targetPlayer = p;
+        
     }
 
-    // 애니메이션 이벤트에서 호출 (가장 끝 프레임)
-    private void MonsterDestroy()
+    public void PlayEffect()
     {
+        if (slimeParticle != null)
+        {
+            slimeParticle.Play();
+            boxCollider2D.enabled = false;
+        }
         if (targetPlayer != null)
         {
             targetPlayer.IsMoving(false);
         }
-
+    }
+    // 애니메이션 이벤트에서 호출 (가장 끝 프레임)
+    private void MonsterDestroy()
+    {
         // 일회성 오브젝트이므로 확실히 제거
         Destroy(gameObject);
     }
