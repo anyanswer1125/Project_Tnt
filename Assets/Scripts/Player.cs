@@ -37,6 +37,11 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip sfx_MoveSound;
     [SerializeField] private AudioClip sfx_PushBox;
     [SerializeField] private AudioClip sfx_Attack;
+    [SerializeField] private AudioClip sfx_BumpSound;
+    // [SerializeField] private AudioClip sfx_Win;
+
+    [SerializeField] private GameObject winTimelineObj;
+
     
     [SerializeField] private GameObject cameraShakeObj;
     private AudioSource audiosource;
@@ -139,6 +144,8 @@ public class Player : MonoBehaviour
     private void PlayerWin()
     {
         ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
+        // audiosource.PlayOneShot(sfx_Win);
+        winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
@@ -319,7 +326,8 @@ public class Player : MonoBehaviour
             {
                 isMoving = true;
                 animator.SetTrigger("Attack");
-                audiosource.PlayOneShot(sfx_Attack);
+                canWarriorMove = false;
+                // audiosource.PlayOneShot(sfx_Attack);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
                 
                 Monster enemy = hit.collider.GetComponent<Monster>();
@@ -344,6 +352,10 @@ public class Player : MonoBehaviour
 
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
+            if (!audiosource.isPlaying)
+            {
+                audiosource.PlayOneShot(sfx_BumpSound);
+            }
 
         }
         else
@@ -400,7 +412,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving && !stagePlayEnd && canWarriorMove)
+        if (canWarriorMove && !isMoving && !stagePlayEnd)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
@@ -423,12 +435,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SfxWarriorAttack()
+    {
+        audiosource.PlayOneShot(sfx_Attack);
+    }
     public void WarrirMoveFalse()
     {
         canWarriorMove = false;
+        Debug.Log("워리어 이동 불가");
     }
     public void WarrirMoveTrue()
     {
         canWarriorMove = true;
+        Debug.Log("워리어 이동 가능");
     }
 }
