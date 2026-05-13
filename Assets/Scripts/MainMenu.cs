@@ -1,33 +1,47 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public static MainMenu instance;
+    private int currentIndex = 1;
+    private static bool isMapSelection = false;//선택하고 있는지ㅇ
 
-    [Header("하이픈 지시자")]
+    [Header("화살표")]
     public GameObject selectPoint;
 
     [Header("연결할 패널 및 버튼")]
-    // 이 부분들이 선언되어 있어야 컨텍스트 오류가 나지 않습니다.
-    public GameObject optionPanel;       // 옵션 패널 오브젝트
-    public GameObject soundMusicButton;  // 옵션 내의 'SoundMusic' 버튼
-    public GameObject gameStartButton;   // 메인 메뉴의 'GameStart' 버튼
+    public GameObject optionPanel;
+    public GameObject soundMusicButton;
+    public GameObject gameStartButton;
+
+    [Header("Maps")]
+    public GameObject mainMenuPanel;
+    public GameObject[] mapPanels;
 
     public void OnclickGameStart()
     {
-        SceneManager.LoadSceneAsync(1);//map씬으로 이동
+        mainMenuPanel.SetActive(false); // 메인 메뉴 숨기기
+        StartCoroutine(MapSelectionDelayed());//대기
+    }
+    IEnumerator MapSelectionDelayed()//중요 없을 시 중복입력으로 처음 맵 등장하자마자 씬 실행
+    {
+        yield return null;
+        isMapSelection = true;// 맵 선택 모드 활성화
+        currentIndex = 0;
+        UpdatePanels();
     }
     public void OnclickOption()
     {
-        // 1. 패널 활성화
+        Debug.Log("OnclickOption");
+        //패널 활성화
         if (optionPanel != null) optionPanel.SetActive(true);
 
-        // 2. 하이픈 지시자 끄기
         if (selectPoint != null) selectPoint.SetActive(false);
 
-        // 3. 옵션의 첫 번째 버튼으로 포커스 이동
+        //옵션의 첫 번째 버튼으로 포커스 이동
         if (soundMusicButton != null)
         {
             EventSystem.current.SetSelectedGameObject(soundMusicButton);
@@ -46,6 +60,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
 #endif
     }
+    void UpdatePanels()
+    {
+        for (int i = 0; i < mapPanels.Length; i++)
+        {
+            // 현재 인덱스만 켜고 나머지는 모두 끔
+            mapPanels[i].SetActive(i == currentIndex);
+        }
+    }
     public void BackFromOption()
     {
         // 1. 하이픈 지시자 다시 켜기
@@ -56,6 +78,45 @@ public class MainMenu : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(gameStartButton);
         }
+    }
+    void StartMap()
+    {
+        GameObject currentPanel = mapPanels[currentIndex];
+
+        MapController map = currentPanel.GetComponent<MapController>();
+        if (map != null)
+        {
+            map.enabled = true;
+        }
+        // 패널 = 씬 이름 동일하게
+        SceneManager.LoadScene(currentPanel.name);
+    }
+    // 좌우 버튼에 연결하거나 키 입력으로 실행
+    public void ChangePage(int direction)
+    {
+        currentIndex = Mathf.Clamp(currentIndex + direction, 0, mapPanels.Length - 1);
+        UpdatePanels();
+    }
+    void Update()
+    {
+        // 맵 선택 모드일 때만 키보드 입력 체크
+        if (isMapSelection)
+        {
+            //좌우 방향키로 패널 교체
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                ChangePage(1);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                ChangePage(-1);
+            }
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                StartMap();
+            }
+        }
+
     }
     void Awake() { instance = this; }
 }
