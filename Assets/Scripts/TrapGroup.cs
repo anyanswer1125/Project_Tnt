@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class TrapGroup : MonoBehaviour
 {
     [SerializeField] private List<FloorButtonScript> floorbuttons = new List<FloorButtonScript>();   //버튼리스트
-    [SerializeField] private List<SpikeScript> spikes = new List<SpikeScript>();  //함정리스트
+    [SerializeField] private List<SpikeScript> upSpikes = new List<SpikeScript>();  //올라올 함정리스트
+    [SerializeField] private List<SpikeScript> downSpikes = new List<SpikeScript>();  //내려갈 함정리스트
     private void Start()
     {
         Initialize();
@@ -15,17 +16,39 @@ public class TrapGroup : MonoBehaviour
     {
         // 버튼 리스트 할당하기전 클리어하여 비움
         floorbuttons.Clear();
-        // 함정 리스트 할당하기전 클리어하여 비움
-        spikes.Clear();
+        // 올라올 함정리스트 할당하기전 클리어하여 비움
+        upSpikes.Clear();
+        // 내려갈 함정리스트 할당하기전 클리어하여 비움
+        downSpikes.Clear();
+
         // 자식 오브젝트들로부터 컴포넌트를 검색하여 리스트에 추가
         floorbuttons.AddRange(GetComponentsInChildren<FloorButtonScript>());
-        // 자식 오브젝트들로부터 컴포넌트를 검색하여 리스트에 추가
-        spikes.AddRange(GetComponentsInChildren<SpikeScript>());
 
-        // 함정 초기화 메서드 호출 (호출 순서 꼬이는 것을 방지)
-        foreach (var v in spikes)
+
+        // 자식 오브젝트들로부터 컴포넌트를 검색하여 리스트에 추가
+        //upSpikes.AddRange(GetComponentsInChildren<SpikeScript>());
+
+        // 전체 SpikeScript를 받아옴
+        SpikeScript[] spikes = GetComponentsInChildren<SpikeScript>();
+
+        // 받아온 SpikeScript를 분류함
+        foreach (SpikeScript spike in spikes)
         {
-            v.Initialize();
+            if (spike.SpikeType == SpikeType.Up)
+                upSpikes.Add(spike);
+            else if(spike.SpikeType == SpikeType.Down)
+                downSpikes.Add(spike);
+        }
+
+        // 올라올 함정 초기화 메서드 호출 (호출 순서 꼬이는 것을 방지)
+        foreach (var v in upSpikes)
+        {
+            v.Initialize(true);
+        }
+        // 내려갈 함정 초기화 메서드 호출 (호출 순서 꼬이는 것을 방지)
+        foreach (var v in downSpikes)
+        {
+            v.Initialize(false);
         }
         // 버튼 초기화 메서드 호출 (호출 순서 꼬이는 것을 방지)
         foreach (var v in floorbuttons)
@@ -39,7 +62,7 @@ public class TrapGroup : MonoBehaviour
     public void Trap()
     {
         // 리스트가 비어있을 경우를 대비한 방어 코드
-        if (floorbuttons == null || spikes == null) return;
+        if (floorbuttons == null) return;
 
         // 하나라도 안 눌린 버튼(True)이 있는지 체크
         bool isAnyButtonNotPressed = false;
@@ -53,11 +76,17 @@ public class TrapGroup : MonoBehaviour
             }
         }
 
-        //판별된 값을 모든 스파이크에 전달합니다.
-        foreach (var spike in spikes)
+        //판별된 값을 모든 올라온 스파이크에 전달합니다.
+        foreach (var spike in upSpikes)
         {
             // 모든 버튼이 False(눌림)가 되어야만 isAnyButtonNotPressed가 False(비활성화)
             spike.FuncSpike(isAnyButtonNotPressed);
+        }
+        //판별된 값을 모든 내려온 스파이크에 전달합니다.
+        foreach (var spike in downSpikes)
+        {
+            // 모든 버튼이 False(눌림)가 되어야만 isAnyButtonNotPressed가 True(활성화)
+            spike.FuncSpike(!isAnyButtonNotPressed);
         }
     }
 }

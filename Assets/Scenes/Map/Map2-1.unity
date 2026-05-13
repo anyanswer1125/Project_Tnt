@@ -503,7 +503,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &274843198
 Transform:
@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!95 &330437366
 Animator:
   serializedVersion: 7
@@ -957,7 +958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &343530207
 Transform:
   m_ObjectHideFlags: 0
@@ -1005,7 +1007,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &385657180
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,6 +1025,7 @@ Transform:
   - {fileID: 1668600608}
   - {fileID: 1274136356}
   - {fileID: 330437368}
+  - {fileID: 1096321023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -4489,7 +4493,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1032068109
 Transform:
@@ -4650,6 +4654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!95 &1067237948
 Animator:
   serializedVersion: 7
@@ -4838,6 +4843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 1
 --- !u!95 &1096321021
 Animator:
   serializedVersion: 7
@@ -4932,7 +4938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1505730909}
+  m_Father: {fileID: 385657180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111437934
 GameObject:
@@ -5041,6 +5047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!95 &1111437938
 Animator:
   serializedVersion: 7
@@ -5244,6 +5251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!95 &1197281847
 Animator:
   serializedVersion: 7
@@ -5447,6 +5455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!95 &1274136354
 Animator:
   serializedVersion: 7
@@ -5846,7 +5855,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &1505730909
 Transform:
   m_ObjectHideFlags: 0
@@ -5860,7 +5870,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1096321023}
   - {fileID: 1067237944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17038,7 +17047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &1976268282
 Transform:
   m_ObjectHideFlags: 0
@@ -17523,6 +17533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
 --- !u!50 &2113152678
 Rigidbody2D:
   serializedVersion: 5
