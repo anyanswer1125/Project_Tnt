@@ -69,6 +69,8 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
+        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
+        StopAllCoroutines();    // 모든 코루틴 종료
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
         stagePlayEnd = true;
@@ -124,11 +126,39 @@ public class Player : MonoBehaviour
     // Win 상태 메서드
     private void PlayerWin()
     {
+        ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
         animator.SetBool("Win", true);
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
 
     }
+
+    // 애니메이터의 Parameters의 모든 값을 0이나 false
+    private void ResetAllAnimatorParameters()
+    {
+        if (animator == null) return;
+
+        // 애니메이터에 등록된 모든 파라미터를 하나씩 훑습니다.
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            switch (param.type)
+            {
+                case AnimatorControllerParameterType.Trigger:
+                    animator.ResetTrigger(param.name);
+                    break;
+                case AnimatorControllerParameterType.Bool:
+                    animator.SetBool(param.name, false);
+                    break;
+                case AnimatorControllerParameterType.Float:
+                    animator.SetFloat(param.name, 0f);
+                    break;
+                case AnimatorControllerParameterType.Int:
+                    animator.SetInteger(param.name, 0);
+                    break;
+            }
+        }
+    }
+
 
     // 초기화 메서드
     private void Initialize()
