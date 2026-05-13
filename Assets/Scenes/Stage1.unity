@@ -348,9 +348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830ba7a24a626244804e764027870f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMoveMent
-  floorButtonLay:
+  floorObjectLay:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
+  objAnimator: {fileID: 0}
 --- !u!212 &89500540
 SpriteRenderer:
   serializedVersion: 2
@@ -8484,7 +8485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   activeFloor: 1
-  spikeObject: {fileID: 2113152673}
 --- !u!61 &1592061871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8721,8 +8721,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.11}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 0.24, y: 0.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8816,9 +8816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830ba7a24a626244804e764027870f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMovement
-  floorButtonLay:
+  floorObjectLay:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  objAnimator: {fileID: 0}
 --- !u!1 &1696174449
 GameObject:
   m_ObjectHideFlags: 0
@@ -8896,6 +8897,8 @@ MonoBehaviour:
   JumpEffectPos: {fileID: 1696174450}
   currentState: 0
   animator: {fileID: 0}
+  turnManager: {fileID: 0}
+  isMoving: 0
 --- !u!95 &1993633622
 Animator:
   serializedVersion: 7
@@ -9365,7 +9368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f53a3aaa14854249858c74d2f937a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  activeSpike: 0
+  spikeActive: 0
 --- !u!50 &2113152678
 Rigidbody2D:
   serializedVersion: 5
@@ -9695,9 +9698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830ba7a24a626244804e764027870f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMoveMent
-  floorButtonLay:
+  floorObjectLay:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
+  objAnimator: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

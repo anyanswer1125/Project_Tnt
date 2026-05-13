@@ -326,3 +326,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74541361897d3d42b0308db6d218274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Goal
+  nextStageData: {fileID: 11400000, guid: e770d0527b1232443a3d4de1f2d54818, type: 2}

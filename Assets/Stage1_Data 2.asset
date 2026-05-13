@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe88c8d7f5dc13e418d365a017cb1b76, type: 3}
   m_Name: Stage1_Data 2
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelName: Stage2
-  sceneName: StageSelect
+  levelName: Map1-2
+  sceneName: Map1-2
   isUnlocked: 0
+  mapPreviewSprite: {fileID: 0}
