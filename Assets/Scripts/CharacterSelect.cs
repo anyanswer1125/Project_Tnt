@@ -74,7 +74,8 @@ public class CharacterSelect : MonoBehaviour
         Player nextPlayer = playerDictionary[c];
         // 캐릭터 전체를 비활성화
 
-        audioSource.PlayOneShot(sfx_PlayerChange);
+        //audioSource.PlayOneShot(sfx_PlayerChange);
+        SoundManager.Instance.PlaySFX(106);
         //AutoDestroy 확인했습니다, 이 이펙트도 풀링 형식으로 작업하겠습니다.
         vfx_ChangePlayer.transform.position = currentPlayer.transform.position;
         vfx_ChangePlayer.SetActive(true);
