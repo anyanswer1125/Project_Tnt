@@ -21,7 +21,7 @@ public class GoalBox : MonoBehaviour
     private void Goal()
     {
         Vector2 goalPos = transform.position;
-        goalPos.y -= 0.5f;
+        goalPos.y -= 0f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
         treasureObj.transform.position = goalPos;
         treasureObj.SetActive(true);
