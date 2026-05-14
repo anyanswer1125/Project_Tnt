@@ -9408,7 +9408,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 85f4ec4bfda64491fa6e4e1a6333dfbb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -25591,7 +25591,7 @@ PrefabInstance:
     - target: {fileID: 6162825033897487456, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1251247836}
     - target: {fileID: 6162825033897487456, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
       propertyPath: treasureObj
       value: 
@@ -25615,6 +25615,26 @@ PrefabInstance:
     - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421192862438228932, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421192862438228932, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421192862438228932, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421192862438228932, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421192862438228932, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
