@@ -15,6 +15,7 @@ public class Goal : MonoBehaviour
         player = FindAnyObjectByType<Player>();
         // key와 goalbox가 서로 충돌되고 사라지고 나서 플레이어가 움직을 수 있도록 함
         player.IsMoving(false);
+        Debug.Log("현재 플레이어 : " + player);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
