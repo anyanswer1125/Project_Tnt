@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5611931260889149425}
   m_Layer: 0
   m_Name: Vfx_PushEffect
-  m_TagString: Untagged
+  m_TagString: Vfx_PushEffect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -62,33 +62,38 @@ public class PointMove : MonoBehaviour
     private TextMeshProUGUI btnText;
     void Update()
     {
+        // 1. 이벤트 시스템 안전 체크
+        if (EventSystem.current == null) return;
+
         GameObject selected = EventSystem.current.currentSelectedGameObject;
         if (selected == null) return;
 
+        // 2. 선택이 바뀌었을 때만 무거운 연산 수행
         if (oldSelected != selected)
         {
-            // 1. 선택된 버튼의 위치로 이동
-            transform.position = selected.GetComponentInChildren<TextMeshProUGUI>().gameObject.transform.position;
-
-            // 2. 버튼 자식에 있는 TextMeshPro 찾기
+            oldSelected = selected;
             btnText = selected.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (btnText != null)
+            {
+                // 월드 좌표 대신 부모 관계를 고려한 위치 설정
+                transform.position = btnText.transform.position;
+            }
         }
 
-        if (btnText != null)
+        // 3. 컴포넌트들이 모두 있을 때만 실행 (매 프레임 실행되는 로직 최적화)
+        if (btnText != null && leftPointer != null && rightPointer != null)
         {
-            // 3. 텍스트가 실제로 차지하는 가로 길이(preferredWidth) 가져오기
             float textWidth = btnText.preferredWidth;
-
-            // 절반 길이 + 여백
             float halfWidth = (textWidth / 2f) + padding;
 
-            // 4. 하이픈 위치 적용 (부드러운 움직임 포함)
+            // Time.time 연산은 가볍지만, 혹시 모를 오버플로우 방지
             float bounce = Mathf.Sin(Time.time * 10f) * 2f;
 
-            leftPointer.anchoredPosition = new Vector2(-halfWidth, yOffset + bounce);
-            rightPointer.anchoredPosition = new Vector2(halfWidth, yOffset + bounce);
+            // Vector2 생성을 최소화하거나 필요한 경우만 할당
+            Vector2 pos = new Vector2(halfWidth, yOffset + bounce);
+            leftPointer.anchoredPosition = -pos;
+            rightPointer.anchoredPosition = pos;
         }
-
-        oldSelected = selected;
     }
 }

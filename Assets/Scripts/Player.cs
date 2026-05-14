@@ -10,10 +10,12 @@ public enum State
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
+    [SerializeField] private float moveSpeed = 0.2f; //캐릭터의 이동 속도 (값이 클수록 빠름)
+    // [SerializeField] private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
     [SerializeField] private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
-    [SerializeField] private LayerMask floorButtonLayer;    // 함정 레이어
+    [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
+    [SerializeField] private LayerMask enemyLayer;  // 적 레이어
 
     [SerializeField] private GameObject vfx_JumpEffectObj; //점프 이펙트 프리팹
     [SerializeField] private GameObject vfx_PushEffect; // 푸쉬 이펙트 프리팹
@@ -24,14 +26,39 @@ public class Player : MonoBehaviour
     [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
+    [SerializeField] private bool isOnSpike = false; // 도적타입일 때 함정위에 있는지 체크(현재 도적타입에 대한 변수이므로 초기값은 false이여야 함)
+    [SerializeField] new BoxCollider2D collider2D;  // Player 콜라이더
+
+    [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
+
+    [SerializeField] private GameObject goalTimelineObj;
+
+    //SFX
+    [SerializeField] private AudioClip sfx_MoveSound;
+    [SerializeField] private AudioClip sfx_PushBox;
+    [SerializeField] private AudioClip sfx_Attack;
+    [SerializeField] private AudioClip sfx_BumpSound;
+    // [SerializeField] private AudioClip sfx_Win;
+
+    [SerializeField] private GameObject winTimelineObj;
+
+    
+    [SerializeField] private GameObject cameraShakeObj;
+    private AudioSource audiosource;
+    
+    
+    private bool canWarriorMove = true;
+
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
-    public State CurrentState => currentState; // 현재 상태 get 프로퍼티
-
     public bool StagePlayEnd => stagePlayEnd; // 스테이지 플레이 종료 get 프로퍼티
 
-    Vector3 Pos => transform.position;
+    public Transform Transform => transform;
+
+    public Character PlayerCharacterType => playerCharacterType;    //플레이어의 캐릭터타입 get 프로퍼티
+
+    public bool IsOnSpike => isOnSpike;
 
     private void Start()
     {
@@ -59,9 +86,12 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
+        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
+        StopAllCoroutines();    // 모든 코루틴 종료
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
         stagePlayEnd = true;
+        collider2D.isTrigger = false;
     }
     private IEnumerator AnimationLose()
     {
@@ -103,13 +133,51 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 외부에서 Transform를 받을 메서드
+    public void SetPlayerTransform(Transform transform)
+    {
+        this.transform.position = transform.position;
+        this.transform.localScale = transform.localScale;
+    }
 
     // Win 상태 메서드
     private void PlayerWin()
     {
+        ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
+        // audiosource.PlayOneShot(sfx_Win);
+        winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
         stagePlayEnd = true;
+        // goalTimelineObj.SetActive(true);
+
     }
+
+    // 애니메이터의 Parameters의 모든 값을 0이나 false
+    private void ResetAllAnimatorParameters()
+    {
+        if (animator == null) return;
+
+        // 애니메이터에 등록된 모든 파라미터를 하나씩 훑습니다.
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            switch (param.type)
+            {
+                case AnimatorControllerParameterType.Trigger:
+                    animator.ResetTrigger(param.name);
+                    break;
+                case AnimatorControllerParameterType.Bool:
+                    animator.SetBool(param.name, false);
+                    break;
+                case AnimatorControllerParameterType.Float:
+                    animator.SetFloat(param.name, 0f);
+                    break;
+                case AnimatorControllerParameterType.Int:
+                    animator.SetInteger(param.name, 0);
+                    break;
+            }
+        }
+    }
+
 
     // 초기화 메서드
     private void Initialize()
@@ -120,12 +188,20 @@ public class Player : MonoBehaviour
         vfx_PushEffect = Instantiate(vfx_PushEffect);
         vfx_PushEffect.SetActive(false);
 
+        audiosource = GetComponent<AudioSource>();
+
         SetState(State.None);
         animator = GetComponent<Animator>();
         stagePlayEnd = false;
         isMoving = false;
 
         turnManager = FindAnyObjectByType<TurnManager>();
+
+        collider2D = GetComponent<BoxCollider2D>();
+
+        collider2D.isTrigger = true;
+
+        isOnSpike = false; //현재 도적타입에 대한 변수이므로 초기값은 false이여야 함
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -139,16 +215,27 @@ public class Player : MonoBehaviour
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정 ( Push는 ObjectMovement에서 호출)
     public void PlayVfxPush(Vector3 pos)
     {
+        // -- 그냥 여기에다가 SFX 추가할게요
+        audiosource.PlayOneShot(sfx_PushBox);
+
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
         vfx_PushEffect.transform.rotation = transform.rotation;
+
     }
 
-    // isMoving로 외부에 전달하는 용도
+    // isMoving를 외부에 전달하는 용도
     public void IsMoving(bool isMoveing)
     {
         this.isMoving = isMoveing;
     }
+
+    // isOnSpike를 외부에 전달하는 용도
+    public void OnSpike(bool isOnSpike)
+    {
+        this.isOnSpike = isOnSpike;
+    }
+
     // 이미지 전환 로직
     private void ImageStats(Vector3 dir)
     {
@@ -160,39 +247,59 @@ public class Player : MonoBehaviour
 
     IEnumerator Movement(Vector3 dir)
     {
-        // 이미지 전환
         ImageStats(dir);
-        // 현재 턴을 1씩 올림
         turnManager?.SetTurnCount();
-        // 이동 되는 동안 키를 입력받지 않게 true
         isMoving = true;
-        // 내가 움직일 거리 (내 위치 + 움직일 방향)
-        Vector3 targetPos = Pos + dir;
 
-        float elapsedTime = 0f; // 경과 시간 초기화
-        // 경과 시간이 설정한 이동 시간(duration)보다 작을 동안 반복
-        while (elapsedTime < moveDuration)
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + dir;
+
+        if (isOnSpike)
         {
-            float progress = elapsedTime / moveDuration; // 0에서 1까지 진행률
-            // Lerp(시작, 끝, 비율): 비율(0~1)에 따라 위치를 결정함
-            // 경과 시간을 전체 이동 시간으로 나누어 비율을 계산 (예: 0.1초 / 0.2초 = 0.5)
-            // 평면 이동 (X, Z축)
-            Vector3 currentPos = Vector3.Lerp(Pos, targetPos, progress);
-            // 높이 이동 (Y축): 사인 곡선을 이용해 0 -> 1 -> 0으로 변함
+            //animator.SetBool("OnSpikeIdle", false);
+            animator.SetBool("OnSpikeMove", true);
+        }
+        else
+            animator.SetBool("Move", true);
+            audiosource.PlayOneShot(sfx_MoveSound);
+
+        // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
+        //float distance = Vector3.Distance(startPos, targetPos);
+        //float counter = 0;
+
+        // 거리를 속도로 나누면 이동에 필요한 '시간'이 나옵니다.
+        // 하지만 속도 기반으로 매 프레임 위치를 옮기는 게 더 직관적입니다.
+        float progress = 0f;
+
+        while (progress < 1f)
+        {
+            // 매 프레임 이동 진행률을 속도에 맞춰 증가시킴
+            // 거리(1)를 이동하는 데 걸리는 비율을 계산
+            progress += Time.deltaTime * moveSpeed;
+
+            // 이동 위치 계산
+            Vector3 currentPos = Vector3.Lerp(startPos, targetPos, progress);
+
+            // 점프 효과 (선택 사항)
             float yOffset = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
             currentPos.y += yOffset;
 
             transform.position = currentPos;
-            // 매 프레임 시간을 더해줌
-            elapsedTime += Time.deltaTime;
 
-            // 다음 프레임까지 기다림 (루프를 프레임 단위로 나눔)
             yield return null;
         }
-        // 오차범위에 도달하면 위치를 보정함
+
         transform.position = targetPos;
-        // 다음 키를 입력받기 위해서 false
         isMoving = false;
+        if (isOnSpike)
+        {
+            animator.SetBool("Move", false);
+            animator.SetBool("OnSpikeMove", false);
+            animator.SetBool("OnSpikeIdle", true);
+
+        }
+        else
+            animator.SetBool("Move", false);
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -208,14 +315,31 @@ public class Player : MonoBehaviour
 
         // 3. 레이 쏘기 (실제 거리 rayDistance 사용)
         RaycastHit2D hit = Physics2D.Raycast(rayStart, dir, rayDistance);
-
         // 3. 디버그 로그 추가
         if (hit.collider != null)
         {
-            // 이동 방향에 FloorButton 레이어가 감지되면 통과 허용
-            if (((1 << hit.collider.gameObject.layer) & floorButtonLayer) != 0) return true;
+            // 레이어의 비트연산을 int로 변환
+            int hitLayer = 1 << hit.collider.gameObject.layer;
 
-            if (((1 << hit.collider.gameObject.layer) & objLayer) != 0)
+            // 플레이어가 워리어타입이고 레이어가 enemylayer 일때
+            if ((hitLayer & enemyLayer) != 0 && playerCharacterType == Character.Warrior)
+            {
+                isMoving = true;
+                animator.SetTrigger("Attack");
+                canWarriorMove = false;
+                // audiosource.PlayOneShot(sfx_Attack);
+                cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
+                
+                Monster enemy = hit.collider.GetComponent<Monster>();
+                enemy.MonsterDie(this);
+                return false;
+            }
+
+            // 이동 방향에 Floor 레이어가 감지되면 통과 허용
+            if ((hitLayer & floorLayer) != 0) return true;
+
+            // 이동 할 수 있는 오브젝트 레이어일때
+            if ((hitLayer & objLayer) != 0)
             {
                 isMoving = true;
                 ImageStats(dir);
@@ -225,9 +349,13 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
-            SpikeScript spike = hit.collider.GetComponent<SpikeScript>();//스파이크 받고
+
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
+            if (!audiosource.isPlaying)
+            {
+                audiosource.PlayOneShot(sfx_BumpSound);
+            }
 
         }
         else
@@ -236,15 +364,55 @@ public class Player : MonoBehaviour
             Debug.Log("<color=green>[통과]</color> 앞이 비어있습니다. 이동 가능!");
         }
 
+        // isOnSpike가 활성화가 된 상태라면
+        if (isOnSpike)
+        {
+            isOnSpike = false;
+            animator.SetBool("OnSpikeIdle", false);
+        }
         // 4. 씬(Scene) 뷰 시각화 (빨간색=막힘, 녹색=통과) (실제 레이와 디버그 레이의 길이를 0.5f로 일치시킴)
         Debug.DrawRay(rayStart, dir * rayDistance, hit.collider != null ? Color.red : Color.green, 0.5f);
 
         // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
         return hit.collider == null;
     }
+
+    // 캐릭터 스킬
+    private void CharacterSkill()
+    {
+        isMoving = true;
+        switch (playerCharacterType)
+        {
+            case Character.Warrior:
+                WarriorSkill();
+                break;
+            case Character.Thief:
+                ThiefSkill();
+                break;
+            case Character.Wizard:
+                WizardSkill();
+                break;
+        }
+        isMoving = false;
+    }
+
+    private void WarriorSkill()
+    {
+
+    }
+    private void ThiefSkill()
+    {
+
+    }
+    private void WizardSkill()
+    {
+
+    }
+
+
     void Update()
     {
-        if (!isMoving && !stagePlayEnd)
+        if (canWarriorMove && !isMoving && !stagePlayEnd)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
@@ -266,6 +434,19 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    public void SfxWarriorAttack()
+    {
+        audiosource.PlayOneShot(sfx_Attack);
+    }
+    public void WarrirMoveFalse()
+    {
+        canWarriorMove = false;
+        Debug.Log("워리어 이동 불가");
+    }
+    public void WarrirMoveTrue()
+    {
+        canWarriorMove = true;
+        Debug.Log("워리어 이동 가능");
+    }
 }
-// 장애물 인식 raycast gameover로 일단 만들기
-// 움직임 로직 수정 앞에 트랩있을때 인식불가

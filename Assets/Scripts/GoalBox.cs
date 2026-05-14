@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GoalBox : MonoBehaviour
 {
-    [SerializeField] private GameObject goalObj;
+    [SerializeField] private GameObject treasureObj;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,7 +20,10 @@ public class GoalBox : MonoBehaviour
     {
         Vector2 goalPos = transform.position;
         goalPos.y -= 0.5f;
-        Instantiate(goalObj, goalPos, Quaternion.identity);
+        // Instantiate(goalObj, goalPos, Quaternion.identity);
+        treasureObj.transform.position = goalPos;
+        
+
     }
 
     // 애니메이션 이벤트에서 호출
