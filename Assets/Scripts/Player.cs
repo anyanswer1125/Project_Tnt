@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.Multiplayer.PlayMode;
+using UnityEngine;
 
 public enum State
 {
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask objLayer;    // 움직을 수 있는 게임오브젝트 레이어
     [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
     [SerializeField] private LayerMask enemyLayer;  // 적 레이어
+    [SerializeField] private LayerMask obstacleLayer;  // 레이어
 
     [SerializeField] private GameObject vfx_JumpEffectObj; //점프 이펙트 프리팹
     [SerializeField] private GameObject vfx_PushEffect; // 푸쉬 이펙트 프리팹
@@ -27,28 +30,29 @@ public class Player : MonoBehaviour
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
     [SerializeField] private bool isOnSpike = false; // 도적타입일 때 함정위에 있는지 체크(현재 도적타입에 대한 변수이므로 초기값은 false이여야 함)
+    [SerializeField] private bool isWizardSkill;    // 마법사타입일 때 스킬을 사용할 수 있는 지 여부
     [SerializeField] new BoxCollider2D collider2D;  // Player 콜라이더
 
     [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
 
     [SerializeField] private GameObject goalTimelineObj;
-
+    [SerializeField] private GameObject TeleportCursor; // 마법사의 스킬 커서
+    [SerializeField] private GameObject TeleportRangeCursor;    // 마법사의 스킬 범위
+    [SerializeField] private SpriteRenderer teleportSprite; // 마법사의 스킬 사용가능 한지 표시하는 역할
     //SFX
     [SerializeField] private AudioClip sfx_MoveSound;
     [SerializeField] private AudioClip sfx_PushBox;
     [SerializeField] private AudioClip sfx_Attack;
     [SerializeField] private AudioClip sfx_BumpSound;
-    // [SerializeField] private AudioClip sfx_Win;
 
     [SerializeField] private GameObject winTimelineObj;
-
-    
     [SerializeField] private GameObject cameraShakeObj;
-    private AudioSource audiosource;
-    
-    
-    private bool canWarriorMove = true;
 
+    [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
+
+    private AudioSource audiosource;
+
+    private bool canWarriorMove = true;
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -62,7 +66,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Initialize();
+        //Initialize();
     }
 
     // 상태 변환 메서드 (외부에서 쓸 수 있도록 공개)
@@ -144,7 +148,7 @@ public class Player : MonoBehaviour
     private void PlayerWin()
     {
         ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
-        // audiosource.PlayOneShot(sfx_Win);
+
         winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
         stagePlayEnd = true;
@@ -180,7 +184,7 @@ public class Player : MonoBehaviour
 
 
     // 초기화 메서드
-    private void Initialize()
+    public void Initialize()
     {
         vfx_JumpEffectObj = Instantiate(vfx_JumpEffectObj);
         vfx_JumpEffectObj.SetActive(false);
@@ -202,6 +206,18 @@ public class Player : MonoBehaviour
         collider2D.isTrigger = true;
 
         isOnSpike = false; //현재 도적타입에 대한 변수이므로 초기값은 false이여야 함
+
+        // 현재 캐릭터 타입이 Wizard이라면
+        if (playerCharacterType == Character.Wizard)
+        {
+            TeleportCursor = transform.Find(nameof(TeleportCursor)).gameObject;
+            TeleportRangeCursor = transform.Find(nameof(TeleportRangeCursor)).gameObject;
+            teleportSprite = TeleportCursor.transform.Find("Square").GetComponent<SpriteRenderer>();
+            WizardSkillSetActive(false);
+            TTam.AddRange(GetComponentsInChildren<TTam>());
+            // 초기 위치에서 마법사 스킬을 쓸 수 있는 지 체크
+            isWizardSkill = CanWizardSkill();
+        }
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -253,6 +269,9 @@ public class Player : MonoBehaviour
 
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + dir;
+        ResetAllAnimatorParameters();
+        if (playerCharacterType == Character.Wizard)
+            animator.SetBool("De", false);
 
         if (isOnSpike)
         {
@@ -261,7 +280,9 @@ public class Player : MonoBehaviour
         }
         else
             animator.SetBool("Move", true);
-            audiosource.PlayOneShot(sfx_MoveSound);
+
+
+        audiosource.PlayOneShot(sfx_MoveSound);
 
         // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
         //float distance = Vector3.Distance(startPos, targetPos);
@@ -293,17 +314,17 @@ public class Player : MonoBehaviour
         isMoving = false;
         if (isOnSpike)
         {
-            animator.SetBool("Move", false);
             animator.SetBool("OnSpikeMove", false);
             animator.SetBool("OnSpikeIdle", true);
 
         }
-        else
-            animator.SetBool("Move", false);
+        animator.SetBool("Move", false);
+        if (playerCharacterType == Character.Wizard)
+            isWizardSkill = CanWizardSkill();
     }
 
     // 이동 할 수 있는 지 확인하는 함수
-    bool CanMove(Vector2 dir)
+    private bool CanMove(Vector2 dir)
     {
         float sideOffset = 0.6f;  // 캐릭터 중심에서 옆으로 밀어낼 거리 (0.5f는 자기 콜라이더에 걸리므로 0.1f 여유치 추가)
         float upOffset = 0.5f;    // 캐릭터 중심에서 위로 올릴 거리 (높이)
@@ -324,12 +345,13 @@ public class Player : MonoBehaviour
             // 플레이어가 워리어타입이고 레이어가 enemylayer 일때
             if ((hitLayer & enemyLayer) != 0 && playerCharacterType == Character.Warrior)
             {
+                ImageStats(dir);
                 isMoving = true;
                 animator.SetTrigger("Attack");
                 canWarriorMove = false;
                 // audiosource.PlayOneShot(sfx_Attack);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
-                
+
                 Monster enemy = hit.collider.GetComponent<Monster>();
                 enemy.MonsterDie(this);
                 return false;
@@ -356,7 +378,6 @@ public class Player : MonoBehaviour
             {
                 audiosource.PlayOneShot(sfx_BumpSound);
             }
-
         }
         else
         {
@@ -377,36 +398,163 @@ public class Player : MonoBehaviour
         return hit.collider == null;
     }
 
-    // 캐릭터 스킬
-    private void CharacterSkill()
+    // 마법사의 스킬을 사용할때 텔포를 할 수 있는지 체크하는 함수( 텔포를 쓸 수 있다면 컬러는 블루, 없다면 레드로 표시)
+    bool CheckTeleportValidity(Vector2 dir)
+    {
+        Vector2 checkPos = (Vector2)TeleportCursor.transform.position + dir;
+
+        // 1. 해당 지점에 '장애물'이 있는지 확인
+        Collider2D hit = Physics2D.OverlapPoint(checkPos, obstacleLayer);
+
+        // 2. 조건 뒤집기: 부딪힌 게 없어야(null이어야) 갈 수 있는 곳입니다.
+        if (hit == null)
+        {
+            //Debug.Log(checkPos);
+            SkillCheckColor(Color.blue);
+            return true;
+        }
+        else
+        {
+            FloorButtonScript buttonScript = hit.GetComponent<FloorButtonScript>();
+            if (buttonScript != null)
+            {
+                //Debug.Log(checkPos);
+                SkillCheckColor(Color.blue);
+                return true;
+            }
+            Debug.Log(checkPos);
+            SkillCheckColor(Color.red);
+            // 장애물이 감지됨
+            Debug.Log($"<color=red>[막힘]</color> {hit.name} 장애물이 앞을 막고 있습니다.");
+            return false;
+        }
+    }
+
+    // 마법사 근처에 enemy가 있는지 체크하는 용도의 함수
+    private bool CanWizardSkill()
+    {
+        // 1. 검사할 중심점 (현재 캐릭터의 위치)
+        Vector2 center = transform.position + Vector3.up * 0.5f;
+
+        // 2. 사각형의 크기 (x 범위가 -2~2라면 가로 길이는 4, y도 마찬가지라면 4)
+        Vector2 size = new Vector2(5f, 5f);
+
+        // 3. 해당 범위 내에 적 레이어가 있는지 체크
+        Collider2D hit = Physics2D.OverlapBox(center, size, 0f, enemyLayer);
+
+        if (hit != null)
+        {
+            // 사각형 범위 안에 적이 하나라도 걸린 경우
+            //Debug.Log($"<color=red>[위험]</color> 범위 내에 {hit.name} 적이 있습니다!");
+            animator.SetBool("De", true);
+            foreach (var v in TTam)
+            {
+                v.gameObject.SetActive(true);
+            }
+            return false;
+        }
+        animator.SetBool("De", false);
+        foreach (var v in TTam)
+        {
+            v.gameObject.SetActive(false);
+        }
+        return true;
+    }
+    // 외부에서 호출 하는 용도의 메서드
+    public void isCanWizardSkill()
+    {
+        CanWizardSkill();
+        CheckTeleportValidity(Vector3.zero);
+        isWizardSkill = CanWizardSkill();
+    }
+
+    // 스킬 체크 컬러를 나타내는 용도의 메서드
+    private void SkillCheckColor(Color color)
+    {
+        color.a = 0.5f;           // 변수의 알파값을 수정한 뒤
+        teleportSprite.color = color; // 다시 스프라이트에 대입
+    }
+
+    // 마법사 스킬
+    private IEnumerator WizardSkill()
     {
         isMoving = true;
-        switch (playerCharacterType)
+        bool isSelected = false;
+        bool isSelectedTrun = false;
+
+        animator.SetBool("Skill", true);
+        WizardSkillSetActive(true);
+        // 스킬 커서 위치 초기화
+        TeleportCursor.transform.position = transform.position + Vector3.up * 0.5f;
+        // 시작 위치
+        Vector3 startPos = TeleportCursor.transform.position;
+        // 시작점에서 한번 체크
+        CheckTeleportValidity(new Vector3(0, 0, 0));
+
+        // 현재 커서가 얼마나 이동했는지 기록할 변수
+        float currentX = 0f;
+        float currentY = 0f;
+
+        while (!isSelected)
         {
-            case Character.Warrior:
-                WarriorSkill();
-                break;
-            case Character.Thief:
-                ThiefSkill();
-                break;
-            case Character.Wizard:
-                WizardSkill();
-                break;
+            if (Input.anyKeyDown)
+            {
+                float x = Input.GetAxisRaw("Horizontal");
+                float y = Input.GetAxisRaw("Vertical");
+
+                if (x != 0 || y != 0)
+                {
+                    // 1. 이동량 누적 (Time.deltaTime과 속도를 곱하면 더 부드럽게 이동 가능합니다)
+                    // 여기서는 단순 이동으로 구현하되 범위를 제한합니다.
+                    currentX += x;
+                    currentY += y;
+
+                    // 2. Mathf.Clamp(값, 최소, 최대)를 사용하여 범위 제한
+                    currentX = Mathf.Clamp(currentX, -2f, 2f);
+                    currentY = Mathf.Clamp(currentY, -2f, 2f);
+
+
+
+                    if (CheckTeleportValidity(new Vector3(x, y, 0)))
+                    {
+                        isSelectedTrun = true;
+                        //Debug.Log("이동 가능");
+                    }
+                    else
+                    {
+                        isSelectedTrun = false;
+                        //Debug.Log("이동 불가");
+                    }
+                    Vector3 dir = new Vector3(currentX, currentY, 0);
+                    TeleportCursor.transform.position = startPos + dir;
+                }
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    WizardSkillSetActive(false);
+                    isSelected = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.E) && isSelectedTrun)
+                {
+                    transform.position = TeleportCursor.transform.position - Vector3.up * 0.5f; //커서위치와 player 위치의 높이가 0.5 차이 나기 때문에 - 를 함
+                    WizardSkillSetActive(false);
+                    isSelected = true;
+                }
+
+            }
+            yield return null;
         }
+
+        isSelectedTrun = false;
+        animator.SetBool("Skill", false);
         isMoving = false;
+        isWizardSkill = CanWizardSkill();   //마법사로 이동한 후에도 체크
     }
 
-    private void WarriorSkill()
+    private void WizardSkillSetActive(bool active)
     {
-
-    }
-    private void ThiefSkill()
-    {
-
-    }
-    private void WizardSkill()
-    {
-
+        TeleportCursor.SetActive(active);
+        TeleportRangeCursor.SetActive(active);
     }
 
 
@@ -417,6 +565,11 @@ public class Player : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
+            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.T))
+            {
+                StartCoroutine(WizardSkill());
+                return;
+            }
 
             // 대각선을 방지하기 위한 조건문
             if (x != 0 && CanMove(new Vector3(x, 0, 0)))
