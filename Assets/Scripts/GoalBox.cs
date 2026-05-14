@@ -6,6 +6,7 @@ public class GoalBox : MonoBehaviour
 {
     [SerializeField] private GameObject treasureObj;
     [SerializeField] private GameObject clearPanel;//클리어시 활성화할 패널
+    [SerializeField] private AudioSource audioSource;
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +22,7 @@ public class GoalBox : MonoBehaviour
     private void Goal()
     {
         Vector2 goalPos = transform.position;
-        goalPos.y -= 0.5f;
+        goalPos.y -= 0f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
         treasureObj.transform.position = goalPos;
         treasureObj.SetActive(true);
@@ -67,8 +68,8 @@ public class GoalBox : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    void Update()
+    public void PlaySfx_ChestOpen()
     {
-
+        audioSource.Play();
     }
 }
