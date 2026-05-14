@@ -369,6 +369,50 @@ public class Player : MonoBehaviour
         return hit.collider == null;
     }
 
+    bool CanWizardSkill(Vector2 dir)
+    {
+        float sideOffset = 0.6f;  // 캐릭터 중심에서 옆으로 밀어낼 거리 (0.5f는 자기 콜라이더에 걸리므로 0.1f 여유치 추가)
+        float upOffset = 0.5f;    // 캐릭터 중심에서 위로 올릴 거리 (높이)
+        float rayDistance = 0.5f; // 감지 거리
+
+        // 2. 레이 시작 지점 계산
+        // 위로 upOffset만큼 올리고, 현재 이동하려는 방향(dir)으로 sideOffset만큼 미리 밀어줌
+        Vector2 rayStart = (Vector2)TeleportCursor.transform.position + Vector2.up * upOffset + (dir * sideOffset);
+
+        // 3. 레이 쏘기 (실제 거리 rayDistance 사용)
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, dir, rayDistance);
+        // 3. 디버그 로그 추가
+        if (hit.collider != null)
+        {
+            // 레이어의 비트연산을 int로 변환
+            int hitLayer = 1 << hit.collider.gameObject.layer;
+
+            // 이동 방향에 Floor 레이어가 감지되면 통과 허용
+            if ((hitLayer & floorLayer) != 0) return true;
+
+            // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
+            Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
+
+        }
+        else
+        {
+            // 아무것도 없을 때
+            Debug.Log("<color=green>[통과]</color> 앞이 비어있습니다. 이동 가능!");
+        }
+
+        // isOnSpike가 활성화가 된 상태라면
+        if (isOnSpike)
+        {
+            isOnSpike = false;
+            animator.SetBool("OnSpikeIdle", false);
+        }
+        // 4. 씬(Scene) 뷰 시각화 (빨간색=막힘, 녹색=통과) (실제 레이와 디버그 레이의 길이를 0.5f로 일치시킴)
+        Debug.DrawRay(rayStart, dir * rayDistance, hit.collider != null ? Color.red : Color.green, 0.5f);
+
+        // 결과 반환: 부딪힌 게 없어야 true(이동 가능)
+        return hit.collider == null;
+    }
+
     // 마법사 스킬
     private IEnumerator WizardSkill()
     {
@@ -404,9 +448,9 @@ public class Player : MonoBehaviour
                     currentX = Mathf.Clamp(currentX, -2f, 2f);
                     currentY = Mathf.Clamp(currentY, -2f, 2f);
 
-                    Vector3 dir = startPos + new Vector3(currentX, currentY, 0);
+                    Vector3 dir = new Vector3(currentX, currentY, 0);
 
-                    if (CanMove(dir))
+                    if (CanWizardSkill(dir))
                     {
                         Debug.Log("이동 가능");
                     }    
