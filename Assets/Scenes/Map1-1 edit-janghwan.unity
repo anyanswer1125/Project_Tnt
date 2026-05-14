@@ -976,6 +976,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
       value: 
@@ -2438,6 +2454,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
       value: 
@@ -3418,7 +3450,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4074,90 +4106,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &619394800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 619394802}
-  - component: {fileID: 619394801}
-  m_Layer: 0
-  m_Name: Global Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &619394801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619394800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
-  m_LightType: 4
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowsEnabled: 0
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!4 &619394802
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619394800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642758283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4181,6 +4129,22 @@ PrefabInstance:
     - target: {fileID: 838588809506635134, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
@@ -5116,6 +5080,22 @@ PrefabInstance:
     - target: {fileID: 838588809506635134, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
@@ -21048,6 +21028,7 @@ GameObject:
   - component: {fileID: 1574836890}
   - component: {fileID: 1574836889}
   - component: {fileID: 1574836892}
+  - component: {fileID: 1574836893}
   m_Layer: 0
   m_Name: CinemachineCamera(Main)
   m_TagString: Untagged
@@ -21168,6 +21149,23 @@ MonoBehaviour:
     FrequencyGain: 1
     Duration: 1
     m_NoiseOffsets: {x: 656.50964, y: 158.3942, z: -983.84973}
+--- !u!114 &1574836893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574836888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449ef5ebbe24720439ec31d15f7b6f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineVolumeSettings
+  Weight: 1
+  FocusTracking: 0
+  FocusTarget: {fileID: 0}
+  FocusOffset: 0
+  Profile: {fileID: 11400000, guid: 13a766d0247304d6587e6fecb30f04fe, type: 2}
 --- !u!1 &1577547753
 GameObject:
   m_ObjectHideFlags: 0
@@ -24640,6 +24638,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &2114878642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.34036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.33647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075035753829183425, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505220965747188773, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
+      propertyPath: m_Name
+      value: UtilManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0429d76c47f15451caedd1199872b9b6, type: 3}
 --- !u!1 &2125891683
 GameObject:
   m_ObjectHideFlags: 0
@@ -24782,6 +24837,22 @@ PrefabInstance:
     - target: {fileID: 838588809506635134, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
@@ -24941,6 +25012,22 @@ PrefabInstance:
     - target: {fileID: 838588809506635134, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919007310271832315, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[3]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3920908422456854290, guid: a45aa3ab65ca52345b841f73c09a26b7, type: 3}
       propertyPath: slimeParticle
@@ -25656,7 +25743,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 3628121008305618618}
   - {fileID: 519420032}
-  - {fileID: 619394802}
   - {fileID: 139229809}
   - {fileID: 3975935332655711871}
   - {fileID: 1032068109}
@@ -25688,3 +25774,4 @@ SceneRoots:
   - {fileID: 407691578}
   - {fileID: 1990532201}
   - {fileID: 189430285}
+  - {fileID: 2114878642}

@@ -562,6 +562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
+  sfx_SpikeOnOff: {fileID: 0}
 --- !u!95 &260283655
 Animator:
   serializedVersion: 7
@@ -779,7 +781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &343530207
 Transform:
   m_ObjectHideFlags: 0
@@ -826,7 +829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &385657180
 Transform:
   m_ObjectHideFlags: 0
@@ -4594,7 +4598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &1505730909
 Transform:
   m_ObjectHideFlags: 0
@@ -15262,6 +15267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
+  sfx_SpikeOnOff: {fileID: 0}
 --- !u!95 &1577547757
 Animator:
   serializedVersion: 7
@@ -15488,6 +15495,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   activeFloor: 1
+  sfx_FloorBtnOn: {fileID: 0}
+  sfx_FloorBtnOff: {fileID: 0}
 --- !u!61 &1592061871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16030,7 +16039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapGroup
   floorbuttons: []
-  spikes: []
+  upSpikes: []
+  downSpikes: []
 --- !u!4 &1976268282
 Transform:
   m_ObjectHideFlags: 0
@@ -16492,6 +16502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   activeFloor: 1
+  sfx_FloorBtnOn: {fileID: 0}
+  sfx_FloorBtnOff: {fileID: 0}
 --- !u!95 &2088298306
 Animator:
   serializedVersion: 7
@@ -16811,6 +16823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeActive: 0
+  spikeType: 0
+  sfx_SpikeOnOff: {fileID: 0}
 --- !u!50 &2113152678
 Rigidbody2D:
   serializedVersion: 5
