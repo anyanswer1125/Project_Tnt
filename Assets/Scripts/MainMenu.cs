@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public static MainMenu instance;
     private int currentIndex = 1;
-    private static bool isMapSelection = false;//선택하고 있는지ㅇ
+    private static bool isMapSelection = false;//선택하고 있는지
 
     [Header("화살표")]
     public GameObject selectPoint;
@@ -96,6 +96,16 @@ public class MainMenu : MonoBehaviour
     {
         currentIndex = Mathf.Clamp(currentIndex + direction, 0, mapPanels.Length - 1);
         UpdatePanels();
+    }
+    void Start()
+    {
+        // 다른 씬에서 넘어올 때 isMapSelection이 true로 설정되어 있다면
+        if (isMapSelection)
+        {
+            mainMenuPanel.SetActive(false); // 메인 타이틀 메뉴 숨기기
+            currentIndex = 0; // 혹은 마지막으로 플레이한 인덱스
+            UpdatePanels(); // 맵 패널들 활성화
+        }
     }
     void Update()
     {
