@@ -232,7 +232,8 @@ public class Player : MonoBehaviour
     public void PlayVfxPush(Vector3 pos)
     {
         // -- 그냥 여기에다가 SFX 추가할게요
-        audiosource.PlayOneShot(sfx_PushBox);
+        //audiosource.PlayOneShot(sfx_PushBox);
+        SoundManager.Instance.PlaySFX(109);
 
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
@@ -282,7 +283,8 @@ public class Player : MonoBehaviour
             animator.SetBool("Move", true);
 
 
-        audiosource.PlayOneShot(sfx_MoveSound);
+        //audiosource.PlayOneShot(sfx_MoveSound);
+        SoundManager.Instance.PlaySFX(105);
 
         // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
         //float distance = Vector3.Distance(startPos, targetPos);
@@ -377,6 +379,7 @@ public class Player : MonoBehaviour
             if (!audiosource.isPlaying)
             {
                 audiosource.PlayOneShot(sfx_BumpSound);
+                //SoundManager.Instance.PlaySFX()
             }
         }
         else
@@ -539,6 +542,7 @@ public class Player : MonoBehaviour
                     transform.position = TeleportCursor.transform.position - Vector3.up * 0.5f; //커서위치와 player 위치의 높이가 0.5 차이 나기 때문에 - 를 함
                     WizardSkillSetActive(false);
                     isSelected = true;
+                    SoundManager.Instance.PlaySFX(108);
                 }
 
             }
@@ -590,7 +594,8 @@ public class Player : MonoBehaviour
 
     public void SfxWarriorAttack()
     {
-        audiosource.PlayOneShot(sfx_Attack);
+        //audiosource.PlayOneShot(sfx_Attack);
+        SoundManager.Instance.PlaySFX(107);
     }
     public void WarrirMoveFalse()
     {
