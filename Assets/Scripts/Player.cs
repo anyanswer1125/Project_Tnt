@@ -241,6 +241,14 @@ public class Player : MonoBehaviour
 
     }
 
+    public void PlayVfxAttack(Vector3 pos)
+    {
+        
+        vfx_PushEffect.SetActive(true);
+        vfx_PushEffect.transform.position = pos;
+        vfx_PushEffect.transform.rotation = transform.rotation;
+    }
+
     // isMoving를 외부에 전달하는 용도
     public void IsMoving(bool isMoveing)
     {
@@ -347,14 +355,20 @@ public class Player : MonoBehaviour
             // 플레이어가 워리어타입이고 레이어가 enemylayer 일때
             if ((hitLayer & enemyLayer) != 0 && playerCharacterType == Character.Warrior)
             {
+                Monster enemy = hit.collider.GetComponent<Monster>();
                 ImageStats(dir);
                 isMoving = true;
                 animator.SetTrigger("Attack");
+                vfx_PushEffect.SetActive(true);
+
+                Vector3 centerPos = ((enemy.transform.position + Vector3.down * 0.5f) + transform.position) / 2f;
+
+                vfx_PushEffect.transform.position = centerPos;
+                vfx_PushEffect.transform.rotation = transform.rotation;
                 canWarriorMove = false;
                 // audiosource.PlayOneShot(sfx_Attack);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
-                Monster enemy = hit.collider.GetComponent<Monster>();
                 enemy.MonsterDie(this);
                 return false;
             }
