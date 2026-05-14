@@ -24,6 +24,7 @@ public class GoalBox : MonoBehaviour
         goalPos.y -= 0.5f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
         treasureObj.transform.position = goalPos;
+        treasureObj.SetActive(true);
         
 
     }
