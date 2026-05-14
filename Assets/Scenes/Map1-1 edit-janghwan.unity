@@ -23467,7 +23467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606450989807431507, guid: ad0cc47bb38c309488e6d602726efbd0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6882944946801058159, guid: ad0cc47bb38c309488e6d602726efbd0, type: 3}
       propertyPath: player
@@ -24862,6 +24862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290871538612266891, guid: 4450403f5bae5c44e9ff57f16faf582a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5348caf93299b42c6b87d5ab0a812f4e, type: 3}
     - target: {fileID: 5350068149254899522, guid: 4450403f5bae5c44e9ff57f16faf582a, type: 3}
       propertyPath: m_Name
       value: Key
@@ -25107,11 +25111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4958517690707194953, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5121649008012438145, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7393068012084249894, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: sfx_PlayerChange
@@ -25593,8 +25597,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 949046768}
     - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1729853892565421317, guid: a57a81b8480b64e539ec0a771123b6ea, type: 3}
+    - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486653483242657474, guid: 426fa3bc9308a464ebc8317c27a94868, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
