@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Multiplayer.PlayMode;
 using UnityEngine;
 
 public enum State
@@ -42,12 +43,16 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip sfx_MoveSound;
     [SerializeField] private AudioClip sfx_PushBox;
     [SerializeField] private AudioClip sfx_Attack;
+    [SerializeField] private AudioClip sfx_BumpSound;
 
+    [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
 
     [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
 
     private AudioSource audiosource;
+
+    private bool canWarriorMove = true;
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -61,7 +66,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Initialize();
+        //Initialize();
     }
 
     // 상태 변환 메서드 (외부에서 쓸 수 있도록 공개)
@@ -143,6 +148,8 @@ public class Player : MonoBehaviour
     private void PlayerWin()
     {
         ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
+
+        winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
@@ -177,7 +184,7 @@ public class Player : MonoBehaviour
 
 
     // 초기화 메서드
-    private void Initialize()
+    public void Initialize()
     {
         vfx_JumpEffectObj = Instantiate(vfx_JumpEffectObj);
         vfx_JumpEffectObj.SetActive(false);
@@ -208,10 +215,9 @@ public class Player : MonoBehaviour
             teleportSprite = TeleportCursor.transform.Find("Square").GetComponent<SpriteRenderer>();
             WizardSkillSetActive(false);
             TTam.AddRange(GetComponentsInChildren<TTam>());
-
+            // 초기 위치에서 마법사 스킬을 쓸 수 있는 지 체크
+            isWizardSkill = CanWizardSkill();
         }
-        // 초기 위치에서 마법사 스킬을 쓸 수 있는 지 체크
-        isWizardSkill = CanWizardSkill();
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -313,11 +319,12 @@ public class Player : MonoBehaviour
 
         }
         animator.SetBool("Move", false);
-        isWizardSkill = CanWizardSkill();
+        if (playerCharacterType == Character.Wizard)
+            isWizardSkill = CanWizardSkill();
     }
 
     // 이동 할 수 있는 지 확인하는 함수
-    bool CanMove(Vector2 dir)
+    private bool CanMove(Vector2 dir)
     {
         float sideOffset = 0.6f;  // 캐릭터 중심에서 옆으로 밀어낼 거리 (0.5f는 자기 콜라이더에 걸리므로 0.1f 여유치 추가)
         float upOffset = 0.5f;    // 캐릭터 중심에서 위로 올릴 거리 (높이)
@@ -338,9 +345,11 @@ public class Player : MonoBehaviour
             // 플레이어가 워리어타입이고 레이어가 enemylayer 일때
             if ((hitLayer & enemyLayer) != 0 && playerCharacterType == Character.Warrior)
             {
+                ImageStats(dir);
                 isMoving = true;
                 animator.SetTrigger("Attack");
-                audiosource.PlayOneShot(sfx_Attack);
+                canWarriorMove = false;
+                // audiosource.PlayOneShot(sfx_Attack);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
                 Monster enemy = hit.collider.GetComponent<Monster>();
@@ -365,7 +374,10 @@ public class Player : MonoBehaviour
 
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
-
+            if (!audiosource.isPlaying)
+            {
+                audiosource.PlayOneShot(sfx_BumpSound);
+            }
         }
         else
         {
@@ -404,13 +416,13 @@ public class Player : MonoBehaviour
         else
         {
             FloorButtonScript buttonScript = hit.GetComponent<FloorButtonScript>();
-            if(buttonScript != null)
+            if (buttonScript != null)
             {
                 //Debug.Log(checkPos);
                 SkillCheckColor(Color.blue);
                 return true;
             }
-            //Debug.Log(checkPos);
+            Debug.Log(checkPos);
             SkillCheckColor(Color.red);
             // 장애물이 감지됨
             Debug.Log($"<color=red>[막힘]</color> {hit.name} 장애물이 앞을 막고 있습니다.");
@@ -419,7 +431,7 @@ public class Player : MonoBehaviour
     }
 
     // 마법사 근처에 enemy가 있는지 체크하는 용도의 함수
-    bool CanWizardSkill()
+    private bool CanWizardSkill()
     {
         // 1. 검사할 중심점 (현재 캐릭터의 위치)
         Vector2 center = transform.position + Vector3.up * 0.5f;
@@ -435,7 +447,7 @@ public class Player : MonoBehaviour
             // 사각형 범위 안에 적이 하나라도 걸린 경우
             //Debug.Log($"<color=red>[위험]</color> 범위 내에 {hit.name} 적이 있습니다!");
             animator.SetBool("De", true);
-            foreach(var v in TTam)
+            foreach (var v in TTam)
             {
                 v.gameObject.SetActive(true);
             }
@@ -447,6 +459,13 @@ public class Player : MonoBehaviour
             v.gameObject.SetActive(false);
         }
         return true;
+    }
+    // 외부에서 호출 하는 용도의 메서드
+    public void isCanWizardSkill()
+    {
+        CanWizardSkill();
+        CheckTeleportValidity(Vector3.zero);
+        isWizardSkill = CanWizardSkill();
     }
 
     // 스킬 체크 컬러를 나타내는 용도의 메서드
@@ -470,7 +489,7 @@ public class Player : MonoBehaviour
         // 시작 위치
         Vector3 startPos = TeleportCursor.transform.position;
         // 시작점에서 한번 체크
-        CheckTeleportValidity(new Vector3(0,0,0));
+        CheckTeleportValidity(new Vector3(0, 0, 0));
 
         // 현재 커서가 얼마나 이동했는지 기록할 변수
         float currentX = 0f;
@@ -494,7 +513,7 @@ public class Player : MonoBehaviour
                     currentX = Mathf.Clamp(currentX, -2f, 2f);
                     currentY = Mathf.Clamp(currentY, -2f, 2f);
 
-                    
+
 
                     if (CheckTeleportValidity(new Vector3(x, y, 0)))
                     {
@@ -541,12 +560,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving && !stagePlayEnd)
+        if (canWarriorMove && !isMoving && !stagePlayEnd)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
-            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.T) )
+            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.T))
             {
                 StartCoroutine(WizardSkill());
                 return;
@@ -567,5 +586,20 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    public void SfxWarriorAttack()
+    {
+        audiosource.PlayOneShot(sfx_Attack);
+    }
+    public void WarrirMoveFalse()
+    {
+        canWarriorMove = false;
+        Debug.Log("워리어 이동 불가");
+    }
+    public void WarrirMoveTrue()
+    {
+        canWarriorMove = true;
+        Debug.Log("워리어 이동 가능");
     }
 }
