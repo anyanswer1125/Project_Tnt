@@ -25,5 +25,10 @@ public class Goal : MonoBehaviour
 
         // goalTimelineObj.SetActive(true);
         player.SetState(State.Win);
+
     }
 }
+
+   
+
+
