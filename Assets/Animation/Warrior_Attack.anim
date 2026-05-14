@@ -22,13 +22,13 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -2775010855876669632, guid: e322c8b3547754373b03339219b73658, type: 3}
-    - time: 0.0625
+    - time: 0.083333336
       value: {fileID: 5735446903023108277, guid: e322c8b3547754373b03339219b73658, type: 3}
     - time: 0.125
       value: {fileID: 2022517745812673094, guid: e322c8b3547754373b03339219b73658, type: 3}
-    - time: 0.1875
+    - time: 0.16666667
       value: {fileID: 8525463986328450768, guid: e322c8b3547754373b03339219b73658, type: 3}
-    - time: 0.25
+    - time: 0.20833333
       value: {fileID: -978000961257790584, guid: e322c8b3547754373b03339219b73658, type: 3}
     - time: 0.375
       value: {fileID: -978000961257790584, guid: e322c8b3547754373b03339219b73658, type: 3}
@@ -37,7 +37,7 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 16
+  m_SampleRate: 24
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4375
+    m_StopTime: 0.41666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -84,4 +84,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.083333336
+    functionName: SfxWarriorAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.375
+    functionName: WarrirMoveTrue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

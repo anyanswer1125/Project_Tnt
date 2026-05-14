@@ -22,6 +22,9 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private CharacterSelectUI characterSelectUI;
     [SerializeField] private GameObject vfx_ChangePlayer;
 
+    [SerializeField] private AudioClip sfx_PlayerChange;
+    
+    private AudioSource audioSource;
     void Start()
     {
         Initialize();
@@ -35,6 +38,8 @@ public class CharacterSelect : MonoBehaviour
         characterSelectUI = GameObject.FindAnyObjectByType<CharacterSelectUI>();
         characterSelectUI?.Initialize();
         characterSelectUI?.SelectUI(currentCharacter);
+
+        audioSource = GetComponent<AudioSource>();
 
         for (int i = 0; i < players.Count; i++)
         {
@@ -63,7 +68,7 @@ public class CharacterSelect : MonoBehaviour
         Player nextPlayer = playerDictionary[c];
         // 캐릭터 전체를 비활성화
 
-
+        audioSource.PlayOneShot(sfx_PlayerChange);
         //AutoDestroy 확인했습니다, 이 이펙트도 풀링 형식으로 작업하겠습니다.
         vfx_ChangePlayer.transform.position = currentPlayer.transform.position;
         vfx_ChangePlayer.SetActive(true);
