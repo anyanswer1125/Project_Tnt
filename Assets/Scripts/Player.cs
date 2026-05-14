@@ -32,16 +32,23 @@ public class Player : MonoBehaviour
     [SerializeField] private Character playerCharacterType; //이 플레이어의 캐릭터 타입
 
     [SerializeField] private GameObject goalTimelineObj;
-    [SerializeField] private GameObject TeleportCursor; // 마법사의 스킬 커서
-    [SerializeField] private GameObject TeleportRangeCursor;    // 마법사의 스킬 범위
 
     //SFX
     [SerializeField] private AudioClip sfx_MoveSound;
     [SerializeField] private AudioClip sfx_PushBox;
     [SerializeField] private AudioClip sfx_Attack;
+    [SerializeField] private AudioClip sfx_BumpSound;
+    // [SerializeField] private AudioClip sfx_Win;
 
+    [SerializeField] private GameObject winTimelineObj;
+
+    
     [SerializeField] private GameObject cameraShakeObj;
     private AudioSource audiosource;
+    
+    
+    private bool canWarriorMove = true;
+
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -137,6 +144,8 @@ public class Player : MonoBehaviour
     private void PlayerWin()
     {
         ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
+        // audiosource.PlayOneShot(sfx_Win);
+        winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
@@ -193,14 +202,6 @@ public class Player : MonoBehaviour
         collider2D.isTrigger = true;
 
         isOnSpike = false; //현재 도적타입에 대한 변수이므로 초기값은 false이여야 함
-
-        // 현재 캐릭터 타입이 Wizard이라면
-        if (playerCharacterType == Character.Wizard)
-        {
-            TeleportCursor = transform.Find(nameof(TeleportCursor)).gameObject;
-            TeleportRangeCursor = transform.Find(nameof(TeleportRangeCursor)).gameObject;
-            WizardSkillSetActive(false);
-        }
     }
 
     // 오브젝트 풀링을 통한 VFX 재사용: 생성 비용 최적화 및 위치 재설정
@@ -260,7 +261,7 @@ public class Player : MonoBehaviour
         }
         else
             animator.SetBool("Move", true);
-        audiosource.PlayOneShot(sfx_MoveSound);
+            audiosource.PlayOneShot(sfx_MoveSound);
 
         // 두 지점 사이의 거리 (보통 1이겠지만, 혹시 모르니 계산)
         //float distance = Vector3.Distance(startPos, targetPos);
@@ -292,11 +293,13 @@ public class Player : MonoBehaviour
         isMoving = false;
         if (isOnSpike)
         {
+            animator.SetBool("Move", false);
             animator.SetBool("OnSpikeMove", false);
             animator.SetBool("OnSpikeIdle", true);
 
         }
-        animator.SetBool("Move", false);
+        else
+            animator.SetBool("Move", false);
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -323,9 +326,10 @@ public class Player : MonoBehaviour
             {
                 isMoving = true;
                 animator.SetTrigger("Attack");
-                audiosource.PlayOneShot(sfx_Attack);
+                canWarriorMove = false;
+                // audiosource.PlayOneShot(sfx_Attack);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
-
+                
                 Monster enemy = hit.collider.GetComponent<Monster>();
                 enemy.MonsterDie(this);
                 return false;
@@ -348,6 +352,10 @@ public class Player : MonoBehaviour
 
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
+            if (!audiosource.isPlaying)
+            {
+                audiosource.PlayOneShot(sfx_BumpSound);
+            }
 
         }
         else
@@ -369,92 +377,46 @@ public class Player : MonoBehaviour
         return hit.collider == null;
     }
 
-    // 마법사 스킬
-    private IEnumerator WizardSkill()
+    // 캐릭터 스킬
+    private void CharacterSkill()
     {
         isMoving = true;
-        bool isSelected = false;
-
-        animator.SetBool("Skill", true);
-        WizardSkillSetActive(true);
-        // 스킬 커서 위치 초기화
-        TeleportCursor.transform.position = transform.position + Vector3.up * 0.5f;
-        // 시작 위치
-        Vector3 startPos = TeleportCursor.transform.position;
-
-        // 현재 커서가 얼마나 이동했는지 기록할 변수
-        float currentX = 0f;
-        float currentY = 0f;
-
-        while (!isSelected)
+        switch (playerCharacterType)
         {
-            if (Input.anyKeyDown)
-            {
-                float x = Input.GetAxisRaw("Horizontal");
-                float y = Input.GetAxisRaw("Vertical");
-
-                if (x != 0 || y != 0)
-                {
-                    // 1. 이동량 누적 (Time.deltaTime과 속도를 곱하면 더 부드럽게 이동 가능합니다)
-                    // 여기서는 단순 이동으로 구현하되 범위를 제한합니다.
-                    currentX += x;
-                    currentY += y;
-
-                    // 2. Mathf.Clamp(값, 최소, 최대)를 사용하여 범위 제한
-                    currentX = Mathf.Clamp(currentX, -2f, 2f);
-                    currentY = Mathf.Clamp(currentY, -2f, 2f);
-
-                    Vector3 dir = startPos + new Vector3(currentX, currentY, 0);
-
-                    if (CanMove(dir))
-                    {
-                        Debug.Log("이동 가능");
-                    }    
-                    else
-                    {       
-                        Debug.Log("이동 불가");
-                    }
-
-                    TeleportCursor.transform.position = startPos + new Vector3(currentX, currentY, 0);
-                }
-
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    WizardSkillSetActive(false);
-                    isSelected = true;
-                }
-                else if (Input.GetKeyDown(KeyCode.E))
-                {
-                    transform.position = TeleportCursor.transform.position - Vector3.up * 0.5f; //커서위치와 player 위치의 높이가 0.5 차이 나기 때문에 - 를 함
-                    WizardSkillSetActive(false);
-                    isSelected = true;
-                }
-            }
-            yield return null;
+            case Character.Warrior:
+                WarriorSkill();
+                break;
+            case Character.Thief:
+                ThiefSkill();
+                break;
+            case Character.Wizard:
+                WizardSkill();
+                break;
         }
-        animator.SetBool("Skill", false);
         isMoving = false;
     }
 
-    private void WizardSkillSetActive(bool active)
+    private void WarriorSkill()
     {
-        TeleportCursor.SetActive(active);
-        TeleportRangeCursor.SetActive(active);
+
+    }
+    private void ThiefSkill()
+    {
+
+    }
+    private void WizardSkill()
+    {
+
     }
 
 
     void Update()
     {
-        if (!isMoving && !stagePlayEnd)
+        if (canWarriorMove && !isMoving && !stagePlayEnd)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
-            if (playerCharacterType == Character.Wizard && Input.GetKeyDown(KeyCode.T))
-            {
-                StartCoroutine(WizardSkill());
-                return;
-            }
 
             // 대각선을 방지하기 위한 조건문
             if (x != 0 && CanMove(new Vector3(x, 0, 0)))
@@ -471,5 +433,20 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    public void SfxWarriorAttack()
+    {
+        audiosource.PlayOneShot(sfx_Attack);
+    }
+    public void WarrirMoveFalse()
+    {
+        canWarriorMove = false;
+        Debug.Log("워리어 이동 불가");
+    }
+    public void WarrirMoveTrue()
+    {
+        canWarriorMove = true;
+        Debug.Log("워리어 이동 가능");
     }
 }
