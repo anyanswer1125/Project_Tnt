@@ -1,0 +1,37 @@
+[
+  {
+    "StageID": 1,
+    "Turns": 15,
+    "MapIndex": "Map1-1"
+  },
+  {
+    "StageID": 2,
+    "Turns": 25,
+    "MapIndex": "Map1-2"
+  },
+  {
+    "StageID": 3,
+    "Turns": 20,
+    "MapIndex": "Map2-1"
+  },
+  {
+    "StageID": 4,
+    "Turns": 18,
+    "MapIndex": "Map2-2"
+  },
+  {
+    "StageID": 5,
+    "Turns": 15,
+    "MapIndex": "Map3-1"
+  },
+  {
+    "StageID": 6,
+    "Turns": 100,
+    "MapIndex": "Map3-2"
+  },
+  {
+    "StageID": 7,
+    "Turns": 100,
+    "MapIndex": "Map4-1"
+  }
+]
