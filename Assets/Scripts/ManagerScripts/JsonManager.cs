@@ -11,11 +11,11 @@ public class JsonManager : MonoBehaviour
 
     // 에디터에서 보기위한 변수들 ([HideInInspector] {변수 변수명} 를 써서 보기 편하게 함)
     [SerializeField] private List<TextAsset> textAsset;
-    [SerializeField] private List<Star_TurnTable> starTurnDebugList;
+    [SerializeField] private List<StageTurns> stageTurnDebugList;
     [SerializeField] private List<SoundTable> soundDebugList;
 
     // 딕셔너리를 사용한 실질적인 스테이지 턴 데이터 테이블
-    public Dictionary<int, Star_TurnTable> StarTurnDict { get; private set; }
+    public Dictionary<int, StageTurns> StageTurnDict { get; private set; }
     // 딕셔너리를 사용한 실질적인 스테이지 사운드 테이블
     public Dictionary<int, SoundTable> SoundDict { get; private set; }
 
@@ -34,8 +34,8 @@ public class JsonManager : MonoBehaviour
     // 모든 데이터 초기화
     private void InitAllData()
     {
-        StarTurnDict = LoadDataDictionary<Star_TurnTable>(nameof(Star_TurnTable), data => data.Round);
-        starTurnDebugList = new List<Star_TurnTable>(StarTurnDict.Values);
+        StageTurnDict = LoadDataDictionary<StageTurns>(nameof(StageTurns), data => data.StageID);
+        stageTurnDebugList = new List<StageTurns>(StageTurnDict.Values);
 
         SoundDict = LoadDataDictionary<SoundTable>(nameof(SoundTable), data => data.Index);
         soundDebugList = new List<SoundTable>(SoundDict.Values);

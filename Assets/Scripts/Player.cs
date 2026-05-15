@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Multiplayer.PlayMode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum State
 {
@@ -26,7 +27,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private State currentState; // 에디터에서 확인하는 용도
     [SerializeField] private Animator animator; // Player의 animator
-    [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
     [SerializeField] private bool isOnSpike = false; // 도적타입일 때 함정위에 있는지 체크(현재 도적타입에 대한 변수이므로 초기값은 false이여야 함)
@@ -90,8 +90,8 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
-        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         StopAllCoroutines();    // 모든 코루틴 종료
+        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
         stagePlayEnd = true;
@@ -135,8 +135,17 @@ public class Player : MonoBehaviour
 
             yield return null;
         }
+
+        // 다시 시작
+        RestartCurrentScene();
     }
 
+    // 게임을 다시 시작 합니다.
+    private void RestartCurrentScene()
+    {
+        // 현재 활성화된 씬을 다시 로드 (초기화)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     // 외부에서 Transform를 받을 메서드
     public void SetPlayerTransform(Transform transform)
     {
@@ -154,6 +163,19 @@ public class Player : MonoBehaviour
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
 
+    }
+
+    public void PlayerTurn()
+    {
+        if(TurnManager.instance.TurnCount > 1)
+        {
+            TurnManager.instance.SetTurnCount();
+        }
+        else
+        {
+            TurnManager.instance.SetTurnCount();
+            SetState(State.Lose);
+        }
     }
 
     // 애니메이터의 Parameters의 모든 값을 0이나 false
@@ -198,8 +220,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         stagePlayEnd = false;
         isMoving = false;
-
-        turnManager = FindAnyObjectByType<TurnManager>();
 
         collider2D = GetComponent<BoxCollider2D>();
 
@@ -273,7 +293,6 @@ public class Player : MonoBehaviour
     IEnumerator Movement(Vector3 dir)
     {
         ImageStats(dir);
-        turnManager?.SetTurnCount();
         isMoving = true;
 
         Vector3 startPos = transform.position;
@@ -331,6 +350,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Move", false);
         if (playerCharacterType == Character.Wizard)
             isWizardSkill = CanWizardSkill();
+        PlayerTurn();
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -418,11 +438,10 @@ public class Player : MonoBehaviour
     // 마법사의 스킬을 사용할때 텔포를 할 수 있는지 체크하는 함수( 텔포를 쓸 수 있다면 컬러는 블루, 없다면 레드로 표시)
     bool CheckTeleportValidity(Vector2 dir)
     {
-        Vector2 checkPos = (Vector2)TeleportCursor.transform.position + dir;
+        Vector2 checkPos = (Vector2)transform.position + dir + Vector2.up* 0.5f;
 
         // 1. 해당 지점에 '장애물'이 있는지 확인
         Collider2D hit = Physics2D.OverlapPoint(checkPos, obstacleLayer);
-
         // 2. 조건 뒤집기: 부딪힌 게 없어야(null이어야) 갈 수 있는 곳입니다.
         if (hit == null)
         {
@@ -532,7 +551,7 @@ public class Player : MonoBehaviour
 
 
 
-                    if (CheckTeleportValidity(new Vector3(x, y, 0)))
+                    if (CheckTeleportValidity(new Vector3(currentX, currentY, 0)))
                     {
                         isSelectedTrun = true;
                         //Debug.Log("이동 가능");
@@ -557,6 +576,7 @@ public class Player : MonoBehaviour
                     WizardSkillSetActive(false);
                     isSelected = true;
                     SoundManager.Instance.PlaySFX(108);
+                    PlayerTurn();
                 }
 
             }
@@ -603,6 +623,10 @@ public class Player : MonoBehaviour
                 StartCoroutine(Movement(new Vector3(0, y, 0)));
             }
 
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                RestartCurrentScene();
+            }
         }
     }
 

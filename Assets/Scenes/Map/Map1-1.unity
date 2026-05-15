@@ -4498,7 +4498,7 @@ GameObject:
   - component: {fileID: 1544319863}
   - component: {fileID: 1544319865}
   - component: {fileID: 1544319866}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -17035,7 +17035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &688502152963232981
 GameObject:
   m_ObjectHideFlags: 0
@@ -17816,21 +17816,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195233461364957961, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1391828794509417289, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_Name
       value: CharacterSelect
       objectReference: {fileID: 0}
     - target: {fileID: 2722930265973037374, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 2722930265973037374, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2722930265973037374, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17864,38 +17860,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3014938012618396126, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014938012618396126, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
-    - target: {fileID: 5121649008012438145, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030744079126888}
-    - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
-      propertyPath: floorLayer.m_Bits
-      value: 1152
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19037,12 +19005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192f9399c8947be4ebff9bbdb51f4ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurnManager
-  turnCount: 0
-  maxTurn: 1
+  turnCount: 10
   turnText: {fileID: 0}
-  stars: []
-  starEffects: []
-  starSprite: {fileID: 6819311276142900636, guid: 9f76a210b5def314994051990e0b3155, type: 3}
+  currentStageIndex: 0
 --- !u!222 &6470356799461350045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19841,7 +19806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8562168961971686603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19909,7 +19874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8654978411099172849
 GameObject:
   m_ObjectHideFlags: 0

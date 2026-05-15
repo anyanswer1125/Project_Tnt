@@ -18641,7 +18641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &2559278376699353942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18835,7 +18835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &2847750960407472470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18938,7 +18938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2722930265973037374, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 2722930265973037374, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20214,7 +20214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &6034272881939419112
 AudioListener:
   m_ObjectHideFlags: 0
@@ -20500,7 +20500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6727753079094158352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20587,7 +20587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6853530648775674716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20940,7 +20940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7560577200580283440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21225,11 +21225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurnManager
   turnCount: 0
-  maxTurn: 1
   turnText: {fileID: 0}
-  stars: []
-  starEffects: []
-  starSprite: {fileID: 6819311276142900636, guid: 9f76a210b5def314994051990e0b3155, type: 3}
+  currentStageIndex: 0
 --- !u!222 &8330907867756367042
 CanvasRenderer:
   m_ObjectHideFlags: 0

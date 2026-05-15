@@ -23,7 +23,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private GameObject vfx_ChangePlayer;
 
     [SerializeField] private AudioClip sfx_PlayerChange;
-    
+
     private AudioSource audioSource;
     void Start()
     {
@@ -52,7 +52,8 @@ public class CharacterSelect : MonoBehaviour
             playerDictionary.Add(players[i].PlayerCharacterType, players[i]);
         }
 
-        Characters(Character.Thief);
+        //Characters(Character.Thief);
+
     }
 
     // 현재 포지션값을 받을 메서드
@@ -70,6 +71,8 @@ public class CharacterSelect : MonoBehaviour
         if (currentCharacter == c) return;
         // 현재 캐릭터
         Player currentPlayer = playerDictionary[currentCharacter];
+
+        if (currentPlayer.StagePlayEnd) return; //게임이 종료 됬다면 캐릭터 변경을 막음.
         // 바꿀 캐릭터
         Player nextPlayer = playerDictionary[c];
         // 캐릭터 전체를 비활성화
@@ -99,7 +102,7 @@ public class CharacterSelect : MonoBehaviour
         currentCharacter = c;
         // 현재 캐릭터 선택 UI 변경
         characterSelectUI.SelectUI(currentCharacter);
-
+        nextPlayer.PlayerTurn();
     }
 
     private void CharacterChange()
