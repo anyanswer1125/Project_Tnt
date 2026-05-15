@@ -17653,7 +17653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1-2\n\uBAAC\uC2A4\uD130\uB294..?"
+  m_text: "1-2\n\uC2AC\uB77C\uC784 \uB4F1\uC7A5!?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19437a4c69c2b9742a5b0a789c1ab7ab, type: 2}
   m_sharedMaterial: {fileID: 2969883151270826532, guid: 19437a4c69c2b9742a5b0a789c1ab7ab, type: 2}
@@ -20210,8 +20210,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC804\uC0AC\uB294 \uC2AC\uB77C\uC784\uC744 \n\uACF5\uACA9\uD560\uC218
-    \uC788\uC5B4\uC694!"
+  m_text: "\uC0C1\uC790\uB294 \uD55C \uBC88\uC5D0 \uB450 \uAC1C\uB97C\n\uBC00 \uC218\uB294
+    \uC5C6\uC2B5\uB2C8\uB2E4.\n\n\uC804\uC0AC\uB294 \uC2AC\uB77C\uC784\uC744\n\uACF5\uACA9\uD560
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e79fdce310b8ab64ca1dd98d5bd1792d, type: 2}
   m_sharedMaterial: {fileID: -3786366797963708605, guid: e79fdce310b8ab64ca1dd98d5bd1792d, type: 2}
@@ -20238,8 +20239,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
