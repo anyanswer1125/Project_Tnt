@@ -9,6 +9,8 @@ public class ClearManager : MonoBehaviour
 
     private bool isCleared = false;   // 중복 실행 방지
 
+    [SerializeField] private GameObject circleFadeObject;
+
     private void Start()
     {
         // 시작할 때 클리어 창은 꺼둡니다.
@@ -31,12 +33,12 @@ public class ClearManager : MonoBehaviour
             // 2. 종이 펼치기 애니메이션 재생
             if (scrollAnimator != null)
             {
-                scrollAnimator.Play("ClearScroll_Open"); // 만든 애니메이션 이름과 일치해야 함
+                // scrollAnimator.Play("ClearScroll_Open"); // 만든 애니메이션 이름과 일치해야 함
             }
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // 클리어 창이 떴을 때만 키 입력을 받습니다.
         if (isCleared)
@@ -44,13 +46,15 @@ public class ClearManager : MonoBehaviour
             // Z키: 다음 스테이지 (현재 씬 번호 + 1)
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-                SceneManager.LoadScene(nextSceneIndex);
+                
+                // int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                // SceneManager.LoadScene(nextSceneIndex);
+                circleFadeObject.GetComponent<CircleFadeScript>().StartCircleFadeOut();
             }
             // X키: 홈(타이틀) 화면으로 (보통 0번 씬)
             else if (Input.GetKeyDown(KeyCode.X))
             {
-                SceneManager.LoadScene("TitleScene"); // 본인의 타이틀 씬 이름으로 변경
+                // SceneManager.LoadScene("TitleScene"); // 본인의 타이틀 씬 이름으로 변경
             }
         }
     }
