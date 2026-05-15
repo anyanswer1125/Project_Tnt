@@ -5,7 +5,7 @@ using System.Collections;
 public class GoalBox : MonoBehaviour
 {
     [SerializeField] private GameObject treasureObj;
-    [SerializeField] private GameObject clearPanel;//클리어시 활성화할 패널
+
     [SerializeField] private AudioSource audioSource;
 
 
@@ -36,7 +36,7 @@ public class GoalBox : MonoBehaviour
 
         //대기
         yield return new WaitForSeconds(2.0f);
-        clearPanel.SetActive(true);
+
     }
     private void GameClear()//버튼 선택 메서드 맵패널 활성화된 상태로 갈지 다음씬으로 갈지
     {
