@@ -1,6 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class ClearUIManager : MonoBehaviour
+using UnityEngine.SceneManagement; // 씬 이동을 위해 필수
+
+public class ClearManager : MonoBehaviour
 {
     [Header("UI 설정")]
     public GameObject clearPanel;     // 클리어 UI 전체 부모
