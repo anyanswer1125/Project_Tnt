@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using Unity.Android.Gradle.Manifest;
+// using Unity.Android.Gradle.Manifest;
 public class MapPreviewUI : MonoBehaviour
 {
     [Header("UI Elements")]
