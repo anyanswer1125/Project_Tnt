@@ -35,6 +35,12 @@ public class CharacterSelect : MonoBehaviour
     {
         players.AddRange(GetComponentsInChildren<Player>(true));
 
+        foreach (Player p in players)
+        {
+            // 플레이어 리스트에 있는 모든 플레이들의 초기화 함수를 여기서 호출
+            p.Initialize();
+        }
+
         characterSelectUI = GameObject.FindAnyObjectByType<CharacterSelectUI>();
         characterSelectUI?.Initialize();
         characterSelectUI?.SelectUI(currentCharacter);
@@ -68,7 +74,8 @@ public class CharacterSelect : MonoBehaviour
         Player nextPlayer = playerDictionary[c];
         // 캐릭터 전체를 비활성화
 
-        audioSource.PlayOneShot(sfx_PlayerChange);
+        //audioSource.PlayOneShot(sfx_PlayerChange);
+        SoundManager.Instance.PlaySFX(106);
         //AutoDestroy 확인했습니다, 이 이펙트도 풀링 형식으로 작업하겠습니다.
         vfx_ChangePlayer.transform.position = currentPlayer.transform.position;
         vfx_ChangePlayer.SetActive(true);
@@ -83,6 +90,11 @@ public class CharacterSelect : MonoBehaviour
         nextPlayer.gameObject.SetActive(true);
         // 위치 값 초기화
         nextPlayer.SetPlayerTransform(SetPos(currentPlayer));
+        // 다음 캐릭터가 마법사라면 스킬을 쓸 수 있는 지 체크
+        if(nextPlayer.PlayerCharacterType == Character.Wizard)
+        {
+            nextPlayer.isCanWizardSkill();
+        }
         // 현재 캐릭터 업데이트
         currentCharacter = c;
         // 현재 캐릭터 선택 UI 변경
