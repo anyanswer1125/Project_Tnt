@@ -24,10 +24,6 @@ public class TrapGroup : MonoBehaviour
         // 자식 오브젝트들로부터 컴포넌트를 검색하여 리스트에 추가
         floorbuttons.AddRange(GetComponentsInChildren<FloorButtonScript>());
 
-
-        // 자식 오브젝트들로부터 컴포넌트를 검색하여 리스트에 추가
-        //upSpikes.AddRange(GetComponentsInChildren<SpikeScript>());
-
         // 전체 SpikeScript를 받아옴
         SpikeScript[] spikes = GetComponentsInChildren<SpikeScript>();
 

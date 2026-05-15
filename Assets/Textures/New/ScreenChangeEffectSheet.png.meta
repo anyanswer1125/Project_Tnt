@@ -1,0 +1,964 @@
+fileFormatVersion: 2
+guid: 304f41a633b7e4181a701146658afe5d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9083892016107805300
+    second: ScreenChangeEffectSheet_0
+  - first:
+      213: 3137494647075121110
+    second: ScreenChangeEffectSheet_1
+  - first:
+      213: 3334570498289898089
+    second: ScreenChangeEffectSheet_2
+  - first:
+      213: -6986359849007603026
+    second: ScreenChangeEffectSheet_3
+  - first:
+      213: 2250520683431850573
+    second: ScreenChangeEffectSheet_4
+  - first:
+      213: -987019877308192767
+    second: ScreenChangeEffectSheet_5
+  - first:
+      213: 4390057635328910868
+    second: ScreenChangeEffectSheet_6
+  - first:
+      213: 6812701627674433219
+    second: ScreenChangeEffectSheet_7
+  - first:
+      213: 9149712816322701856
+    second: ScreenChangeEffectSheet_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1990
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8523e107588fe180800000000000000
+      internalID: -9083892016107805300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1932
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d72a9322ce9a8b20800000000000000
+      internalID: 3137494647075121110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1874
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962111d6336c64e20800000000000000
+      internalID: 3334570498289898089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1816
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2a9de8bb67b0f90800000000000000
+      internalID: -6986359849007603026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1758
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42ff9743a47b3f10800000000000000
+      internalID: 2250520683431850573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1700
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108abcaa6a66d42f0800000000000000
+      internalID: -987019877308192767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1642
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4166549e82e9cec30800000000000000
+      internalID: 4390057635328910868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1584
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6924ef8049b8e50800000000000000
+      internalID: 6812701627674433219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1526
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ae0c5445f4afe70800000000000000
+      internalID: 9149712816322701856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1468
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9eb8c4852434f5db2830e4b8516555
+      internalID: 83400871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1410
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a824fbf580464eb0992c3da148b5ed3
+      internalID: -1038738524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1352
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d6339f4b1d64a98b8beb8f1fc299fb
+      internalID: -543298147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1294
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092846f0bbd39469a93fe1b283085c07
+      internalID: -865570103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1236
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fa1fda907a94805a844fb75092f204
+      internalID: 389722425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1178
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2690e847a12164409b2d5dc836a84cfe
+      internalID: -111972890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6379405d4664a4e95a99779a632b380c
+      internalID: 302383357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1062
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9326cc71e504042f7bf2cd750273fff8
+      internalID: -361844984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58946a283d6324c6ea760d58199ea60d
+      internalID: 1736768101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 946
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690ffe937ab004bbba6cbb46db212e0d
+      internalID: 629614283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 888
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7061bfcb96b4745a596068d4c146e3
+      internalID: 663789001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 830
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377fd07915e6d45b584316b5a88cc83d
+      internalID: 388421189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 772
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a646a234d7a0243cda13bde83089f202
+      internalID: -544100955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b37a89415665436aa32f8c7789ce6ca
+      internalID: 1249256028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 656
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b94d5c23bf540e2a1ba1b3759c1e99
+      internalID: -1578139530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 598
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9153300fc51942eebe2a2cfc5f413dd
+      internalID: 144382282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8569122329554c79b749e5f451a879e
+      internalID: 1145247381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509730febfa0d45b4b0c920dcc8d3404
+      internalID: -407396542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed258894e0464aebb7a3009388f637f
+      internalID: 1902316327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 366
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a875ae523e23540fb856a580b4d48f60
+      internalID: 1970909541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be419371973244234af0c920bb2f1b61
+      internalID: -1235743543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876b01222119f431190155d6acb8d735
+      internalID: -987428163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0f2278f7317423ebb3362088a8b84f
+      internalID: 1974803465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2087594f8cfd14c638ed2b31d48cb605
+      internalID: -971459880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab62315757c1b44c195380f7ddb59eb4
+      internalID: -138157025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenChangeEffectSheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 101
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f868ca4d5c84764bb01a05d9ff9543
+      internalID: -1265012762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9df4166712d31447d9d4a6a82e310787
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":35.0},"gridSpriteSize":{"x":101.0,"y":58.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ScreenChangeEffectSheet_0: -9083892016107805300
+      ScreenChangeEffectSheet_1: 3137494647075121110
+      ScreenChangeEffectSheet_10: -1038738524
+      ScreenChangeEffectSheet_11: -543298147
+      ScreenChangeEffectSheet_12: -865570103
+      ScreenChangeEffectSheet_13: 389722425
+      ScreenChangeEffectSheet_14: -111972890
+      ScreenChangeEffectSheet_15: 302383357
+      ScreenChangeEffectSheet_16: -361844984
+      ScreenChangeEffectSheet_17: 1736768101
+      ScreenChangeEffectSheet_18: 629614283
+      ScreenChangeEffectSheet_19: 663789001
+      ScreenChangeEffectSheet_2: 3334570498289898089
+      ScreenChangeEffectSheet_20: 388421189
+      ScreenChangeEffectSheet_21: -544100955
+      ScreenChangeEffectSheet_22: 1249256028
+      ScreenChangeEffectSheet_23: -1578139530
+      ScreenChangeEffectSheet_24: 144382282
+      ScreenChangeEffectSheet_25: 1145247381
+      ScreenChangeEffectSheet_26: -407396542
+      ScreenChangeEffectSheet_27: 1902316327
+      ScreenChangeEffectSheet_28: 1970909541
+      ScreenChangeEffectSheet_29: -1235743543
+      ScreenChangeEffectSheet_3: -6986359849007603026
+      ScreenChangeEffectSheet_30: -987428163
+      ScreenChangeEffectSheet_31: 1974803465
+      ScreenChangeEffectSheet_32: -971459880
+      ScreenChangeEffectSheet_33: -138157025
+      ScreenChangeEffectSheet_34: -1265012762
+      ScreenChangeEffectSheet_4: 2250520683431850573
+      ScreenChangeEffectSheet_5: -987019877308192767
+      ScreenChangeEffectSheet_6: 4390057635328910868
+      ScreenChangeEffectSheet_7: 6812701627674433219
+      ScreenChangeEffectSheet_8: 9149712816322701856
+      ScreenChangeEffectSheet_9: 83400871
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
