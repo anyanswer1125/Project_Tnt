@@ -71,7 +71,6 @@ public class OptionPanel : MonoBehaviour
         else if (name == "BackGroundMusic") BackGroundMusicText.text = bgm.ToString();
         else if (name == "Mode") ModeText.text = isFull ? "전체화면" : "창모드";
     }
-
     public void SaveAndExit()
     {
         PlayerPrefs.SetInt("SFX", sfx);
@@ -79,20 +78,19 @@ public class OptionPanel : MonoBehaviour
         PlayerPrefs.Save();
 
         // MainMenu.instance를 통해 메인 메뉴 오브젝트를 다시 켭니다.
-        if (MainMenu.instance != null)
+        if (MainMenuController.instance != null)
         {
             // 메인 메뉴 게임 오브젝트 자체를 활성화
-            MainMenu.instance.gameObject.SetActive(true);
+            MainMenuController.instance.gameObject.SetActive(true);
             // 하이픈과 포커스 조절 함수 호출
-            MainMenu.instance.BackFromOption();
+            MainMenuController.instance.BackFromOption();
         }
         this.gameObject.SetActive(false); // 옵션 패널 끄기
     }
-
     public void CancelExit()
     {
         // 저장 없이 그냥 돌아가기
-        MainMenu.instance.BackFromOption();
+        MainMenuController.instance.BackFromOption();
         gameObject.SetActive(false);
     }
 }

@@ -530,7 +530,7 @@ MonoBehaviour:
   currentPlayerTransform: {fileID: 0}
   currentCharacter: 0
   characterSelectUI: {fileID: 0}
-  vfx_ChangePlayer: {fileID: 0}
+  vfx_ChangePlayer: {fileID: 4056258238711646226, guid: 716602b71d93d49c4a215aae3ab35a0d, type: 3}
   sfx_PlayerChange: {fileID: 8300000, guid: 7773d10bd498142d6a02d65dfd1203fa, type: 3}
 --- !u!82 &6126692236138339673
 AudioSource:
