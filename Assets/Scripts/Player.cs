@@ -565,12 +565,12 @@ public class Player : MonoBehaviour
                     TeleportCursor.transform.position = startPos + dir;
                 }
 
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
                     WizardSkillSetActive(false);
                     isSelected = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) && isSelectedTrun)
+                else if (Input.GetKeyDown(KeyCode.Space) && isSelectedTrun)
                 {
                     transform.position = TeleportCursor.transform.position - Vector3.up * 0.5f; //커서위치와 player 위치의 높이가 0.5 차이 나기 때문에 - 를 함
                     WizardSkillSetActive(false);
@@ -603,7 +603,7 @@ public class Player : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
-            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.T))
+            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(WizardSkill());
                 return;
