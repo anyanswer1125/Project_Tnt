@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -13,11 +14,13 @@ public class JsonManager : MonoBehaviour
     [SerializeField] private List<TextAsset> textAsset;
     [SerializeField] private List<StageTurns> stageTurnDebugList;
     [SerializeField] private List<SoundTable> soundDebugList;
+    [SerializeField] private List<StageCharacterCount> stageCharacterCount;
 
     // 딕셔너리를 사용한 실질적인 스테이지 턴 데이터 테이블
     public Dictionary<int, StageTurns> StageTurnDict { get; private set; }
     // 딕셔너리를 사용한 실질적인 스테이지 사운드 테이블
     public Dictionary<int, SoundTable> SoundDict { get; private set; }
+    public Dictionary<int, StageCharacterCount> StageCharacterCount { get; private set; }
 
 
     private void Awake()
@@ -39,6 +42,9 @@ public class JsonManager : MonoBehaviour
 
         SoundDict = LoadDataDictionary<SoundTable>(nameof(SoundTable), data => data.Index);
         soundDebugList = new List<SoundTable>(SoundDict.Values);
+
+        StageCharacterCount = LoadDataDictionary<StageCharacterCount>(nameof(StageCharacterCount), data => data.StageID);
+        stageCharacterCount = new List<StageCharacterCount>(StageCharacterCount.Values);
     }
 
     /// <summary>

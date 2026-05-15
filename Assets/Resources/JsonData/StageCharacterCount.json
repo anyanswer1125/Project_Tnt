@@ -1,0 +1,58 @@
+[
+  {
+    "StageID": 1,
+    "StageName": "Map1-1",
+    "Warrior": true,
+    "Thief": false,
+    "Wizard": false,
+    "Description": "기본 튜토리얼"
+  },
+  {
+    "StageID": 2,
+    "StageName": "Map1-2",
+    "Warrior": true,
+    "Thief": false,
+    "Wizard": false,
+    "Description": "전사 전투 튜토리얼"
+  },
+  {
+    "StageID": 3,
+    "StageName": "Map2-1",
+    "Warrior": true,
+    "Thief": true,
+    "Wizard": false,
+    "Description": "도적 능력 튜토리얼"
+  },
+  {
+    "StageID": 4,
+    "StageName": "Map2-2",
+    "Warrior": true,
+    "Thief": true,
+    "Wizard": false,
+    "Description": "무거운 상자 첫 등장"
+  },
+  {
+    "StageID": 5,
+    "StageName": "Map3-1",
+    "Warrior": true,
+    "Thief": true,
+    "Wizard": true,
+    "Description": "마법사의 능력 튜토리얼"
+  },
+  {
+    "StageID": 6,
+    "StageName": "Map3-2",
+    "Warrior": true,
+    "Thief": true,
+    "Wizard": true,
+    "Description": "마법사의 능력 조건 확인"
+  },
+  {
+    "StageID": 7,
+    "StageName": "Map4-1",
+    "Warrior": true,
+    "Thief": true,
+    "Wizard": true,
+    "Description": "최종라운드"
+  }
+]

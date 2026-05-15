@@ -48,6 +48,7 @@ public class TurnManager : MonoBehaviour
     {
         turnCount--;
         UpdateTurnDisplay();
+        Debug.Log(turnCount);
     }
 
     // 턴 UI 및 상태 갱신
