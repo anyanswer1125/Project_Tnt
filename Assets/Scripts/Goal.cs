@@ -25,6 +25,7 @@ public class Goal : MonoBehaviour
 
 
         // goalTimelineObj.SetActive(true);
-        player.SetState(State.Win);
+        if (TurnManager.instance.TurnCount > 1)
+            player.SetState(State.Win);
     }
 }
