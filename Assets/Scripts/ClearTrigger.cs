@@ -4,11 +4,14 @@ public class ClearTrigger : MonoBehaviour
 {
     [Header("설정")]
     public string playerTag = "Player"; // 플레이어의 태그
-    public GameObject clearPanel;      // 띄울 UI 패널 (ClearPanel)
+    public Animator scrollAnimator;
+    [SerializeField]public GameObject clearPanel;      // 띄울 UI 패널 (ClearPanel)
+    private bool isTrigger = false;
 
     // 이 스크립트가 붙은 오브젝트에 무언가 닿으면 실행됩니다.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        clearPanel.SetActive(false);
         // 닿은 물체의 태그가 Player인지 확인
         if (collision.CompareTag(playerTag))
         {
@@ -18,9 +21,11 @@ public class ClearTrigger : MonoBehaviour
             {
                 clearPanel.SetActive(true);
             }
+            if(scrollAnimator!=null)
+            {
+                scrollAnimator.Play("ClearScroll_Open");
+            }
 
-            // 필요하다면 게임 일시정지 (선택 사항)
-            // Time.timeScale = 0f;
         }
     }
 }

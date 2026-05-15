@@ -2,6 +2,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ClearUIManager : MonoBehaviour
 {
+   void Update()
+    {
+        if(gameObject.activeSelf)
+        {
+            if(Input.GetKeyDown(KeyCode.Z)) // Z를 누르면 다음 레벨
+            {
+                GoToNextLevel();
+            }
+            else if(Input.GetKeyDown(KeyCode.X)) // X를 누르면 타이틀 화면으로
+            {
+                GoToTitle();
+            }
+        }
+    }
   public void GoToNextLevel()
     {
         // 현재 스테이지 인덱스 + 1번 씬을 로드함
