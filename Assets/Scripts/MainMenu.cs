@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string targetStageName = "Map1-1";
+    public GameObject[] uiStars;
     public static MainMenu instance;
     private int currentIndex = 1;
     private static bool isMapSelection = false;//선택하고 있는지
@@ -35,7 +37,6 @@ public class MainMenu : MonoBehaviour
     }
     public void OnclickOption()
     {
-        Debug.Log("OnclickOption");
         //패널 활성화
         if (optionPanel != null) optionPanel.SetActive(true);
 
@@ -87,19 +88,45 @@ public class MainMenu : MonoBehaviour
         if (map != null)
         {
             map.enabled = true;
+            map.LoadThisScene();
         }
-        // 패널 = 씬 이름 동일하게
-        SceneManager.LoadScene(currentPanel.name);
     }
+    //public void ActivateClearPanel(string sceneName)// 한번 열었으면 저장되어 일반 패널이 아닌 cleared 패널이 열리게끔 + 별갯수 score에서 받아와서 똑같이
+    //{
+    //    string endstage = sceneName + " Cleared";
+
+    //    foreach (GameObject panel in mapPanels)
+    //    {
+    //        if (panel.name == endstage)
+    //        {
+    //            panel.SetActive(true);
+    //            return;
+    //        }
+    //    }
+    //}
     // 좌우 버튼에 연결하거나 키 입력으로 실행
     public void ChangePage(int direction)
     {
         currentIndex = Mathf.Clamp(currentIndex + direction, 0, mapPanels.Length - 1);
         UpdatePanels();
     }
+    void OnEnable()
+    {
+        RefreshUI();
+    }
+    public void RefreshUI()
+    {
+        // 저장된 해당 스테이지의 별 개수 가져오기
+        int savedStars = PlayerPrefs.GetInt(targetStageName + "_Stars", 0);
+
+        // 별 UI 활성화
+        for (int i = 0; i < uiStars.Length; i++)
+        {
+            uiStars[i].SetActive(i < savedStars);
+        }
+    }
     void Start()
     {
-        // 다른 씬에서 넘어올 때 isMapSelection이 true로 설정되어 있다면
         if (isMapSelection)
         {
             mainMenuPanel.SetActive(false); // 메인 타이틀 메뉴 숨기기
@@ -125,8 +152,13 @@ public class MainMenu : MonoBehaviour
             {
                 StartMap();
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                mapPanels[currentIndex].SetActive(false);
+                mainMenuPanel.SetActive(true);
+                isMapSelection = false;
+            }
         }
-
     }
     void Awake() { instance = this; }
 }
