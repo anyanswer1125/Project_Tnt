@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
     [SerializeField] private LayerMask enemyLayer;  // 적 레이어
     [SerializeField] private LayerMask obstacleLayer;  // 레이어
+    [SerializeField] private LayerMask heavyBox; // 무거운 박스
 
     [SerializeField] private GameObject vfx_JumpEffectObj; //점프 이펙트 프리팹
     [SerializeField] private GameObject vfx_PushEffect; // 푸쉬 이펙트 프리팹
@@ -163,11 +164,22 @@ public class Player : MonoBehaviour
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
 
+        // 임시 테스트할려고 만듬 (추후에 지워야함)
+        Test();
+    }
+
+    // 임시 테스트할려고 만듬 (추후에 지워야함)
+    public void Test()
+    {
+        int nextScene = SceneManager.GetActiveScene().buildIndex;
+        nextScene++;
+
+        SceneManager.LoadScene(nextScene);
     }
 
     public void PlayerTurn()
     {
-        if(TurnManager.instance.TurnCount > 1)
+        if (TurnManager.instance.TurnCount > 1)
         {
             TurnManager.instance.SetTurnCount();
         }
@@ -263,7 +275,7 @@ public class Player : MonoBehaviour
 
     public void PlayVfxAttack(Vector3 pos)
     {
-        
+
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
         vfx_PushEffect.transform.rotation = transform.rotation;
@@ -393,6 +405,17 @@ public class Player : MonoBehaviour
                 return false;
             }
 
+            if((hitLayer& heavyBox) != 0 && playerCharacterType == Character.Warrior)
+            {
+                isMoving = true;
+                ImageStats(dir);
+                ObjectMovement obj = hit.collider.GetComponent<ObjectMovement>();
+                // obj가 null 경우 리턴 true를 하여 통과하게 함
+                if (obj == null) return true;
+                obj.ObjMovement(this, dir);
+                return false;
+            }
+
             // 이동 방향에 Floor 레이어가 감지되면 통과 허용
             if ((hitLayer & floorLayer) != 0) return true;
 
@@ -438,7 +461,7 @@ public class Player : MonoBehaviour
     // 마법사의 스킬을 사용할때 텔포를 할 수 있는지 체크하는 함수( 텔포를 쓸 수 있다면 컬러는 블루, 없다면 레드로 표시)
     bool CheckTeleportValidity(Vector2 dir)
     {
-        Vector2 checkPos = (Vector2)transform.position + dir + Vector2.up* 0.5f;
+        Vector2 checkPos = (Vector2)transform.position + dir + Vector2.up * 0.5f;
 
         // 1. 해당 지점에 '장애물'이 있는지 확인
         Collider2D hit = Physics2D.OverlapPoint(checkPos, obstacleLayer);
@@ -623,7 +646,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(Movement(new Vector3(0, y, 0)));
             }
 
-            if(Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 RestartCurrentScene();
             }
