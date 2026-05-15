@@ -5,13 +5,13 @@ using System.Collections;
 public class GoalBox : MonoBehaviour
 {
     [SerializeField] private GameObject treasureObj;
-    [SerializeField] private GameObject clearPanel;//클리어시 활성화할 패널
+
     [SerializeField] private AudioSource audioSource;
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Key")
+        if (collision.name == "Key")
         {
             Animator animator = GetComponent<ObjectMovement>().ObjAnimator;
             animator.SetTrigger("Goal");//클리어
@@ -24,9 +24,9 @@ public class GoalBox : MonoBehaviour
         Vector2 goalPos = transform.position;
         goalPos.y -= 0.5f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
-        treasureObj.transform.position = goalPos; 
+        treasureObj.transform.position = goalPos;
         treasureObj.SetActive(true);
-        
+
 
     }
     IEnumerator ClearAndWait()
@@ -36,7 +36,7 @@ public class GoalBox : MonoBehaviour
 
         //대기
         yield return new WaitForSeconds(2.0f);
-        clearPanel.SetActive(true);
+
     }
     private void GameClear()//버튼 선택 메서드 맵패널 활성화된 상태로 갈지 다음씬으로 갈지
     {
@@ -71,5 +71,12 @@ public class GoalBox : MonoBehaviour
     public void PlaySfx_ChestOpen()
     {
         audioSource.Play();
+    }
+
+    private void OnDestroy()
+    {
+        Player player = FindAnyObjectByType<Player>();
+        if (player)
+            player.IsMoving(false);
     }
 }
