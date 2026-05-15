@@ -97,6 +97,8 @@ public class CharacterSelect : MonoBehaviour
         // 현재 캐릭터
         Player currentPlayer = playerDictionary[currentCharacter];
 
+        if (currentPlayer.PlayerisMoving) return;
+
         if (currentPlayer.StagePlayEnd) return; //게임이 종료 됬다면 캐릭터 변경을 막음.
 
         // 딕셔너리에 키가 없으면 즉시 리턴 (out 키워드를 통해 찾은 결과를 nextPlayer 변수에 직접 할당)
@@ -118,6 +120,11 @@ public class CharacterSelect : MonoBehaviour
         nextPlayer.gameObject.SetActive(true);
         // 위치 값 초기화
         nextPlayer.SetPlayerTransform(SetPos(currentPlayer));
+        // 현재 캐릭터 isMoving 변경
+        currentPlayer.IsMoving(false);
+        // 다음 캐릭터 isMoivg 변경
+        nextPlayer.IsMoving(false);
+
         // 다음 캐릭터가 마법사라면 스킬을 쓸 수 있는 지 체크
         if (nextPlayer.PlayerCharacterType == Character.Wizard)
         {

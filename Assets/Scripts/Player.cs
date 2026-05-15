@@ -63,6 +63,8 @@ public class Player : MonoBehaviour
 
     public Character PlayerCharacterType => playerCharacterType;    //플레이어의 캐릭터타입 get 프로퍼티
 
+    public bool PlayerisMoving => isMoving;
+
     public bool IsOnSpike => isOnSpike;
 
     private void Start()
