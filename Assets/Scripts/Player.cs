@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Multiplayer.PlayMode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum State
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask floorLayer;    // 갈 수 있는 레이어
     [SerializeField] private LayerMask enemyLayer;  // 적 레이어
     [SerializeField] private LayerMask obstacleLayer;  // 레이어
+    [SerializeField] private LayerMask heavyBox; // 무거운 박스
 
     [SerializeField] private GameObject vfx_JumpEffectObj; //점프 이펙트 프리팹
     [SerializeField] private GameObject vfx_PushEffect; // 푸쉬 이펙트 프리팹
@@ -26,7 +28,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private State currentState; // 에디터에서 확인하는 용도
     [SerializeField] private Animator animator; // Player의 animator
-    [SerializeField] private TurnManager turnManager; // TurnManager 인스턴스
 
     [SerializeField] private bool isMoving; // 키를 한번만 입력받기 위한 변수
     [SerializeField] private bool isOnSpike = false; // 도적타입일 때 함정위에 있는지 체크(현재 도적타입에 대한 변수이므로 초기값은 false이여야 함)
@@ -62,6 +63,8 @@ public class Player : MonoBehaviour
 
     public Character PlayerCharacterType => playerCharacterType;    //플레이어의 캐릭터타입 get 프로퍼티
 
+    public bool PlayerisMoving => isMoving;
+
     public bool IsOnSpike => isOnSpike;
 
     private void Start()
@@ -90,8 +93,8 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
-        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         StopAllCoroutines();    // 모든 코루틴 종료
+        ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
         stagePlayEnd = true;
@@ -135,8 +138,17 @@ public class Player : MonoBehaviour
 
             yield return null;
         }
+
+        // 다시 시작
+        RestartCurrentScene();
     }
 
+    // 게임을 다시 시작 합니다.
+    private void RestartCurrentScene()
+    {
+        // 현재 활성화된 씬을 다시 로드 (초기화)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     // 외부에서 Transform를 받을 메서드
     public void SetPlayerTransform(Transform transform)
     {
@@ -154,6 +166,30 @@ public class Player : MonoBehaviour
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
 
+        // 임시 테스트할려고 만듬 (추후에 지워야함)
+        Test();
+    }
+
+    // 임시 테스트할려고 만듬 (추후에 지워야함)
+    public void Test()
+    {
+        int nextScene = SceneManager.GetActiveScene().buildIndex;
+        nextScene++;
+
+        SceneManager.LoadScene(nextScene);
+    }
+
+    public void PlayerTurn()
+    {
+        if (TurnManager.instance.TurnCount > 1)
+        {
+            TurnManager.instance.SetTurnCount();
+        }
+        else
+        {
+            TurnManager.instance.SetTurnCount();
+            SetState(State.Lose);
+        }
     }
 
     // 애니메이터의 Parameters의 모든 값을 0이나 false
@@ -199,8 +235,6 @@ public class Player : MonoBehaviour
         stagePlayEnd = false;
         isMoving = false;
 
-        turnManager = FindAnyObjectByType<TurnManager>();
-
         collider2D = GetComponent<BoxCollider2D>();
 
         collider2D.isTrigger = true;
@@ -243,7 +277,7 @@ public class Player : MonoBehaviour
 
     public void PlayVfxAttack(Vector3 pos)
     {
-        
+
         vfx_PushEffect.SetActive(true);
         vfx_PushEffect.transform.position = pos;
         vfx_PushEffect.transform.rotation = transform.rotation;
@@ -273,7 +307,6 @@ public class Player : MonoBehaviour
     IEnumerator Movement(Vector3 dir)
     {
         ImageStats(dir);
-        turnManager?.SetTurnCount();
         isMoving = true;
 
         Vector3 startPos = transform.position;
@@ -331,6 +364,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Move", false);
         if (playerCharacterType == Character.Wizard)
             isWizardSkill = CanWizardSkill();
+        PlayerTurn();
     }
 
     // 이동 할 수 있는 지 확인하는 함수
@@ -370,6 +404,17 @@ public class Player : MonoBehaviour
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
                 enemy.MonsterDie(this);
+                return false;
+            }
+
+            if((hitLayer& heavyBox) != 0 && playerCharacterType == Character.Warrior)
+            {
+                isMoving = true;
+                ImageStats(dir);
+                ObjectMovement obj = hit.collider.GetComponent<ObjectMovement>();
+                // obj가 null 경우 리턴 true를 하여 통과하게 함
+                if (obj == null) return true;
+                obj.ObjMovement(this, dir);
                 return false;
             }
 
@@ -418,11 +463,10 @@ public class Player : MonoBehaviour
     // 마법사의 스킬을 사용할때 텔포를 할 수 있는지 체크하는 함수( 텔포를 쓸 수 있다면 컬러는 블루, 없다면 레드로 표시)
     bool CheckTeleportValidity(Vector2 dir)
     {
-        Vector2 checkPos = (Vector2)TeleportCursor.transform.position + dir;
+        Vector2 checkPos = (Vector2)transform.position + dir + Vector2.up * 0.5f;
 
         // 1. 해당 지점에 '장애물'이 있는지 확인
         Collider2D hit = Physics2D.OverlapPoint(checkPos, obstacleLayer);
-
         // 2. 조건 뒤집기: 부딪힌 게 없어야(null이어야) 갈 수 있는 곳입니다.
         if (hit == null)
         {
@@ -532,7 +576,7 @@ public class Player : MonoBehaviour
 
 
 
-                    if (CheckTeleportValidity(new Vector3(x, y, 0)))
+                    if (CheckTeleportValidity(new Vector3(currentX, currentY, 0)))
                     {
                         isSelectedTrun = true;
                         //Debug.Log("이동 가능");
@@ -546,17 +590,18 @@ public class Player : MonoBehaviour
                     TeleportCursor.transform.position = startPos + dir;
                 }
 
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
                     WizardSkillSetActive(false);
                     isSelected = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) && isSelectedTrun)
+                else if (Input.GetKeyDown(KeyCode.Space) && isSelectedTrun)
                 {
                     transform.position = TeleportCursor.transform.position - Vector3.up * 0.5f; //커서위치와 player 위치의 높이가 0.5 차이 나기 때문에 - 를 함
                     WizardSkillSetActive(false);
                     isSelected = true;
                     SoundManager.Instance.PlaySFX(108);
+                    PlayerTurn();
                 }
 
             }
@@ -583,7 +628,7 @@ public class Player : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
-            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.T))
+            if (playerCharacterType == Character.Wizard && isWizardSkill == true && Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(WizardSkill());
                 return;
@@ -603,6 +648,10 @@ public class Player : MonoBehaviour
                 StartCoroutine(Movement(new Vector3(0, y, 0)));
             }
 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RestartCurrentScene();
+            }
         }
     }
 

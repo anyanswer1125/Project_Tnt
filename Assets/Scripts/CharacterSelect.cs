@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum Character
 {
@@ -23,7 +25,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private GameObject vfx_ChangePlayer;
 
     [SerializeField] private AudioClip sfx_PlayerChange;
-    
+
     private AudioSource audioSource;
     void Start()
     {
@@ -33,6 +35,8 @@ public class CharacterSelect : MonoBehaviour
     // 초기화 메서드
     private void Initialize()
     {
+        players.Clear();
+
         players.AddRange(GetComponentsInChildren<Player>(true));
 
         foreach (Player p in players)
@@ -47,12 +51,34 @@ public class CharacterSelect : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
-        for (int i = 0; i < players.Count; i++)
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (JsonManager.Instance.StageCharacterCount.TryGetValue(sceneIndex, out var data))
         {
-            playerDictionary.Add(players[i].PlayerCharacterType, players[i]);
+            foreach (var player in players)
+            {
+                // 1. 해당 캐릭터가 이번 스테이지에서 사용 가능한지 확인하는 로컬 함수나 로직
+                bool isAvailable = false;
+
+                switch (player.PlayerCharacterType)
+                {
+                    case Character.Warrior: isAvailable = data.Warrior; break;
+                    case Character.Thief: isAvailable = data.Thief; break;
+                    case Character.Wizard: isAvailable = data.Wizard; break;
+                }
+
+                // 2. 사용 가능한 캐릭터이고, 아직 사전에 추가되지 않았다면 추가
+                if (isAvailable == true && !playerDictionary.ContainsKey(player.PlayerCharacterType))
+                {
+                    playerDictionary.Add(player.PlayerCharacterType, player);
+                }
+            }
         }
 
-        Characters(Character.Thief);
+
+
+        //Characters(Character.Thief);
+
     }
 
     // 현재 포지션값을 받을 메서드
@@ -70,9 +96,13 @@ public class CharacterSelect : MonoBehaviour
         if (currentCharacter == c) return;
         // 현재 캐릭터
         Player currentPlayer = playerDictionary[currentCharacter];
-        // 바꿀 캐릭터
-        Player nextPlayer = playerDictionary[c];
-        // 캐릭터 전체를 비활성화
+
+        if (currentPlayer.PlayerisMoving) return;
+
+        if (currentPlayer.StagePlayEnd) return; //게임이 종료 됬다면 캐릭터 변경을 막음.
+
+        // 딕셔너리에 키가 없으면 즉시 리턴 (out 키워드를 통해 찾은 결과를 nextPlayer 변수에 직접 할당)
+        if (!playerDictionary.TryGetValue(c, out Player nextPlayer)) return;
 
         //audioSource.PlayOneShot(sfx_PlayerChange);
         SoundManager.Instance.PlaySFX(106);
@@ -81,17 +111,22 @@ public class CharacterSelect : MonoBehaviour
         vfx_ChangePlayer.SetActive(true);
 
 
-
-        foreach(Player player in  players)
+        // 캐릭터 전체 비활성화
+        foreach (Player player in players)
         {
-            player.gameObject.SetActive(false);  
+            player.gameObject.SetActive(false);
         }
         // 다음 캐릭터 활성화
         nextPlayer.gameObject.SetActive(true);
         // 위치 값 초기화
         nextPlayer.SetPlayerTransform(SetPos(currentPlayer));
+        // 현재 캐릭터 isMoving 변경
+        currentPlayer.IsMoving(false);
+        // 다음 캐릭터 isMoivg 변경
+        nextPlayer.IsMoving(false);
+
         // 다음 캐릭터가 마법사라면 스킬을 쓸 수 있는 지 체크
-        if(nextPlayer.PlayerCharacterType == Character.Wizard)
+        if (nextPlayer.PlayerCharacterType == Character.Wizard)
         {
             nextPlayer.isCanWizardSkill();
         }
@@ -99,7 +134,7 @@ public class CharacterSelect : MonoBehaviour
         currentCharacter = c;
         // 현재 캐릭터 선택 UI 변경
         characterSelectUI.SelectUI(currentCharacter);
-
+        nextPlayer.PlayerTurn();
     }
 
     private void CharacterChange()

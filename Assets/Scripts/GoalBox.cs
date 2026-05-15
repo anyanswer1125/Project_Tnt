@@ -7,11 +7,11 @@ public class GoalBox : MonoBehaviour
     [SerializeField] private GameObject treasureObj;
 
     [SerializeField] private AudioSource audioSource;
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Key")
+        if (collision.name == "Key")
         {
             Animator animator = GetComponent<ObjectMovement>().ObjAnimator;
             animator.SetTrigger("Goal");//클리어
@@ -24,9 +24,9 @@ public class GoalBox : MonoBehaviour
         Vector2 goalPos = transform.position;
         goalPos.y -= 0.5f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
-        treasureObj.transform.position = goalPos; 
+        treasureObj.transform.position = goalPos;
         treasureObj.SetActive(true);
-        
+
 
     }
     IEnumerator ClearAndWait()
@@ -71,5 +71,12 @@ public class GoalBox : MonoBehaviour
     public void PlaySfx_ChestOpen()
     {
         audioSource.Play();
+    }
+
+    private void OnDestroy()
+    {
+        Player player = FindAnyObjectByType<Player>();
+        if (player)
+            player.IsMoving(false);
     }
 }
