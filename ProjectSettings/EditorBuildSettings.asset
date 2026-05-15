@@ -9,20 +9,34 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 3a9308532288626488ea735d03369d5f
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Map1-2.unity
     guid: 60a5949562f9a8e428eb1fbdd2537a99
   - enabled: 1
     path: Assets/Scenes/Map1-1edit.unity
     guid: 3b5629074e717f14d93c29c20273b4d9
+=======
+    path: Assets/Scenes/Map/Map1-1.unity
+    guid: d4531bea4b76ba6468840d961420e04e
   - enabled: 1
-    path: Assets/Scenes/Map1-1 edit-janghwan.unity
-    guid: 439ff495670f24676b59b4f96b84ea8f
+    path: Assets/Scenes/Map/Map1-2.unity
+    guid: 93e58ba2da5addb46a62b67a30e6ee5c
+>>>>>>> main
   - enabled: 1
-    path: Assets/Scenes/Map1-1 edit-minjun.unity
-    guid: 5c5fdf607904b9b4a97310ec927b497c
+    path: Assets/Scenes/Map/Map2-1.unity
+    guid: 89b49b8f67340014d9f4ae7f6167b711
   - enabled: 1
-    path: Assets/Scenes/NewScene-minjun.unity
-    guid: 78c2ef1e624912f4eaf76c7698c53805
+    path: Assets/Scenes/Map/Map2-2.unity
+    guid: a75e6573ce89a2a49a96fd249841657d
+  - enabled: 1
+    path: Assets/Scenes/Map/Map3-1.unity
+    guid: c287978e74747084787206b57060ba99
+  - enabled: 1
+    path: Assets/Scenes/Map/Map3-2.unity
+    guid: 6001ea010ab39d747a30d4300aeeeca6
+  - enabled: 1
+    path: Assets/Scenes/Map/Map4-1.unity
+    guid: 85964c857145f3d40a1de1d8f35ac00e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

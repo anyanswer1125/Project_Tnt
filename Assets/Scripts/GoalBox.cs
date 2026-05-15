@@ -1,25 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class GoalBox : MonoBehaviour
 {
     [SerializeField] private GameObject treasureObj;
-
-    [Header("UI 설정")]
-    public GameObject ClearPanel;
+    [SerializeField] private GameObject clearPanel;//클리어시 활성화할 패널
+    [SerializeField] private AudioSource audioSource;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
-        {
-            Debug.Log("플레이어 도달! 클리어 UI를 켭니다.");
-            if(ClearPanel!=null)
-            {
-                ClearPanel.SetActive(true); // 종이 UI
-            }
-        }
         if(collision.name == "Key")
         {
             Animator animator = GetComponent<ObjectMovement>().ObjAnimator;
@@ -33,7 +24,7 @@ public class GoalBox : MonoBehaviour
         Vector2 goalPos = transform.position;
         goalPos.y -= 0.5f;
         // Instantiate(goalObj, goalPos, Quaternion.identity);
-        treasureObj.transform.position = goalPos;
+        treasureObj.transform.position = goalPos; 
         treasureObj.SetActive(true);
         
 
@@ -45,7 +36,7 @@ public class GoalBox : MonoBehaviour
 
         //대기
         yield return new WaitForSeconds(2.0f);
-        ClearPanel.SetActive(true);
+        clearPanel.SetActive(true);
     }
     private void GameClear()//버튼 선택 메서드 맵패널 활성화된 상태로 갈지 다음씬으로 갈지
     {
@@ -77,8 +68,8 @@ public class GoalBox : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    void Update()
+    public void PlaySfx_ChestOpen()
     {
-
+        audioSource.Play();
     }
 }
