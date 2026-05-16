@@ -63,14 +63,14 @@ public class Goal : MonoBehaviour
                 else
                 {
                     Debug.Log("마지막 레벨입니다! 타이틀로 돌아갑니다.");
-                    SceneManager.LoadScene("Title"); // 타이틀 씬 이름으로 변경하세요
+                    SceneManager.LoadScene(0); // 타이틀 씬 이름으로 변경하세요
                 }
             }
 
             // X키를 누르면 타이틀 화면으로
             if (Input.GetKeyDown(KeyCode.X))
             {
-                SceneManager.LoadScene("Title"); // 본인의 타이틀 씬 이름을 따옴표 안에 적으세요
+                SceneManager.LoadScene(0); // 본인의 타이틀 씬 이름을 따옴표 안에 적으세요
             }
         }
     }
