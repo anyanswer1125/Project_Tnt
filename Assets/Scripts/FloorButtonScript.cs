@@ -6,9 +6,13 @@ public class FloorButtonScript : MonoBehaviour
     
     [SerializeField] private bool activeFloor;
 
+    [SerializeField] private AudioSource audioSource;
+
     [SerializeField] private AudioClip sfx_FloorBtnOn;
     [SerializeField] private AudioClip sfx_FloorBtnOff;
-    private AudioSource audiosource;
+
+    
+    // private AudioSource audiosource;
     private TrapGroup trap; // 현재 트랩 그룹
 
     public bool ActiveFloor => activeFloor; // activeFloor 외부 get 프로퍼티
@@ -19,7 +23,7 @@ public class FloorButtonScript : MonoBehaviour
     {
         floorAnim = GetComponent<Animator>();
         floorAnim.SetBool("ActiveFloorButton", activeFloor);
-        audiosource = GetComponent<AudioSource>();
+        // audiosource = GetComponent<AudioSource>();
     }
 
     // 현재 그룹을 받아오는 함수
@@ -33,14 +37,14 @@ public class FloorButtonScript : MonoBehaviour
         activeFloor = false;    // 버튼이 눌림 (False)
         floorAnim.SetBool("ActiveFloorButton", activeFloor);    // 눌림 애니메이션
         trap.Trap(); // 현재 그룹의 버튼들이 눌렸는지 확인하는 메서드
-        audiosource.PlayOneShot(sfx_FloorBtnOn);
+        audioSource.PlayOneShot(sfx_FloorBtnOn);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         activeFloor = true; // 버튼이 안눌림 (True)
         floorAnim.SetBool("ActiveFloorButton", activeFloor);    // 올라오는 애니메이션
-        audiosource.PlayOneShot(sfx_FloorBtnOff);
+        audioSource.PlayOneShot(sfx_FloorBtnOff);
         trap.Trap(); // 현재 그룹의 버튼들이 눌렸는지 확인하는 메서드
     }
 }

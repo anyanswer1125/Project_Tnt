@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
 
+    
+
     [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
 
     private AudioSource audiosource;
@@ -93,6 +95,7 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
+        cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake(5);
         StopAllCoroutines();    // 모든 코루틴 종료
         ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         animator.SetBool("Lose", true);
