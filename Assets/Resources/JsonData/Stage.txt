@@ -1,0 +1,9 @@
+[
+  { "MapName": "Map1-1" },
+  { "MapName": "Map1-2" },
+  { "MapName": "Map2-1" },
+  { "MapName": "Map2-2" },
+  { "MapName": "Map3-1" },
+  { "MapName": "Map3-2" },
+  { "MapName": "Map4-1" }
+]

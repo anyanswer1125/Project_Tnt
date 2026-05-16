@@ -23,18 +23,12 @@ public class MainMenuController : MonoBehaviour
     {
         if (mapController != null)
         {
-            mapController.StartGameWithMap("map1-1");
+            mapController.OpenMapPanel();
         }
         else
         {
             Debug.LogError("인스펙터에서 MapController를 연결해주세요!");
         }
-    }
-    IEnumerator MapSelectionDelayed()//중요 없을 시 중복입력으로 처음 맵 등장하자마자 씬 실행
-    {
-        yield return null;
-        isMapSelection = true;// 맵 선택 모드 활성화
-        currentIndex = 0;
     }
     public void OnclickOption()
     {
@@ -81,10 +75,6 @@ public class MainMenuController : MonoBehaviour
             mainMenuPanel.SetActive(false); // 메인 타이틀 메뉴 숨기기
             currentIndex = 0; // 혹은 마지막으로 플레이한 인덱스
         }
-        
-    }
-    void Update()
-    {
         
     }
     void Awake() { instance = this; }

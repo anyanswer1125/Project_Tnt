@@ -1206,7 +1206,7 @@ MonoBehaviour:
   soundMusicButton: {fileID: 1375139848}
   gameStartButton: {fileID: 1654554826}
   mainMenuPanel: {fileID: 122774879}
-  mapController: {fileID: 1036439847}
+  mapController: {fileID: 1036439846}
 --- !u!1 &145163451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 1880182267}
+  starUI: {fileID: 1880182267}
+  stageText: {fileID: 369505250}
 --- !u!1 &414766831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 1772281735}
+  starUI: {fileID: 1772281735}
+  stageText: {fileID: 1788725362}
 --- !u!1 &829507610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6210,7 +6212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 492531061}
+  starUI: {fileID: 492531061}
+  stageText: {fileID: 2075437551}
 --- !u!1 &1036439844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6220,8 +6223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1036439845}
-  - component: {fileID: 1036439847}
-  - component: {fileID: 1036439848}
+  - component: {fileID: 1036439846}
   m_Layer: 0
   m_Name: Maps
   m_TagString: Untagged
@@ -6251,7 +6253,7 @@ Transform:
   - {fileID: 1584073567}
   m_Father: {fileID: 1380677527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1036439847
+--- !u!114 &1036439846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6260,10 +6262,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036439844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bef3b101b3078e459ed22e5e55ab38f, type: 3}
+  m_Script: {fileID: 11500000, guid: e6f9ed8ca5448324682fbe32b8367e11, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapManager
-  mainMenuPanel: {fileID: 122774879}
+  m_EditorClassIdentifier: Assembly-CSharp::MapController
+  textMesh: {fileID: 3022604196596860231}
   mapPanels:
   - {fileID: 1255971376755039356}
   - {fileID: 1028529526}
@@ -6272,24 +6274,9 @@ MonoBehaviour:
   - {fileID: 794069367}
   - {fileID: 1621845889}
   - {fileID: 1584073566}
-  backgroundImage: {fileID: 2114105054}
-  mapListParent: {fileID: 1036439845}
---- !u!114 &1036439848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036439844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077028496c5c60a479a34585d3dd35e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JsonManager
-  textAsset:
-  - {fileID: 4900000, guid: ab5cfa9a9b75caf41af415184f2e8745, type: 3}
-  starTurnDebugList: []
-  soundDebugList: []
+  mainMenuPanel: {fileID: 122774879}
+  mapsParent: {fileID: 1036439844}
+  map1_1: {fileID: 1255971376755039356}
 --- !u!1 &1055890173
 GameObject:
   m_ObjectHideFlags: 0
@@ -9501,7 +9488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 210801733}
+  starUI: {fileID: 210801733}
+  stageText: {fileID: 2056368633}
 --- !u!1 &1590813791
 GameObject:
   m_ObjectHideFlags: 0
@@ -9787,7 +9775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 2030471719}
+  starUI: {fileID: 2030471719}
+  stageText: {fileID: 1567984912}
 --- !u!1 &1622726338
 GameObject:
   m_ObjectHideFlags: 0
@@ -12643,7 +12632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 205521452}
+  starUI: {fileID: 205521452}
+  stageText: {fileID: 2058471391}
 --- !u!1 &2091220263
 GameObject:
   m_ObjectHideFlags: 0
@@ -14295,7 +14285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50b94a45956c749ac179cb1c6ae761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapStage
-  scoreStarsObject: {fileID: 1522097864556998075}
+  starUI: {fileID: 1522097864556998075}
+  stageText: {fileID: 3022604196596860231}
 --- !u!224 &8796586712408468492
 RectTransform:
   m_ObjectHideFlags: 0

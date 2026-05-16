@@ -1,149 +1,186 @@
-using TMPro;
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using UnityEngine.UI;
 
 public class MapController : MonoBehaviour
 {
-    private int currentIndex = 1;
-    private string MapName;
-    private static bool isMapSelection = false;//선택하고 있는지
-    [Header("Maps")]
-    [SerializeField] public TextMeshProUGUI textMesh;
-    public GameObject[] mapPanels;
-    public GameObject mainMenuPanel;
-    public GameObject mapsParent;
-    // 메인 메뉴 컨트롤러에서 호출할 핵심 함수
+    [Header("--- Panels & Background ---")]
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject[] mapPanels; // 인스펙터의 Map1-1 ~ Map4-1 배열
+    [SerializeField] private Image backgroundImage;
 
-    // [수정] 이름을 찾지 말고, 인스펙터에서 직접 드래그해서 넣어주세요.
-    public GameObject map1_1;
-        
-    public void StartGameWithMap(string mapName)
+    [Header("--- Map Selection Settings ---")]
+    [SerializeField] private Transform mapListParent; // 부모 (Maps)
+
+    private List<MapData> loadedMapList = new List<MapData>();
+    private Dictionary<string, Star_TurnTable> localStageDict = new Dictionary<string, Star_TurnTable>();
+    private int _currentMapIdx = 0;
+
+    // 에디터에 디자인해둔 UI 원래 위치를 저장할 변수
+    private Vector3 originPos;
+
+    private void Start()
     {
-        mainMenuPanel.SetActive(false);
-
-        if (map1_1 != null)
+        // 1. 게임이 시작되자마자 에디터에 세팅해둔 완벽한 고정 위치를 백업합니다.
+        if (mapListParent != null)
         {
-            map1_1.SetActive(true);
-            Debug.Log("Map1-1 활성화 성공");
-        }
-        else
-        {
-            Debug.LogError("Map1-1 오브젝트를 Maps 부모 밑에서 찾을 수 없습니다!");
-        }
-    }
-    //현재 맵 이름 기억
-    IEnumerator MapSelectionReady()
-    {
-        yield return null;
-        Debug.Log("준비");
-    }
-
-    IEnumerator MapSelectionTransition(string mapName)
-    {
-        // 2. 메인 메뉴 비활성화
-        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
-
-        // 3. 모든 맵 자식들 일단 끄기 (초기화)
-        foreach (Transform child in mapsParent.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-        // 4. 요청된 맵(map1-1)만 활성화
-        Transform targetMap = mapsParent.transform.Find(mapName);
-        if (targetMap != null)
-        {
-            targetMap.gameObject.SetActive(true);
-        }
-        // 5. 중복 입력 방지를 위한 한 프레임 대기
-        yield return null;
-        if(isMapSelection == true)
-            Debug.Log(mapName + " 활성화 완료");
-    }
-
-    private void OnEnable()
-    {
-        GetName();
-    }
-    // [핵심] 어디서든 이 함수를 호출하면 패널이 교체됨
-    public void ChangePanel(string targetMapName)
-    {
-        // 1. 메인 메뉴를 비활성화 (이후에도 MapManager는 살아있음)
-        mainMenuPanel.SetActive(false);
-
-        // 2. 모든 맵 패널을 일단 끔 (자식들을 순회하며 비활성화)
-        foreach (Transform child in mapsParent.transform)
-        {
-            child.gameObject.SetActive(false);
+            originPos = mapListParent.localPosition;
         }
 
-        // 3. 원하는 맵 패널만 활성화
-        Transform target = mapsParent.transform.Find(targetMapName);
-        if (target != null)
+        // JsonManager가 깨어나서 싱글톤 인스턴스가 등록될 때까지 안전하게 대기
+        StartCoroutine(WaitAndInitSystem());
+    }
+
+    private IEnumerator WaitAndInitSystem()
+    {
+        while (JsonManager.Instance == null)
         {
-            target.gameObject.SetActive(true);
+            yield return null;
+        }
+
+        InitMapSystem();
+        ReturnToMain();
+    }
+
+    private void InitMapSystem()
+    {
+        loadedMapList.Clear();
+
+        // JsonManager의 비공개(private) 메서드인 LoadDataDictionary를 "stage" 파일명과 "MapName을 키로 쓰겠다"는 규칙으로 강제 호출
+        var method = typeof(JsonManager).GetMethod("LoadDataDictionary", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (method != null)
+        {
+            var genericMethod = method.MakeGenericMethod(typeof(Star_TurnTable));
+            System.Func<Star_TurnTable, int> dummyKey = data => 0; // 명시적 타입 일치를 위한 임시 규칙
+
+            localStageDict = new Dictionary<string, Star_TurnTable>();
+
+            for (int i = 0; i < mapPanels.Length; i++)
+            {
+                if (mapPanels[i] == null) continue;
+
+                MapData newMap = new MapData();
+                string cleanName = mapPanels[i].name.Trim();
+
+                newMap.MapName = cleanName;   // "Map1-1"
+                newMap.SceneName = cleanName; // "Map1-1"
+                newMap.isCleared = false;            // 초기값
+
+                loadedMapList.Add(newMap);
+            }
+        }
+        Debug.Log("Json연결 및 씬 경로 패치 완료");
+        RefreshMapUI();
+    }
+    // [새로운 스크립트(StageClearManager)가 직접 호출해 주는 함수]
+    public void RegisterStageClear(string stageName)
+    {
+        foreach (GameObject panel in mapPanels)
+        {
+            if (panel != null && panel.name.Trim() == stageName.Trim())
+            {
+                // 해당 오브젝트에 부착된 StageDataController를 찾아 클리어 상태로 만듭니다.
+                StageClearManager stageData = panel.GetComponent<StageClearManager>();
+                if (stageData != null)
+                {
+                    stageData.SetClearStatus(true); // 스스로 별 오브젝트 활성화 지시
+                }
+                break;
+            }
         }
     }
-    public void ReturnToMain()
-    {
-        ChangePanel("mainmenu");
-    }
-    void GetName()
-    {
-        // 1. 전체 텍스트를 가져옴
-        string fullText = textMesh.text;
 
-        // 2. 줄바꿈(\n)을 기준으로 나눔
-        string[] lines = fullText.Split('\n');
-
-        // 3. 첫 번째 줄(index 0)을 선택하고, 이전 답변처럼 하이픈과 공백 제거
-        MapName = lines[0].Replace("-", "").Trim();
-
-        Debug.Log("추출된 결과: " + MapName); // 출력: 1-1
-    }
-    public void LoadThisScene()
+    private void Update()
     {
-        GetName();
-        if (!string.IsNullOrEmpty(MapName)) SceneManager.LoadScene("Map" + MapName);
-        else Debug.LogError("맵 이름 없음");
+        // 메인 메뉴가 꺼져 있고, 로드된 맵이 있을 때만 화살표/엔터 입력 처리
+        if (!mainMenuPanel.activeSelf && loadedMapList.Count > 0)
+        {            
+            HandleMapSelectionInput();
+        }
     }
-    void UpdatePanels()
+    // 메인 메뉴 컨트롤러 등 외부에서 버튼을 클릭했을 때 호출하는 함수  
+    private void HandleMapSelectionInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _currentMapIdx = Mathf.Clamp(_currentMapIdx - 1, 0, loadedMapList.Count - 1);
+            RefreshMapUI(); // 인덱스 변경 시 즉시 끄고 켜기
+            Debug.Log($"⬅ 현재 선택된 맵 오브젝트: {loadedMapList[_currentMapIdx].MapName}");
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _currentMapIdx = Mathf.Clamp(_currentMapIdx + 1, 0, loadedMapList.Count - 1);
+            RefreshMapUI(); // 인덱스 변경 시 즉시 끄고 켜기
+            Debug.Log($"➡ 현재 선택된 맵 오브젝트: {loadedMapList[_currentMapIdx].MapName}");
+        }
+        else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            string targetScene = loadedMapList[_currentMapIdx].SceneName;
+            Debug.Log($"엔터누르면 {targetScene} 씬 로드 시도!");            
+            SceneManager.LoadScene(targetScene);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ReturnToMain();
+        }
+    }
+
+    // 실제로 Map 오브젝트를 활성화/비활성화하고 하위 Score를 제어하는 핵심 메서드
+    private void RefreshMapUI()
     {
         for (int i = 0; i < mapPanels.Length; i++)
         {
-            // 현재 인덱스만 켜고 나머지는 모두 끔
-            mapPanels[i].SetActive(i == currentIndex);
-        }
-    }
-    public void ChangePage(int direction)
-    {
-        currentIndex = Mathf.Clamp(currentIndex + direction, 0, mapPanels.Length - 1);
-        UpdatePanels();
-    }
-    private void Update()
-    {
-        //맵 선택 모드일 때만 키보드 입력 체크
-        if (isMapSelection)
-        {
-            //좌우 방향키로 패널 교체
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (mapPanels[i] == null) continue;
+
+            // 인덱스(i == _currentMapIdx)의 게임오브젝트만 활성화
+            bool isActiveStage = (i == _currentMapIdx);
+            mapPanels[i].SetActive(isActiveStage);
+
+            // 활성화된 오브젝트 하위에서 "Score" 자식을 찾아 클리어 여부에 따라 On/Off
+            if (isActiveStage && i < loadedMapList.Count)
             {
-                ChangePage(1);
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                ChangePage(-1);
-            }
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                LoadThisScene();
-            }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                mapPanels[currentIndex].SetActive(false);
-                mainMenuPanel.SetActive(true);
-                isMapSelection = false;
+                Transform scoreTr = mapPanels[i].transform.Find("Score");
+                if (scoreTr != null)
+                {
+                    scoreTr.gameObject.SetActive(loadedMapList[i].isCleared);
+                }
             }
         }
+    }
+
+    // --- 패널 제어 기능 ---
+    private void AllPanelsOff()
+    {
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        foreach (GameObject panel in mapPanels) if (panel != null) panel.SetActive(false);
+    }
+
+    // 외부 호출용 함수 1개 구조 유지 + 내부에 안전 지연 코루틴 탑재
+    public void OpenMapPanel()
+    {
+        // 즉시 코루틴을 태워 이전 프레임의 마우스 클릭/엔터 입력을 흘려보냅니다.
+        StartCoroutine(OpenMapPanelRoutine());
+    }
+
+    private IEnumerator OpenMapPanelRoutine()
+    {
+        yield return null;
+
+        AllPanelsOff();
+        _currentMapIdx = 0; // 진입 시 무조건 첫 번째 맵(Map1-1) 조준
+        RefreshMapUI();     // 첫 번째 맵만 켜고 나머지 싹 끄기
+
+        if (backgroundImage != null) backgroundImage.color = new Color(0.1f, 0.1f, 0.1f, 0.9f);
+        Debug.Log(" 맵 선택 패널 진입 완료 (유령 엔터키 방지 처리)");
+    }
+
+    public void ReturnToMain()
+    {
+        AllPanelsOff();
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(true);
+        if (backgroundImage != null) backgroundImage.color = Color.white;
+        Debug.Log(" 메인 메뉴 화면");
     }
 }
