@@ -3412,7 +3412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapController
   textMesh: {fileID: 2075437551}
-  CircleFadeObject: {fileID: 1621321074}
 --- !u!1 &1055890173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,7 +4137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1292531518
 Transform:
   m_ObjectHideFlags: 0
@@ -4172,7 +4171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapController
   textMesh: {fileID: 1074340284}
-  CircleFadeObject: {fileID: 1621321074}
 --- !u!1 &1306948212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6944,7 +6942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapController
   textMesh: {fileID: 2058471391}
-  CircleFadeObject: {fileID: 1621321074}
 --- !u!1 &2114105052
 GameObject:
   m_ObjectHideFlags: 0

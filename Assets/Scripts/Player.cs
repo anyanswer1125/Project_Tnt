@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
         // goalTimelineObj.SetActive(true);
 
         // 임시 테스트할려고 만듬 (추후에 지워야함)
-        Test();
+        // Test();
     }
 
     // 임시 테스트할려고 만듬 (추후에 지워야함)
