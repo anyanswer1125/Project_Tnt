@@ -15521,7 +15521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967801567064128100, guid: 2eea608d9a4f64a3c971b71837345703, type: 3}
       propertyPath: orthographic size
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6012131698252424857, guid: 2eea608d9a4f64a3c971b71837345703, type: 3}
       propertyPath: m_IsActive
@@ -17083,7 +17083,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "W, A, S, D\uB97C \uB20C\uB7EC \n\uC774\uB3D9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  m_text: " W, A, S, D\uB97C \uB20C\uB7EC \n\uC774\uB3D9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e79fdce310b8ab64ca1dd98d5bd1792d, type: 2}
   m_sharedMaterial: {fileID: -3786366797963708605, guid: e79fdce310b8ab64ca1dd98d5bd1792d, type: 2}
@@ -17092,8 +17092,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282343578
-  m_fontColor: {r: 0.603, g: 0.37757692, b: 0.247833, a: 1}
+    rgba: 4279247425
+  m_fontColor: {r: 0.25490198, g: 0.13333334, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -19332,9 +19332,21 @@ PrefabInstance:
       propertyPath: circleFadeObject
       value: 
       objectReference: {fileID: 596577907448537232}
+    - target: {fileID: 6972402037412077931, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642932985468516782, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD14C\uC774\uC9C0 1-1 \uBCF4\uBB3C \uD68D\uB4DD"
+      objectReference: {fileID: 0}
     - target: {fileID: 8658868285651861075, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
       propertyPath: m_Name
       value: ClearPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658868285651861075, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
