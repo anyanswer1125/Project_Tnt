@@ -116,6 +116,7 @@ public class TitleMenuController : MonoBehaviour
     private void OptionsUIOn()
     {
         OptionsMenuController.gameObject.SetActive(true);
+        OptionsMenuController.Initialize();
         Debug.Log("옵션 창 열기 로직");
     }
 
