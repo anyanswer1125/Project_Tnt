@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
 
+    private bool bgmValueSetting = false; // BGM 볼륨 설정이 완료되었는지 여부
+    private bool sfxValueSetting = false; // SFX 볼륨 설정이 완료되었는지 여부
 
     private void Awake()
     {
@@ -49,7 +51,7 @@ public class SoundManager : MonoBehaviour
         {
             // 데이터의 설정값 적용
             bgmSource.clip = clip;
-            bgmSource.volume = table.Volume;
+            bgmSource.volume = bgmValueSetting == true? bgmSource.volume:table.Volume;
             bgmSource.loop = table.Loop;
 
             bgmSource.Play(); // 재생
@@ -77,7 +79,7 @@ public class SoundManager : MonoBehaviour
             // PlayOneShot은 기존 소리를 끊지 않고 중첩해서 재생함
             // (단, 이 방식은 루프 기능을 쓸 수 없음)
             // 데이터의 설정값 적용
-            sfxSource.volume = table.Volume;
+            sfxSource.volume = sfxValueSetting == true ? sfxSource.volume : table.Volume;
             sfxSource.loop = table.Loop;
 
             sfxSource.PlayOneShot(clip, table.Volume);
@@ -107,5 +109,17 @@ public class SoundManager : MonoBehaviour
 
         if (newClip != null) clipCache[fileName] = newClip;
         return newClip;
+    }
+
+    public void SetBgmVolume(int volume)
+    {
+        bgmSource.volume = volume * 0.01f;
+        bgmValueSetting = true;
+    }
+
+    public void SetSfxVolume(int volume)
+    {
+        sfxSource.volume = volume * 0.01f;
+        sfxValueSetting = true;
     }
 }
