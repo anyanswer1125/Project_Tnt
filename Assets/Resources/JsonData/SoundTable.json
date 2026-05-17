@@ -198,5 +198,15 @@
     "FileName": "DesertLoop",
     "Volume": 1.0,
     "Loop": true
+  },
+  {
+    "Index": 121,
+    "Scene": "InGame",
+    "SoundName": "SFX_TeleportReady",
+    "Description": "텔레포트준비",
+    "SoundType": "SFX",
+    "FileName": "WizardMagicCircleSpawnSound",
+    "Volume": 1.0,
+    "Loop": false
   }
 ]
