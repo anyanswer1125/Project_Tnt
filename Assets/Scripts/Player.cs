@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip sfx_Attack;
     [SerializeField] private AudioClip sfx_BumpSound;
 
+    [SerializeField] private AudioClip sfx_TeleportActiveSound;
+
+
     [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
 
@@ -549,6 +552,8 @@ public class Player : MonoBehaviour
 
         animator.SetBool("Skill", true);
         WizardSkillSetActive(true);
+        SoundManager.Instance.PlaySFX(121);
+
         // 스킬 커서 위치 초기화
         TeleportCursor.transform.position = transform.position + Vector3.up * 0.5f;
         // 시작 위치

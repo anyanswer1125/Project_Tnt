@@ -31036,6 +31036,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 387409512609101004, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1391828794509417289, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_Name
       value: CharacterSelect
@@ -31088,6 +31092,18 @@ PrefabInstance:
       propertyPath: floorLayer.m_Bits
       value: 1152
       objectReference: {fileID: 0}
+    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: sfx_TeleportActiveSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c2711e6a1e8d345e5a1c30d6ac82d23a, type: 3}
+    - target: {fileID: 3653506576064557363, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114688463189723606, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5121649008012438145, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -31104,6 +31120,10 @@ PrefabInstance:
       propertyPath: 'players.Array.data[2]'
       value: 
       objectReference: {fileID: 232465825}
+    - target: {fileID: 8266087257264177926, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8421475137514857839, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: cameraShakeObj
       value: 
