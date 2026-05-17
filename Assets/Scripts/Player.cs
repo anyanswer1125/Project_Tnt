@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
+        SoundManager.Instance.PlaySFX(107);
         cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake(5);
         StopAllCoroutines();    // 모든 코루틴 종료
         ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
@@ -106,7 +107,7 @@ public class Player : MonoBehaviour
     private IEnumerator AnimationLose()
     {
         float jumpHeight = 6.0f;     // 튀어오르는 높이
-        float loseDuration = 1.2f;  // 전체 애니메이션 시간
+        float loseDuration = 0.8f;  // 전체 애니메이션 시간
         float fallDepth = -8.0f;    // 화면 아래로 떨어질 깊이
         float sideDistance = 1.0f;  // 옆으로 밀려날 거리
         float elapsedTime = 0f;
