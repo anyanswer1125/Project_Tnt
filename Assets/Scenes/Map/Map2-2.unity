@@ -408,7 +408,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1854677542563926825, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103206333}
+    - targetCorrespondingSourceObject: {fileID: 3111930058654424370, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103206332}
+    - targetCorrespondingSourceObject: {fileID: 6972402037412077931, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103206331}
+    - targetCorrespondingSourceObject: {fileID: 7890973554078895284, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103206330}
+    - targetCorrespondingSourceObject: {fileID: 2369703175250436781, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103206329}
   m_SourcePrefab: {fileID: 100100000, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
 --- !u!224 &103206321 stripped
 RectTransform:
@@ -425,6 +440,96 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4229812296925253469, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
   m_PrefabInstance: {fileID: 103206320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &103206324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2369703175250436781, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+  m_PrefabInstance: {fileID: 103206320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &103206325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7890973554078895284, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+  m_PrefabInstance: {fileID: 103206320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &103206326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6972402037412077931, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+  m_PrefabInstance: {fileID: 103206320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &103206327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3111930058654424370, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+  m_PrefabInstance: {fileID: 103206320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &103206328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1854677542563926825, guid: d29d921a2eed6d446ab57e6170ec363d, type: 3}
+  m_PrefabInstance: {fileID: 103206320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &103206329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103206324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797871484902539}
+--- !u!114 &103206330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103206325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797871484902539}
+--- !u!114 &103206331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103206326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797871484902539}
+--- !u!114 &103206332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103206327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797871484902539}
+--- !u!114 &103206333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103206328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797871484902539}
 --- !u!1 &131525954
 GameObject:
   m_ObjectHideFlags: 0
@@ -16721,6 +16826,7 @@ GameObject:
   - component: {fileID: 2077246634}
   - component: {fileID: 2077246633}
   - component: {fileID: 2077246632}
+  - component: {fileID: 2077246635}
   m_Layer: 0
   m_Name: Cinemachine(Goal)
   m_TagString: Untagged
@@ -16834,6 +16940,30 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &2077246635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077246630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 656.50964, y: 158.3942, z: -983.84973}
 --- !u!1 &2081661848
 GameObject:
   m_ObjectHideFlags: 0

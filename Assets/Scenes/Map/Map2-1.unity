@@ -18817,6 +18817,7 @@ GameObject:
   - component: {fileID: 6150500984903201420}
   - component: {fileID: 5842035561613796742}
   - component: {fileID: 1445186338892589942}
+  - component: {fileID: 6150500984903201421}
   m_Layer: 5
   m_Name: FIndTreasure
   m_TagString: Untagged
@@ -19218,6 +19219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6052638183859834057}
   - component: {fileID: 621068941004895815}
+  - component: {fileID: 6052638183859834058}
   m_Layer: 5
   m_Name: GroupSelect
   m_TagString: Untagged
@@ -19929,6 +19931,7 @@ GameObject:
   - component: {fileID: 7617686215152138787}
   - component: {fileID: 7821361197325117989}
   - component: {fileID: 1837455440098589098}
+  - component: {fileID: 7821361197325117990}
   m_Layer: 5
   m_Name: TreasureImage
   m_TagString: Untagged
@@ -21753,6 +21756,7 @@ GameObject:
   - component: {fileID: 1909380440545809669}
   - component: {fileID: 1024163515303096119}
   - component: {fileID: 7343211845446475533}
+  - component: {fileID: 7343211845446475534}
   m_Layer: 0
   m_Name: Cinemachine(Goal)
   m_TagString: Untagged
@@ -21847,6 +21851,19 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: -412.52}
   m_SizeDelta: {x: 382.1, y: 700}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &6052638183859834058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369703175365855799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797870897586252}
 --- !u!222 &6074592410708689914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21911,6 +21928,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854677542947797939}
   m_CullTransparentMesh: 1
+--- !u!114 &6150500984903201421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854677542947797939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797870897586252}
 --- !u!222 &6216818288310057185
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22479,6 +22509,7 @@ GameObject:
   - component: {fileID: 2780621644815496957}
   - component: {fileID: 8642932985353310516}
   - component: {fileID: 24788464109250218}
+  - component: {fileID: 8642932985353310517}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -22603,6 +22634,30 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!114 &7343211845446475534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012131700045275712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 656.50964, y: 158.3942, z: -983.84973}
 --- !u!224 &7368108161749985337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23049,6 +23104,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3111930058769692072}
   m_CullTransparentMesh: 1
+--- !u!114 &7821361197325117990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111930058769692072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797870897586252}
 --- !u!222 &7840235719685854009
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23168,6 +23236,7 @@ GameObject:
   - component: {fileID: 7368108161749985337}
   - component: {fileID: 3021189238099624165}
   - component: {fileID: 1267098524171890999}
+  - component: {fileID: 7890973554499986479}
   m_Layer: 5
   m_Name: ClearLogo
   m_TagString: Untagged
@@ -23175,6 +23244,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &7890973554499986479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890973554499986478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797870897586252}
 --- !u!114 &7911981320697942493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23680,6 +23762,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uC2A4\uD14C\uC774\uC9C0 2-1 \uBCF4\uBB3C \uD68D\uB4DD"
+--- !u!114 &8642932985353310517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972402037527857649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218c76170eb84b489a1898e2caeace9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearScreenCameraShakeScript
+  cameraShakeObj: {fileID: 2745797870897586252}
 --- !u!222 &8650039348896713738
 CanvasRenderer:
   m_ObjectHideFlags: 0
