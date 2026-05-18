@@ -20,13 +20,11 @@ public class OptionPanel : MonoBehaviour
         instance = this;
     }
 
-    // 옵션창이 활성화될 때마다 자동으로 실행되는 유니티 내장 함수
-    void OnEnable()
+    void Start()
     {
         // 1. 켜지자마자 SoundMusic 버튼을 선택 상태로 만듦
         if (soundMusicButton != null)
         {
-            EventSystem.current.SetSelectedGameObject(soundMusicButton);
             UpdateValueDisplay("SoundMusic"); // 초기 값 표시
         }
     }

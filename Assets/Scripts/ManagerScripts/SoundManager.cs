@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioMixer audioMixer; // 오디오 믹서 (볼륨 조절용)
 
+    private const string BGM_VOLUME_PARAM = "BGMVolume";
+    private const string SFX_VOLUME_PARAM = "SFXVolume";
+
+    private bool bgmValueSetting = false; // BGM 볼륨 설정이 완료되었는지 여부
+    private bool sfxValueSetting = false; // SFX 볼륨 설정이 완료되었는지 여부
 
     private void Awake()
     {
@@ -25,10 +32,13 @@ public class SoundManager : MonoBehaviour
     {
         // 내 오브젝트에 붙은 오디오 소스를 가져옴
         var sources = GetComponents<AudioSource>();
+        audioMixer = Resources.Load<AudioMixer>("AudioMixer");
         if (sources.Length >= 2)
         {
             bgmSource = sources[0];
+            bgmSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups(BGM_VOLUME_PARAM)[0]; // BGM 믹서 그룹에 연결
             sfxSource = sources[1];
+            sfxSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups(SFX_VOLUME_PARAM)[0]; // SFX 믹서 그룹에 연결
         }
     }
 
@@ -49,7 +59,7 @@ public class SoundManager : MonoBehaviour
         {
             // 데이터의 설정값 적용
             bgmSource.clip = clip;
-            bgmSource.volume = table.Volume;
+            //bgmSource.volume = bgmValueSetting == true? bgmSource.volume:table.Volume;
             bgmSource.loop = table.Loop;
 
             bgmSource.Play(); // 재생
@@ -77,7 +87,7 @@ public class SoundManager : MonoBehaviour
             // PlayOneShot은 기존 소리를 끊지 않고 중첩해서 재생함
             // (단, 이 방식은 루프 기능을 쓸 수 없음)
             // 데이터의 설정값 적용
-            sfxSource.volume = table.Volume;
+            //sfxSource.volume = sfxValueSetting == true ? sfxSource.volume : table.Volume;
             sfxSource.loop = table.Loop;
 
             sfxSource.PlayOneShot(clip, table.Volume);
@@ -107,5 +117,27 @@ public class SoundManager : MonoBehaviour
 
         if (newClip != null) clipCache[fileName] = newClip;
         return newClip;
+    }
+
+    public void SetBgmVolume(int volume)
+    {
+        // 0~100을 0.0001~1.0 범위로 변환 후 dB로 계산 (선형 진폭과 일치)
+        float linearVolume = Mathf.Max(0.0001f, volume / 100f); // 0.0001 ~ 1.0
+        float dbVolume = 20f * Mathf.Log10(linearVolume);        // -80dB ~ 0dB
+        audioMixer.SetFloat(BGM_VOLUME_PARAM, dbVolume);
+
+        //bgmSource.volume = volume * 0.01f;
+        bgmValueSetting = true;
+    }
+
+    public void SetSfxVolume(int volume)
+    {
+        // 0~100을 0.0001~1.0 범위로 변환 후 dB로 계산 (선형 진폭과 일치)
+        float linearVolume = Mathf.Max(0.0001f, volume / 100f); // 0.0001 ~ 1.0
+        float dbVolume = 20f * Mathf.Log10(linearVolume);        // -80dB ~ 0dB
+        audioMixer.SetFloat(SFX_VOLUME_PARAM, dbVolume);
+
+        //sfxSource.volume = volume * 0.01f;
+        sfxValueSetting = true;
     }
 }

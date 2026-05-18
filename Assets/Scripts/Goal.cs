@@ -25,7 +25,7 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 1. 이름표(Tag)가 Player인지 먼저 확인 (전사/도적/마법사 모두 해당)
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && TurnManager.instance.TurnCount > 0)
         {
             Debug.Log(collision.name + "가 골인했습니다!");
 

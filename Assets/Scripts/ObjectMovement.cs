@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 public class ObjectMovement : MonoBehaviour
 {
     private float moveDuration = 0.2f; // 이동에 걸리는 시간 (예: 0.2초)
-    private float jumpHeight = 0.1f; // 점프 높이
     [SerializeField] private LayerMask floorObjectLay;  //f
     [SerializeField] private Animator objAnimator;
 

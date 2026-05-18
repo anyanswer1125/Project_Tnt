@@ -14,11 +14,6 @@ public class SpikeScript : MonoBehaviour
     [SerializeField] private bool spikeActive;
     [SerializeField] private SpikeType spikeType;   //현재 SpikeScript의 타입
 
-
-    [SerializeField] private AudioClip sfx_SpikeOnOff;
-    
-    private AudioSource audiosource;
-
     public SpikeType SpikeType => spikeType;
 
     public bool SpikeActive => spikeActive;
@@ -27,8 +22,7 @@ public class SpikeScript : MonoBehaviour
     public void Initialize(bool spikeActive)
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
-        spikeAnim = GetComponent<Animator>();
-        audiosource = GetComponent<AudioSource>();        
+        spikeAnim = GetComponent<Animator>();      
         boxCollider2D.enabled = spikeActive;
         boxCollider2D.isTrigger = spikeActive;
         this.spikeActive = spikeActive;
@@ -86,6 +80,6 @@ public class SpikeScript : MonoBehaviour
     }
     public void PlaySfxSpikeOnOff()
     {
-        audiosource.PlayOneShot(sfx_SpikeOnOff);
+        SoundManager.Instance.PlaySFX(113);
     }
 }

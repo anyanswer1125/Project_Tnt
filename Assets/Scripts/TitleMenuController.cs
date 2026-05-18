@@ -47,6 +47,8 @@ public class TitleMenuController : MonoBehaviour
 
         // 2. 게임 시작 시 첫 번째 버튼(스타트)에 포커스를 줍니다.
         SelectButton(currentSelection);
+
+        SoundManager.Instance.PlayBgm(101);
     }
 
     // 키보드 위/아래 이동 및 스페이스바 선택 처리
@@ -102,6 +104,7 @@ public class TitleMenuController : MonoBehaviour
         // 유니티 UI 시스템이 해당 버튼을 '선택 상태(Selected)'로 만듭니다.
         menuButtons[index].Select();
         arrowboths.transform.localPosition = menuButtons[index].transform.localPosition;
+        SoundManager.Instance.PlaySFX(102);
     }
 
     // 맵UI 활성화
@@ -109,6 +112,7 @@ public class TitleMenuController : MonoBehaviour
     {
         mapMeunController.gameObject.SetActive(true);
         mapMeunController.Initialize();
+        SoundManager.Instance.PlaySFX(103);
         Debug.Log("맵 창 열기 로직");
     }
 
@@ -116,6 +120,8 @@ public class TitleMenuController : MonoBehaviour
     private void OptionsUIOn()
     {
         OptionsMenuController.gameObject.SetActive(true);
+        OptionsMenuController.Initialize();
+        SoundManager.Instance.PlaySFX(103);
         Debug.Log("옵션 창 열기 로직");
     }
 

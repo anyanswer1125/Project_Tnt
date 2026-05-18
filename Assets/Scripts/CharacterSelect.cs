@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum Character
 {
@@ -24,9 +23,6 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private CharacterSelectUI characterSelectUI;
     [SerializeField] private GameObject vfx_ChangePlayer;
 
-    [SerializeField] private AudioClip sfx_PlayerChange;
-
-    private AudioSource audioSource;
     void Start()
     {
         Initialize();
@@ -49,8 +45,6 @@ public class CharacterSelect : MonoBehaviour
         characterSelectUI?.Initialize();
         characterSelectUI?.SelectUI(currentCharacter);
 
-        audioSource = GetComponent<AudioSource>();
-
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (JsonManager.Instance.StageCharacterCount.TryGetValue(sceneIndex, out var data))
@@ -67,7 +61,7 @@ public class CharacterSelect : MonoBehaviour
                     case Character.Wizard: isAvailable = data.Wizard; break;
                 }
 
-                // 2. 사용 가능한 캐릭터이고, 아직 사전에 추가되지 않았다면 추가
+                // 2.사용 가능한 캐릭터이고, 아직 사전에 추가되지 않았다면 추가
                 if (isAvailable == true && !playerDictionary.ContainsKey(player.PlayerCharacterType))
                 {
                     playerDictionary.Add(player.PlayerCharacterType, player);

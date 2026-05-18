@@ -26,12 +26,12 @@
   },
   {
     "StageID": 6,
-    "Turns": 100,
+    "Turns": 40,
     "MapIndex": "Map3-2"
   },
   {
     "StageID": 7,
-    "Turns": 100,
+    "Turns": 30,
     "MapIndex": "Map4-1"
   }
 ]
