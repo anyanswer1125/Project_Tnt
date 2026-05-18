@@ -6,8 +6,6 @@ public class GoalBox : MonoBehaviour
 {
     [SerializeField] private GameObject treasureObj;
 
-    [SerializeField] private AudioSource audioSource;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,7 +68,7 @@ public class GoalBox : MonoBehaviour
     }
     public void PlaySfx_ChestOpen()
     {
-        audioSource.Play();
+        SoundManager.Instance.PlaySFX(116);
     }
 
     private void OnDestroy()
