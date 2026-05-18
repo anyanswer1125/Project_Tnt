@@ -386,7 +386,6 @@ public class Player : MonoBehaviour
                 vfx_PushEffect.transform.position = centerPos;
                 vfx_PushEffect.transform.rotation = transform.rotation;
                 canWarriorMove = false;
-                SoundManager.Instance.PlaySFX(107);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
                 enemy.MonsterDie(this);

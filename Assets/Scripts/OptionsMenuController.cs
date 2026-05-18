@@ -185,7 +185,6 @@ public class OptionsMenuController : MonoBehaviour
                 ApplyOptionSetting(currentItem); // [옵션 프리뷰] 화면 모드 같은 설정을 인게임에 즉시 미리보기로 반영합니다.
                 UpdateArrowStates();   // 현재 값이 최소/최대치에 도달했는지 확인해 화살표 투명도를 조절합니다.
 
-                SoundManager.Instance.PlaySFX(102);
             }
         }
         else
@@ -318,19 +317,21 @@ public class OptionsMenuController : MonoBehaviour
         switch (item.type)
         {
             case OptionType.Save:
+                SoundManager.Instance.PlaySFX(102);
                 SaveSettings(); // 저장
                 gameObject.SetActive(false);
                 titleMenuController.ResetMenuSelection();
+                SoundManager.Instance.PlaySFX(103);
                 break;
 
             case OptionType.Cancel:
+                SoundManager.Instance.PlaySFX(102);
                 LoadSettings(); // 취소
                 UpdateOptionTexts();
                 gameObject.SetActive(false);
                 titleMenuController.ResetMenuSelection();
+                SoundManager.Instance.PlaySFX(103);
                 break;
         }
-
-        SoundManager.Instance.PlaySFX(103);
     }
 }
