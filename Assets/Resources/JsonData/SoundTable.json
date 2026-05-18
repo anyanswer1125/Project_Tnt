@@ -5,7 +5,7 @@
     "SoundName": "BGM_MainTitle",
     "Description": "타이틀배경음",
     "SoundType": "BGM",
-    "FileName": "TutorialLoop / DemoLoop",
+    "FileName": "TutorialLoop",
     "Volume": 0.8,
     "Loop": true
   },

@@ -100,6 +100,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 4040
+  heavyBox:
+    serializedVersion: 2
+    m_Bits: 0
   vfx_JumpEffectObj: {fileID: 7846941661377796682, guid: 9ab3d9dab096e462f81e194b4939316b, type: 3}
   vfx_PushEffect: {fileID: 6346689490019014112, guid: f759dd2612f0244d79a05e72fc9b5d40, type: 3}
   JumpEffectPos: {fileID: 3945141592878167340}
@@ -114,9 +117,6 @@ MonoBehaviour:
   TeleportCursor: {fileID: 0}
   TeleportRangeCursor: {fileID: 0}
   teleportSprite: {fileID: 0}
-  sfx_MoveSound: {fileID: 8300000, guid: ee52e22ffb4204fab8b6febe60d9fd9a, type: 3}
-  sfx_PushBox: {fileID: 8300000, guid: 6db45a90dd01a4cb19072d435ea64f3b, type: 3}
-  sfx_Attack: {fileID: 0}
   sfx_BumpSound: {fileID: 8300000, guid: 581fff02b7a4143fa80106fdde01ec12, type: 3}
   winTimelineObj: {fileID: 0}
   cameraShakeObj: {fileID: 0}
@@ -574,8 +574,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2722930265973037374}
   - component: {fileID: 7393068012084249894}
-  - component: {fileID: 6126692236138339673}
-  - component: {fileID: 177918882786128998}
   m_Layer: 0
   m_Name: CharacterSelect
   m_TagString: Untagged
@@ -622,202 +620,7 @@ MonoBehaviour:
   currentPlayerTransform: {fileID: 0}
   currentCharacter: 0
   characterSelectUI: {fileID: 0}
-  vfx_ChangePlayer: {fileID: 0}
-  sfx_PlayerChange: {fileID: 8300000, guid: 7773d10bd498142d6a02d65dfd1203fa, type: 3}
---- !u!82 &6126692236138339673
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391828794509417289}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &177918882786128998
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391828794509417289}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  vfx_ChangePlayer: {fileID: 5227164062496089103}
 --- !u!1 &1521464732260927787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1394,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
+  heavyBox:
+    serializedVersion: 2
+    m_Bits: 0
   vfx_JumpEffectObj: {fileID: 7846941661377796682, guid: 9ab3d9dab096e462f81e194b4939316b, type: 3}
   vfx_PushEffect: {fileID: 6346689490019014112, guid: f759dd2612f0244d79a05e72fc9b5d40, type: 3}
   JumpEffectPos: {fileID: 8131916794511565420}
@@ -1605,9 +1411,6 @@ MonoBehaviour:
   TeleportCursor: {fileID: 0}
   TeleportRangeCursor: {fileID: 0}
   teleportSprite: {fileID: 0}
-  sfx_MoveSound: {fileID: 8300000, guid: ee52e22ffb4204fab8b6febe60d9fd9a, type: 3}
-  sfx_PushBox: {fileID: 8300000, guid: 6db45a90dd01a4cb19072d435ea64f3b, type: 3}
-  sfx_Attack: {fileID: 0}
   sfx_BumpSound: {fileID: 8300000, guid: 581fff02b7a4143fa80106fdde01ec12, type: 3}
   winTimelineObj: {fileID: 0}
   cameraShakeObj: {fileID: 0}
@@ -2029,6 +1832,9 @@ MonoBehaviour:
     m_Bits: 1024
   obstacleLayer:
     serializedVersion: 2
+    m_Bits: 0
+  heavyBox:
+    serializedVersion: 2
     m_Bits: 4096
   vfx_JumpEffectObj: {fileID: 7846941661377796682, guid: 9ab3d9dab096e462f81e194b4939316b, type: 3}
   vfx_PushEffect: {fileID: 6346689490019014112, guid: f759dd2612f0244d79a05e72fc9b5d40, type: 3}
@@ -2044,9 +1850,6 @@ MonoBehaviour:
   TeleportCursor: {fileID: 0}
   TeleportRangeCursor: {fileID: 0}
   teleportSprite: {fileID: 0}
-  sfx_MoveSound: {fileID: 8300000, guid: ee52e22ffb4204fab8b6febe60d9fd9a, type: 3}
-  sfx_PushBox: {fileID: 8300000, guid: 6db45a90dd01a4cb19072d435ea64f3b, type: 3}
-  sfx_Attack: {fileID: 8300000, guid: f353a93dd7e44473e90a8a589a442e78, type: 3}
   sfx_BumpSound: {fileID: 8300000, guid: 581fff02b7a4143fa80106fdde01ec12, type: 3}
   winTimelineObj: {fileID: 0}
   cameraShakeObj: {fileID: 0}

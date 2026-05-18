@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Multiplayer.PlayMode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,14 +39,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject TeleportCursor; // 마법사의 스킬 커서
     [SerializeField] private GameObject TeleportRangeCursor;    // 마법사의 스킬 범위
     [SerializeField] private SpriteRenderer teleportSprite; // 마법사의 스킬 사용가능 한지 표시하는 역할
-    //SFX
-    [SerializeField] private AudioClip sfx_MoveSound;
-    [SerializeField] private AudioClip sfx_PushBox;
-    [SerializeField] private AudioClip sfx_Attack;
     [SerializeField] private AudioClip sfx_BumpSound;
-
-    [SerializeField] private AudioClip sfx_TeleportActiveSound;
-
 
     [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
@@ -98,7 +90,7 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
-        SoundManager.Instance.PlaySFX(107);
+        SoundManager.Instance.PlaySFX(118);
         cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake(5);
         StopAllCoroutines();    // 모든 코루틴 종료
         ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
@@ -172,29 +164,16 @@ public class Player : MonoBehaviour
         animator.SetBool("Win", true);
         stagePlayEnd = true;
         // goalTimelineObj.SetActive(true);
-
-        // 임시 테스트할려고 만듬 (추후에 지워야함)
-        // Test();
-    }
-
-    // 임시 테스트할려고 만듬 (추후에 지워야함)
-    public void Test()
-    {
-        int nextScene = SceneManager.GetActiveScene().buildIndex;
-        nextScene++;
-
-        SceneManager.LoadScene(nextScene);
     }
 
     public void PlayerTurn()
     {
-        if (TurnManager.instance.TurnCount > 1)
+        if (TurnManager.instance.TurnCount > 0)
         {
             TurnManager.instance.SetTurnCount();
         }
         else
         {
-            TurnManager.instance.SetTurnCount();
             SetState(State.Lose);
         }
     }
@@ -407,7 +386,7 @@ public class Player : MonoBehaviour
                 vfx_PushEffect.transform.position = centerPos;
                 vfx_PushEffect.transform.rotation = transform.rotation;
                 canWarriorMove = false;
-                // audiosource.PlayOneShot(sfx_Attack);
+                SoundManager.Instance.PlaySFX(107);
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
                 enemy.MonsterDie(this);

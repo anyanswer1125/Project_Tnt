@@ -42,11 +42,6 @@ public class OptionsMenuController : MonoBehaviour
     Color arrGoColor = new Color(1f, 1f, 1f, 1f);     // 갈 수 있는 상태 (활성화 상태)
     Color arrStopColor = new Color(1f, 1f, 1f, 0.3f); // 갈 수 없는 상태 (비활성화 상태)
 
-    [Header("Saved Value Shortcuts (외부 대입용 변수)")]
-    public int sfxSavedIndex = 0;          // 저장된 SFX value 값
-    public int bgmSavedIndex = 0;          // 저장된 BGM value 값
-    public int displayModeSavedIndex = 0;  // 저장된 화면모드 값
-
     // 초기화 함수
     public void Initialize()
     {
@@ -71,6 +66,8 @@ public class OptionsMenuController : MonoBehaviour
         {
             arrowParent.localPosition = optionItems[currentSelection].valueText.transform.localPosition;
         }
+
+        SoundManager.Instance.PlaySFX(104);
     }
 
     // 각 옵션들 ValueOptions 값 초기화
@@ -152,6 +149,8 @@ public class OptionsMenuController : MonoBehaviour
 
                 isVerticalMoved = true; // "이미 이동 처리했음" 플래그를 켜서 꾹 누르고 있어도 마구 스크롤되지 않게 막음
                 UpdateArrowStates();   // 메뉴가 바뀌었으므로 좌우 화살표들의 투명도 상태도 다시 계산
+
+                SoundManager.Instance.PlaySFX(102);
             }
         }
         else
@@ -185,6 +184,8 @@ public class OptionsMenuController : MonoBehaviour
                 UpdateOptionTexts();   // 유저가 방 번호를 바꿨으니 화면에 나오는 글자도 바로 교체합니다.
                 ApplyOptionSetting(currentItem); // [옵션 프리뷰] 화면 모드 같은 설정을 인게임에 즉시 미리보기로 반영합니다.
                 UpdateArrowStates();   // 현재 값이 최소/최대치에 도달했는지 확인해 화살표 투명도를 조절합니다.
+
+                SoundManager.Instance.PlaySFX(102);
             }
         }
         else
@@ -272,17 +273,17 @@ public class OptionsMenuController : MonoBehaviour
             switch (item.type)
             {
                 case OptionType.SFX:
-                    sfxSavedIndex = item.currentIndex;
+                    SettingsManager.Instance.sfxSavedIndex = item.currentIndex;
                     if (int.TryParse(item.valueOptions[item.currentIndex], out int sfxVolume))
                         SoundManager.Instance.SetSfxVolume(sfxVolume);
                     break;
                 case OptionType.BGM:
-                    bgmSavedIndex = item.currentIndex;
+                    SettingsManager.Instance.bgmSavedIndex = item.currentIndex;
                     if (int.TryParse(item.valueOptions[item.currentIndex], out int bgmVolume))
                         SoundManager.Instance.SetBgmVolume(bgmVolume);
                     break;
                 case OptionType.DisplayMode:
-                    displayModeSavedIndex = item.currentIndex;
+                    SettingsManager.Instance.displayModeSavedIndex = item.currentIndex;
                     break;
             }
         }
@@ -297,13 +298,13 @@ public class OptionsMenuController : MonoBehaviour
             switch (item.type)
             {
                 case OptionType.SFX:
-                    item.currentIndex = sfxSavedIndex;
+                    item.currentIndex = SettingsManager.Instance.sfxSavedIndex;
                     break;
                 case OptionType.BGM:
-                    item.currentIndex = bgmSavedIndex;
+                    item.currentIndex = SettingsManager.Instance.bgmSavedIndex;
                     break;
                 case OptionType.DisplayMode:
-                    item.currentIndex = displayModeSavedIndex;
+                    item.currentIndex = SettingsManager.Instance.displayModeSavedIndex;
                     break;
             }
             ApplyOptionSetting(item); // 저장된 값 전달
@@ -329,5 +330,7 @@ public class OptionsMenuController : MonoBehaviour
                 titleMenuController.ResetMenuSelection();
                 break;
         }
+
+        SoundManager.Instance.PlaySFX(103);
     }
 }

@@ -20,6 +20,7 @@ public class MapMeunController : MonoBehaviour
     // 초기화 함수
     public void Initialize()
     {
+        SoundManager.Instance.PlaySFX(104);
         fullMapList.AddRange(transform.Find("Map").GetComponentsInChildren<Button>(true));
         arrowBothLeft = transform.Find("ArrowBothLeft").GetComponent<Image>();
         arrowBothRight = transform.Find("ArrowBothRight").GetComponent<Image>();
@@ -90,6 +91,8 @@ public class MapMeunController : MonoBehaviour
 
                 MapSetActive(currentSelection);
                 UpdateArrowStates();
+
+                SoundManager.Instance.PlaySFX(102);
             }
         }
         else
@@ -104,6 +107,7 @@ public class MapMeunController : MonoBehaviour
             {
                 // 현재 선택된 버튼의 onClick 이벤트를 강제로 실행!
                 currentMapList[currentSelection].onClick.Invoke();
+                SoundManager.Instance.PlaySFX(103);
             }
         }
 
@@ -112,6 +116,7 @@ public class MapMeunController : MonoBehaviour
         {
             titleMenuController.ResetMenuSelection(); // 타이틀 메뉴로 돌아가서 버튼 셀렉트 상태를 다시 초기화하도록 설정
             this.gameObject.SetActive(false);
+            SoundManager.Instance.PlaySFX(103);
         }
     }
 
