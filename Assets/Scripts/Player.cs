@@ -508,7 +508,7 @@ public class Player : MonoBehaviour
         return true;
     }
     // 외부에서 호출 하는 용도의 메서드
-    public void isCanWizardSkill()
+    public void IsCanWizardSkill()
     {
         CanWizardSkill();
         CheckTeleportValidity(Vector3.zero);
