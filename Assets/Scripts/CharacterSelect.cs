@@ -122,7 +122,7 @@ public class CharacterSelect : MonoBehaviour
         // 다음 캐릭터가 마법사라면 스킬을 쓸 수 있는 지 체크
         if (nextPlayer.PlayerCharacterType == Character.Wizard)
         {
-            nextPlayer.isCanWizardSkill();
+            nextPlayer.IsCanWizardSkill();
         }
         // 현재 캐릭터 업데이트
         currentCharacter = c;

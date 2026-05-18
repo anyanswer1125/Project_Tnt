@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Bits: 1024
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 4040
+    m_Bits: 8136
   heavyBox:
     serializedVersion: 2
     m_Bits: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   JumpEffectPos: {fileID: 3945141592878167340}
   currentState: 0
   animator: {fileID: 0}
-  isMoving: 1
+  isMoving: 0
   isOnSpike: 0
   isWizardSkill: 0
   collider2D: {fileID: 0}
@@ -552,7 +552,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2763805046982883336, guid: f4f5131eff78946799e3c4b6a31c65b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -916,7 +916,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6054259140101157313, guid: bb569a4f1e8cf4029a88231784e48d6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
