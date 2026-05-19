@@ -27,8 +27,10 @@ public class SoundManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else { Destroy(gameObject); }
+
+        Initialize();
     }
-    private void Start()
+    private void Initialize()
     {
         // 내 오브젝트에 붙은 오디오 소스를 가져옴
         var sources = GetComponents<AudioSource>();

@@ -19841,7 +19841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2776375132415805313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20025,6 +20025,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 2745797870897586252}
+    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030744325252636}
@@ -20073,9 +20077,17 @@ PrefabInstance:
       value: 1152
       objectReference: {fileID: 0}
     - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 2745797870897586252}
+    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030744325252636}
+    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: floorLayer.m_Bits
       value: 1152

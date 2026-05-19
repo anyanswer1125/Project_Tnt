@@ -19187,6 +19187,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 2745797871484902539}
+    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030745376879731}
@@ -19210,6 +19214,10 @@ PrefabInstance:
       propertyPath: obstacleLayer.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 2745797871484902539}
     - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 

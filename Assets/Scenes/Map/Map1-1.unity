@@ -18334,6 +18334,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 1751813337}
+    - target: {fileID: 3564964605344541927, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030744079126888}
@@ -18346,9 +18350,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2057030744079126888}
     - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: cameraShakeObj
+      value: 
+      objectReference: {fileID: 1751813337}
+    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
       propertyPath: winTimelineObj
       value: 
       objectReference: {fileID: 2057030744079126888}
+    - target: {fileID: 8582988112376691623, guid: b2646e44658d9864b8def4e920ff011f, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
