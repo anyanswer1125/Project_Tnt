@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
 
-    
+
 
     [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
 
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
 
         winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
-     
+
         // goalTimelineObj.SetActive(true);
     }
 
@@ -392,8 +392,8 @@ public class Player : MonoBehaviour
                 enemy.MonsterDie(this);
                 return false;
             }
-
-            if((hitLayer& heavyBox) != 0 && playerCharacterType == Character.Warrior)
+            // 플레이어가 워리어타입이고 레이어가 heavyBox 일때
+            if ((hitLayer & heavyBox) != 0 && playerCharacterType == Character.Warrior)
             {
                 isMoving = true;
                 ImageStats(dir);
@@ -418,6 +418,14 @@ public class Player : MonoBehaviour
                 obj.ObjMovement(this, dir);
                 return false;
             }
+
+            // 마지막 위에 조건을 모두 통과 했으므로 벽 레이어에 막힌 경우라고 판단
+            if (PlayerCharacterType == Character.Thief && isOnSpike)
+            {
+                Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
+                return false;
+            }
+
 
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
