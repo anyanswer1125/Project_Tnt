@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// JsonManager는 JsonData를 전체적으로 관리하며 
+// JsonManager는 JsonData를 전체적으로 관리하며 로드 및 저장 기능을 담당함
 public class JsonManager : MonoBehaviour
 {
     // 정적 싱글톤 인스턴스

@@ -90,14 +90,14 @@ public class Player : MonoBehaviour
     // Lose 상태 메서드
     private void PlayerLose()
     {
+        stagePlayEnd = true;
+        collider2D.isTrigger = false;
         SoundManager.Instance.PlaySFX(118);
         cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake(5);
         StopAllCoroutines();    // 모든 코루틴 종료
         ResetAllAnimatorParameters();   //모든 애니메이션의 동작을 멈춤
         animator.SetBool("Lose", true);
         StartCoroutine(AnimationLose());
-        stagePlayEnd = true;
-        collider2D.isTrigger = false;
     }
     private IEnumerator AnimationLose()
     {
@@ -158,11 +158,12 @@ public class Player : MonoBehaviour
     // Win 상태 메서드
     private void PlayerWin()
     {
+        stagePlayEnd = true;
         ResetAllAnimatorParameters();   //모든 애니메이터의 동작을 멈춤
 
         winTimelineObj.SetActive(true);
         animator.SetBool("Win", true);
-        stagePlayEnd = true;
+     
         // goalTimelineObj.SetActive(true);
     }
 
@@ -507,7 +508,7 @@ public class Player : MonoBehaviour
         return true;
     }
     // 외부에서 호출 하는 용도의 메서드
-    public void isCanWizardSkill()
+    public void IsCanWizardSkill()
     {
         CanWizardSkill();
         CheckTeleportValidity(Vector3.zero);
