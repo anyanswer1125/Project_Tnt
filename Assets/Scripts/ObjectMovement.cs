@@ -29,7 +29,6 @@ public class ObjectMovement : MonoBehaviour
     IEnumerator Movement(Player player, Vector3 dir)
     {
         Animator animator = player.GetComponent<Animator>();
-
         if (player.PlayerCharacterType == Character.Thief && player.IsOnSpike)
             animator.SetTrigger("OnSpikePush");
         else
@@ -45,9 +44,10 @@ public class ObjectMovement : MonoBehaviour
         // 애니메이션 타이밍
         yield return new WaitForSeconds(0.12f);
         objAnimator.SetTrigger("Moving");
-
         // 이동 되는 동안 키를 입력받지 않게 true
         player.IsMoving(true);
+
+        player.PlayerTurn();
         // 내가 움직일 거리 (내 위치 + 움직일 방향)
         Vector3 targetPos = Pos + dir;
 
@@ -98,9 +98,13 @@ public class ObjectMovement : MonoBehaviour
         if (hit.collider != null)
         {
             // floorButtonLay는 발판이기에 통과함
-            if ((1 << hit.collider.gameObject.layer & floorObjectLay) != 0) return true;
+            if ((1 << hit.collider.gameObject.layer & floorObjectLay) != 0) 
+            { 
+                return true; 
+            }
 
             player.IsMoving(false);
+            player.CanPush();
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name}");
             return false;
         }

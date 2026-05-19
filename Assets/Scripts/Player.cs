@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject TeleportCursor; // 마법사의 스킬 커서
     [SerializeField] private GameObject TeleportRangeCursor;    // 마법사의 스킬 범위
     [SerializeField] private SpriteRenderer teleportSprite; // 마법사의 스킬 사용가능 한지 표시하는 역할
-    [SerializeField] private AudioClip sfx_BumpSound;
 
     [SerializeField] private GameObject winTimelineObj;
     [SerializeField] private GameObject cameraShakeObj;
@@ -48,9 +47,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
 
-    private AudioSource audiosource;
-
     private bool canWarriorMove = true;
+
+    private bool canPush = true; // 박스를 밀 수 있는 지 여부
 
     private bool stagePlayEnd; // 스테이지 플레이 종료
 
@@ -214,8 +213,6 @@ public class Player : MonoBehaviour
 
         vfx_PushEffect = Instantiate(vfx_PushEffect);
         vfx_PushEffect.SetActive(false);
-
-        audiosource = GetComponent<AudioSource>();
 
         SetState(State.None);
         animator = GetComponent<Animator>();
@@ -390,12 +387,14 @@ public class Player : MonoBehaviour
                 cameraShakeObj.GetComponent<CameraShakeScript>().CameraShake();
 
                 enemy.MonsterDie(this);
+                PlayerTurn();
                 return false;
             }
             // 플레이어가 워리어타입이고 레이어가 heavyBox 일때
             if ((hitLayer & heavyBox) != 0 && playerCharacterType == Character.Warrior)
             {
                 isMoving = true;
+                canPush = false;
                 ImageStats(dir);
                 ObjectMovement obj = hit.collider.GetComponent<ObjectMovement>();
                 // obj가 null 경우 리턴 true를 하여 통과하게 함
@@ -411,11 +410,13 @@ public class Player : MonoBehaviour
             if ((hitLayer & objLayer) != 0)
             {
                 isMoving = true;
+                canPush = false;
                 ImageStats(dir);
                 ObjectMovement obj = hit.collider.GetComponent<ObjectMovement>();
                 // obj가 null 경우 리턴 true를 하여 통과하게 함
                 if (obj == null) return true;
                 obj.ObjMovement(this, dir);
+                //PlayerTurn();
                 return false;
             }
 
@@ -429,11 +430,8 @@ public class Player : MonoBehaviour
 
             // 무언가에 부딪혔을 때: 부딪힌 대상의 이름과 레이어 출력
             Debug.Log($"<color=red>[막힘]</color> {hit.collider.name} (레이어 이름: {LayerMask.LayerToName(hit.collider.gameObject.layer)}, 레이어 인덱스: {hit.collider.gameObject.layer})");
-            if (!audiosource.isPlaying)
-            {
-                audiosource.PlayOneShot(sfx_BumpSound);
-                //SoundManager.Instance.PlaySFX()
-            }
+            if (Input.anyKeyDown)
+                SoundManager.Instance.PlaySFX(122);
         }
         else
         {
@@ -619,7 +617,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (canWarriorMove && !isMoving && !stagePlayEnd)
+        if (canWarriorMove && !isMoving && !stagePlayEnd && canPush)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
@@ -665,5 +663,10 @@ public class Player : MonoBehaviour
     {
         canWarriorMove = true;
         Debug.Log("워리어 이동 가능");
+    }
+
+    public void CanPush()
+    {
+        canPush = true;
     }
 }

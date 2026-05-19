@@ -69,10 +69,6 @@ public class CharacterSelect : MonoBehaviour
             }
         }
 
-
-
-        //Characters(Character.Thief);
-
     }
 
     // 현재 포지션값을 받을 메서드
@@ -108,6 +104,8 @@ public class CharacterSelect : MonoBehaviour
         // 캐릭터 전체 비활성화
         foreach (Player player in players)
         {
+            // 위에 조건을 통해서 현재 캐릭터는 움직을 수 있는 상태로 전체 플레이어의 isMoving을 false로 함(움직일 수 있다라는 상태)
+            player.IsMoving(false);
             player.gameObject.SetActive(false);
         }
         // 다음 캐릭터 활성화
@@ -128,6 +126,7 @@ public class CharacterSelect : MonoBehaviour
         currentCharacter = c;
         // 현재 캐릭터 선택 UI 변경
         characterSelectUI.SelectUI(currentCharacter);
+        // 턴 변경
         nextPlayer.PlayerTurn();
     }
 

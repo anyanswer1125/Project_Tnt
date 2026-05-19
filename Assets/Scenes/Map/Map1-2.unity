@@ -19583,6 +19583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5268663961634623888, guid: 3ce48ebe22ab4194f9e7d3cfa7989299, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7859631436526803781, guid: 3ce48ebe22ab4194f9e7d3cfa7989299, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5
