@@ -18264,7 +18264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1-2\n\uC2AC\uB77C\uC784 \uB4F1\uC7A5!?"
+  m_text: "1-2\n\uBAAC\uC2A4\uD130\uB294..?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19437a4c69c2b9742a5b0a789c1ab7ab, type: 2}
   m_sharedMaterial: {fileID: 2969883151270826532, guid: 19437a4c69c2b9742a5b0a789c1ab7ab, type: 2}
