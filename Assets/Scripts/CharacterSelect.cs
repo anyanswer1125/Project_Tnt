@@ -106,6 +106,7 @@ public class CharacterSelect : MonoBehaviour
         {
             // 위에 조건을 통해서 현재 캐릭터는 움직을 수 있는 상태로 전체 플레이어의 isMoving을 false로 함(움직일 수 있다라는 상태)
             player.IsMoving(false);
+            player.WarrirMoveTrue();
             player.gameObject.SetActive(false);
         }
         // 다음 캐릭터 활성화

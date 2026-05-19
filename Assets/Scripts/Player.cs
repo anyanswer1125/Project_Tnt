@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private List<TTam> TTam;   // TTam오브젝트 리스트
 
-    private bool canWarriorMove = true;
+    [SerializeField] private bool canWarriorMove = true;
 
     private bool canPush = true; // 박스를 밀 수 있는 지 여부
 
