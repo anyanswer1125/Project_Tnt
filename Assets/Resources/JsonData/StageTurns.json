@@ -16,7 +16,7 @@
   },
   {
     "StageID": 4,
-    "Turns": 18,
+    "Turns": 20,
     "MapIndex": "Map2-2"
   },
   {
@@ -26,12 +26,12 @@
   },
   {
     "StageID": 6,
-    "Turns": 40,
+    "Turns": 45,
     "MapIndex": "Map3-2"
   },
   {
     "StageID": 7,
-    "Turns": 30,
+    "Turns": 45,
     "MapIndex": "Map4-1"
   }
 ]

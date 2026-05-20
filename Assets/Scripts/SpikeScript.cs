@@ -76,7 +76,6 @@ public class SpikeScript : MonoBehaviour
             Animator a = player.GetComponent<Animator>();
             a.SetBool("OnSpikeIdle", false);
         }
-
     }
     public void PlaySfxSpikeOnOff()
     {

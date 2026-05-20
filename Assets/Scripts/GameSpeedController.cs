@@ -39,10 +39,13 @@ public class GameSpeedController : MonoBehaviour
 
     private void SetSpeed(float speed)
     {
+#if UNITY_EDITOR
         // 속도 범위를 minSpeed와 maxSpeed 사이로 제한
         Time.timeScale = Mathf.Clamp(speed, minSpeed, maxSpeed);
         
         // 소수점 오차 방지를 위해 반올림 후 로그 출력
         Debug.Log($"현재 게임 속도: {Time.timeScale:F2}x");
+
+#endif 
     }
 }
