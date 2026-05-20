@@ -208,5 +208,15 @@
     "FileName": "WizardMagicCircleSpawnSound",
     "Volume": 1.0,
     "Loop": false
+  },
+  {
+    "Index": 122,
+    "Scene": "InGame",
+    "SoundName": "SFX_BumpSound",
+    "Description": "이동불가",
+    "SoundType": "SFX",
+    "FileName": "BumpSound",
+    "Volume": 1.0,
+    "Loop": false
   }
 ]

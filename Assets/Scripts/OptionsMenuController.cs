@@ -192,7 +192,7 @@ public class OptionsMenuController : MonoBehaviour
             isHorizontalMoved = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return ) || Input.GetKeyDown(KeyCode.Space))
         {
             EnterEvent(optionItems[currentSelection]);
         }

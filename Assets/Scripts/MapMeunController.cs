@@ -101,7 +101,7 @@ public class MapMeunController : MonoBehaviour
         }
 
         // 일반 엔터키로 선택 처리
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             if (currentMapList.Count > 0)
             {
